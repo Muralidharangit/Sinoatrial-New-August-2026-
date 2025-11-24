@@ -38,6 +38,7 @@
                     <ul class="contact-info text-lg-end list-style">
                         <li><i class="flaticon-clock"></i>Mon - Sat:
                             09.00 to 6.00, Sunday: Closed</li>
+                            {{-- mn --}}
                     </ul>
                 </div>
             </div>
