@@ -72,34 +72,39 @@
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Full Name*" id="name"
                                         required data-error="Please enter your name">
+                                    <small id="nameError" class="text-danger error"></small>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="email" name="email" id="email" required
                                         placeholder="Your Email Address*" data-error="Please enter your email">
+                                    <small id="emailError" class="text-danger error"></small>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="number" name="mobile_no" id="mobile_no" required
-                                        placeholder="Phone Number*" data-error="Please enter your email">
+                                        placeholder="Phone Number*" data-error="Please enter your phone number">
+                                    <small id="mobileNoError" class="text-danger error"></small>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="subject" placeholder="Subject*" id="subject" required
                                         data-error="Please enter your subject">
-                                    <div class="help-block with-errors"></div>
+                                    <small id="subjectError" class="text-danger error"></small>
                                 </div>
                             </div>
-
-
 
                             <div class="col-12">
                                 <div class="form-group">
                                     <textarea name="enquiry" id="enquiry" placeholder="Your Messages.." cols="30" rows="10" required
                                         data-error="Please enter your message"></textarea>
+                                    <small id="enquiryError" class="text-danger error"></small>
                                 </div>
                             </div>
                             {{-- <div class="form-group">

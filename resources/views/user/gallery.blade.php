@@ -11,7 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Gallery</title>
     @include('user.layouts.link')
-
+    <style>
+        button.btn.btn-outline-primary.btn-two.active {
+            background-color: #db0007;
+        }
+    </style>
 
 </head>
 
@@ -79,24 +83,36 @@
 
             <!-- Gallery Grid -->
             <div class="row">
-                @foreach ($gallery_images as $image)
-                    <div class="col-lg-4 col-md-6 gallery-item {{ Str::slug($image->category->name ?? '') }}">
-                        <div class="service-card style-three">
-                            <span class="service-img">
-                                <img src="{{ asset($image->image) }}" alt="{{ $image->name }}" class="w-100">
-                            </span>
+                @if ($gallery_images->count())
+                    @foreach ($gallery_images as $image)
+                        <div class="col-lg-4 col-md-6 gallery-item {{ Str::slug($image->category->name ?? '') }}">
+                            <div class="service-card style-three">
+                                <span class="service-img">
+                                    <img src="{{ asset($image->image) }}" alt="{{ $image->name }}" class="w-100"
+                                        style="height: 300px; width: 100% !important; object-fit: cover;">
+                                </span>
+                            </div>
                         </div>
+                    @endforeach
+
+                    {{-- Shown only when a filter has no matching images --}}
+                    <div class="col-12 d-none" id="noImagesFilterMessage">
+                        <p class="text-center py-5 mb-0">No images found for this category.</p>
                     </div>
-                @endforeach
+                @else
+                    <div class="col-12">
+                        <p class="text-center py-5 mb-0">No images found.</p>
+                    </div>
+                @endif
             </div>
         </div>
 
-        <!--footer start-->
-        @include('user.layouts.footer')
-        <!--footer end-->
+
     </section>
     {{-- main Layout Ends here --}}
-
+    <!--footer start-->
+    @include('user.layouts.footer')
+    <!--footer end-->
 
     <!-- page end -->
     <!-- Javascript -->
@@ -134,6 +150,41 @@
             // Optional: Trigger the default filter on page load
             const defaultButton = document.querySelector('.filter-buttons .btn.active');
             if (defaultButton) defaultButton.click();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.filter-buttons [data-filter]');
+            const items = document.querySelectorAll('.gallery-item');
+            const noMsg = document.getElementById('noImagesFilterMessage');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+
+                    // Active button UI
+                    buttons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    let visibleCount = 0;
+
+                    items.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(filter)) {
+                            item.style.display = ''; // show
+                            visibleCount++;
+                        } else {
+                            item.style.display = 'none'; // hide
+                        }
+                    });
+
+                    // If no items are visible, show message
+                    if (visibleCount === 0) {
+                        noMsg.classList.remove('d-none');
+                    } else {
+                        noMsg.classList.add('d-none');
+                    }
+                });
+            });
         });
     </script>
 </body>
