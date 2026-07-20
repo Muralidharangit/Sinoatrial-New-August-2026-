@@ -6,11 +6,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content=" ">
-    <meta name="description" content="" />
-    <meta name="author" content="#" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Product</title>
+    <meta name="keywords" content="Sinoatrial, Medical, Technologies, Products, Category">
+    <meta name="description" content="Browse our wide selection of medical equipment and hospital supplies sorted by specialized medical categories (backup view)." />
+    <meta name="author" content="Syscorp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Category Products (Copy) - Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
 </head>
 
@@ -24,6 +24,8 @@
         <!--header start-->
         @include('user.layouts.header', ['categories' => $categories])
         <!--header end-->
+
+        <main>
         <!-- page-title -->
         <div class="ttm-page-title-row">
             <div class="container">
@@ -566,6 +568,8 @@
             <!-- sidebar end -->
 
         </div><!--site-main end-->
+        </main>
+
         <!--footer start-->
         @include('user.layouts.footer')
         <!--footer end-->

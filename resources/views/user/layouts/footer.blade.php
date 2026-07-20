@@ -7,7 +7,7 @@
                     <div class="footer-box">
                         <div class="footer-logo bg-white rounded p-0 mb-3 d-flex justify-content-center">
                             <a href="{{ route('home') }}">
-                                <img src="{{ asset('user/assets/img/logo.png') }}" class="img-fluid" alt="footer-logo">
+                                <img src="{{ asset('user/assets/img/logo.webp') }}" class="img-fluid" alt="footer-logo">
                             </a>
                         </div>
                         <div class="footer-about">
@@ -87,14 +87,14 @@
 
 <footer class="footer-wrap style-one">
     <div class="footer-top pb-70">
-        <img src="{{ asset('user/assets/img/footer-shape.webp') }}" alt="Image" class="footer-shape">
+        <img src="{{ asset('user/assets/img/footer-shape.webp') }}" alt="Image" class="footer-shape" width="1920" height="821" loading="lazy">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-sm-6">
                     <div class="footer-widget">
                         <div class="bg-white rounded">
                             <a href="#" class="footer-logo bg-white">
-                                <img class="logo-light" src="{{ asset('user/assets/img/logo.png') }}" alt="Image">
+                                <img class="logo-light" src="{{ asset('user/assets/img/logo.webp') }}" alt="Image" width="300" height="60" loading="lazy">
                             </a>
                         </div>
                         <p class="comp-desc">
@@ -105,16 +105,16 @@
                             healthcare professionals.
                         </p>
                         <div class="contact-info">
-                            <h6><i class="flaticon-pin"></i>Contact
-                                Address</h6>
+                            <p class="h6"><i class="flaticon-pin"></i>Contact
+                                Address</p>
                             <p>Sinoatrial Medical Technologies , No.10A ,F2 First Floor, VGN Nagar, 4th main road,
                                 Ayyapanthangal, Chennai-600056.</p>
                         </div>
                         <ul class="social-profile list-style">
-                            <li><a href="#" target="_blank"><i class="ri-facebook-fill"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="ri-twitter-fill"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="ri-instagram-line"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="ri-linkedin-fill"></i></a></li>
+                            <li><a href="#" target="_blank" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+                            <li><a href="#" target="_blank" aria-label="Twitter"><i class="ri-twitter-fill"></i></a></li>
+                            <li><a href="#" target="_blank" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+                            <li><a href="#" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -161,8 +161,8 @@
                                     -</span><span>Closed</span></li>
                         </ul>
                         <div class="contact-info">
-                            <h6><i class="flaticon-phone-call"></i>Call
-                                Us</h6>
+                            <p class="h6"><i class="flaticon-phone-call"></i>Call
+                                Us</p>
                             <a href="tel:08811234567899">044-4542
                                 8844</a>
                         </div>
@@ -177,7 +177,7 @@
         <span>The Theme Developed</span> by <a href="#">SyscorpTheme</a>
     </p>
 </footer>
-<button type="button" id="backtotop" class="position-fixed text-center border-0 p-0">
+<button type="button" id="backtotop" class="position-fixed text-center border-0 p-0" aria-label="Back to top">
     <i class="ri-arrow-up-line"></i>
 </button>
 <!-- Footer End -->

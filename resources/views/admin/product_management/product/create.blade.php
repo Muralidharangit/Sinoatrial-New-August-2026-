@@ -85,10 +85,9 @@
                                                 <div class="border border-3 p-4 rounded">
                                                     <div class="row g-3">
                                                         <div class="col-md-6">
-                                                            <label for="product" class="form-label">Product price <span
-                                                                    class="text-danger">*</span></label>
+                                                            <label for="product" class="form-label">Product price</label>
                                                             <input type="text" class="form-control" id="price"
-                                                                name="price" placeholder="00.00" required
+                                                                name="price" placeholder="00.00"
                                                                 value="{{ old('price') }}">
                                                             @error('price')
                                                                 <span style="color: red">{{ $message }}</span>

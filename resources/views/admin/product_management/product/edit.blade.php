@@ -163,7 +163,7 @@
                                                     <div class="row g-3">
                                                         <div class="col-md-6">
                                                             <label for="product" class="form-label">Product
-                                                                price <span class="text-danger">*</span></label>
+                                                                price</label>
                                                             <input type="text" class="form-control" id="price"
                                                                 name="price" placeholder="00.00"
                                                                 value="{{ $Product_image->price }}">

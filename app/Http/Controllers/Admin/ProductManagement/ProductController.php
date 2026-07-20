@@ -109,7 +109,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255|unique:products,name',
             // 'slug' => 'required|string|max:255|unique:products,slug',
             'description' => 'nullable|string',
-            'price' => 'required|numeric|min:0',
+            'price' => 'nullable|numeric|min:0',
             'discount_price' => 'nullable|numeric|min:0|lt:price', // Discount price should be less than price
             'stock' => 'required|integer|min:0',
             'category_id' => 'required|exists:categories,id',
@@ -215,7 +215,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             // 'slug' => 'required|string|max:255|unique:products,slug,' . $id,
             'description' => 'nullable|string',
-            'price' => 'required|numeric|min:0',
+            'price' => 'nullable|numeric|min:0',
             'discount_price' => 'nullable|numeric|min:0|lt:price',
             'stock' => 'required|integer|min:0',
             'category_id' => 'required|exists:categories,id',

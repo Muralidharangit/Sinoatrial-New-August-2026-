@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content=" ">
-    <meta name="description" content="" />
-    <meta name="author" content="#" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>About</title>
+    <meta name="keywords" content="Sinoatrial, Medical, Technologies, About">
+    <meta name="description" content="Learn more about Sinoatrial Medical Technologies, a leading provider of reliable, quality-tested hospital equipment and medical accessories in India." />
+    <meta name="author" content="Syscorp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
 </head>
 
@@ -21,6 +21,8 @@
     <!--header start-->
     @include('user.layouts.header', ['categories' => $categories])
     <!--header end-->
+
+    <main>
 
     <!-- scrollUp Start Here -->
     {{-- <a href="#wrapper" data-type="section-switch" class="scrollUp">
@@ -101,7 +103,7 @@
                 <div class="col-lg-6">
                     <div class="wh-img-wrap" data-aos="zoom-in-up" data-aos-delay="400">
                         <div class="wh-img">
-                            <img src="{{ asset('user/assets/img/about/wh-img-1.png') }}" alt="Image">
+                            <img src="{{ asset('user/assets/img/about/wh-img-1.webp') }}" alt="Image">
                         </div>
                         <div class="circle-wrap" data-aos="flip-up" data-aos-delay="600">
                             <i class="flaticon-heartbeat"></i>
@@ -405,6 +407,8 @@
         </div>
     </div>
     <!-- CTA Section End -->
+    </main>
+
     <!--footer start-->
     @include('user.layouts.footer')
     <!--footer end-->

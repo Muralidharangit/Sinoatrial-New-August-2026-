@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content=" ">
-    <meta name="description" content="" />
-    <meta name="author" content="#" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Gallery</title>
+    <meta name="keywords" content="Sinoatrial, Medical, Technologies, Gallery, Installations">
+    <meta name="description" content="View our gallery of successful medical equipment installations and setups at leading hospitals and healthcare clinics across India." />
+    <meta name="author" content="Syscorp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Installation Gallery - Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
     <style>
         button.btn.btn-outline-primary.btn-two.active {
@@ -27,6 +27,8 @@
     <!--header start-->
     @include('user.layouts.header', ['categories' => $categories])
     <!--header end-->
+
+    <main>
 
     <!-- scrollUp Start Here -->
     {{-- <a href="#wrapper" data-type="section-switch" class="scrollUp">
@@ -63,7 +65,7 @@
                     <span>MEDICAL EQUIPMENT</span>
                     <h2>We Provide Advanced & Reliable
                         <span>Hospital Equipment
-                            <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image">
+                            <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
                         </span>
                     </h2>
                 </div>
@@ -110,6 +112,8 @@
 
     </section>
     {{-- main Layout Ends here --}}
+    </main>
+
     <!--footer start-->
     @include('user.layouts.footer')
     <!--footer end-->

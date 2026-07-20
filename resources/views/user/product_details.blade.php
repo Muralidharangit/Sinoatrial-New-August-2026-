@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content=" ">
-    <meta name="description" content="" />
-    <meta name="author" content="#" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Product</title>
+    <meta name="keywords" content="Sinoatrial, Medical, Technologies, Product, Specification">
+    <meta name="description" content="View technical specifications and detailed information for our high-quality medical devices and clinical accessories." />
+    <meta name="author" content="Syscorp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Details - Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
     <style>
         .modal-backdrop {
@@ -108,6 +108,8 @@
     @include('user.layouts.header', ['categories' => $categories])
     <!--header end-->
 
+    <main>
+
     <!-- scrollUp Start Here -->
     {{-- <a href="#wrapper" data-type="section-switch" class="scrollUp">
         <i class="fas fa-angle-double-up"></i>
@@ -179,7 +181,9 @@
                             <i class="fas fa-star-half-alt"></i> --}}
                             <span class="ms-2 text-muted">(4.5/5)</span>
                         </div>
-                        <h3 class="text-primary mb-3">₹{{ $product->discount_price ?? $product->price }}</h3>
+                        @if ($product->discount_price || $product->price)
+                            <h3 class="text-primary mb-3">₹{{ $product->discount_price ?? $product->price }}</h3>
+                        @endif
                         <p> <i class="fa fa-check-circle"></i><span
                                 class=" {{ $product->stock > 10 ? 'text-success' : 'text-danger' }}">
                                 in
@@ -331,6 +335,8 @@
 
     </section>
     {{-- main Layout ends here --}}
+
+    </main>
 
     <!--footer start-->
     @include('user.layouts.footer')

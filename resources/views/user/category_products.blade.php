@@ -6,11 +6,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content=" ">
-    <meta name="description" content="" />
-    <meta name="author" content="#" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Product</title>
+    <meta name="keywords" content="Sinoatrial, Medical, Technologies, Products, Category">
+    <meta name="description" content="Browse our wide selection of medical equipment and hospital supplies sorted by specialized medical categories." />
+    <meta name="author" content="Syscorp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Category Products - Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
     <style>
         li.active {
@@ -30,6 +30,128 @@
             margin-left: 5px;
             color: #656c76;
         }
+
+        /* Modern Category Widget */
+        .widget-categories-modern {
+            background: #ffffff;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 10px 30px rgba(0, 10, 45, 0.04);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .widget-categories-modern:hover {
+            box-shadow: 0 15px 35px rgba(0, 10, 45, 0.08);
+        }
+
+        .widget-categories-modern .widget-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--titleColor);
+            position: relative;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #eef2f6;
+        }
+
+        .widget-categories-modern .widget-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 40px;
+            height: 2px;
+            background: var(--primaryColor); /* Themed Red Accent Bar */
+            border-radius: 2px;
+        }
+
+        .widget-categories-modern .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .widget-categories-modern .category-item {
+            border-radius: 10px;
+            border: 1px solid #f0f4f8;
+            background: #fafbfc;
+            transition: all 0.3s ease;
+        }
+
+        .widget-categories-modern .category-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #495057;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .widget-categories-modern .category-icon {
+            font-size: 10px;
+            margin-right: 10px;
+            color: #adb5bd;
+            transition: all 0.3s ease;
+        }
+
+        .widget-categories-modern .category-count {
+            background: #eef2f6;
+            color: #6c757d;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover States */
+        .widget-categories-modern .category-item:hover {
+            background: rgba(194, 28, 34, 0.03); /* Soft Red Tint */
+            border-color: rgba(194, 28, 34, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .widget-categories-modern .category-item:hover .category-link {
+            color: var(--primaryColor);
+        }
+
+        .widget-categories-modern .category-item:hover .category-icon {
+            color: var(--primaryColor);
+            transform: translateX(4px);
+        }
+
+        .widget-categories-modern .category-item:hover .category-count {
+            background: var(--primaryColor);
+            color: #ffffff;
+        }
+
+        /* Active State */
+        .widget-categories-modern .category-item.active {
+            background: var(--primaryColor);
+            border-color: var(--primaryColor);
+        }
+
+        .widget-categories-modern .category-item.active .category-link {
+            color: #ffffff !important;
+        }
+
+        .widget-categories-modern .category-item.active .category-icon {
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+
+        .widget-categories-modern .category-item.active .category-count {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
     </style>
 </head>
 
@@ -41,6 +163,8 @@
     <!--header start-->
     @include('user.layouts.header', ['categories' => $categories])
     <!--header end-->
+
+    <main>
 
     <!-- scrollUp Start Here -->
     {{-- <a href="#wrapper" data-type="section-switch" class="scrollUp">
@@ -74,15 +198,17 @@
 
                 <!-- Sidebar Column -->
                 <div class="col-xl-3 col-lg-4">
-                    <div class="widget widget-categories">
-                        <h3 class="mb-3">Categories</h3>
-                        <ul class="list-unstyled">
+                    <div class="widget widget-categories-modern">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul class="category-list">
                             @foreach ($categories as $category)
-                                <li
-                                    class="{{ request()->segment(2) == $category->name ? 'active' : '' }} text-capitalize">
-                                    <a href="{{ route('category.products', $category->name) }}">
-                                        {{ $category->name }} <span
-                                            class="badge text-primary ">({{ $category->products_count }})</span>
+                                <li class="category-item {{ request()->segment(2) == $category->name ? 'active' : '' }} text-capitalize">
+                                    <a href="{{ route('category.products', $category->name) }}" class="category-link">
+                                        <span class="category-name-wrapper">
+                                            <i class="fas fa-chevron-right category-icon"></i>
+                                            {{ $category->name }}
+                                        </span>
+                                        <span class="category-count">{{ $category->products_count }}</span>
                                     </a>
                                 </li>
                             @endforeach
@@ -169,6 +295,8 @@
 
 
     {{-- main Layout ends here --}}
+
+    </main>
 
     <!--footer start-->
     @include('user.layouts.footer')

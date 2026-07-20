@@ -365,7 +365,8 @@
   background-color: var(--primaryColor);
   border-color: transparent;
 }
-.footer-wrap .footer-widget .contact-info h6 {
+.footer-wrap .footer-widget .contact-info h6,
+.footer-wrap .footer-widget .contact-info .h6 {
   color: var(--whiteColor);
   font-size: 18px;
   font-weight: 600;
@@ -374,7 +375,8 @@
   padding-left: 30px;
   letter-spacing: -0.03em;
 }
-.footer-wrap .footer-widget .contact-info h6 i {
+.footer-wrap .footer-widget .contact-info h6 i,
+.footer-wrap .footer-widget .contact-info .h6 i {
   position: absolute;
   top: 6px;
   left: 0;
@@ -400,8 +402,12 @@
   margin-right: 4px;
   font-size: 15px;
 }
-.footer-wrap .copyright-text a, .footer-wrap .copyright-text span {
+.footer-wrap .copyright-text span {
   color: var(--whiteColor);
+}
+.footer-wrap .copyright-text a {
+  color: var(--whiteColor);
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 767px) {

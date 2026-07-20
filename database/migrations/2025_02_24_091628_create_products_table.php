@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name'); // Product name
             $table->string('slug')->unique()->nullable(); // SEO-friendly URL
             $table->text('description')->nullable(); // Product description
-            $table->decimal('price', 10, 2); // Price
+            $table->decimal('price', 10, 2)->nullable(); // Price
             $table->decimal('discount_price', 10, 2)->nullable(); // Discounted price
             $table->integer('stock')->default(0); // Available stock count
             $table->foreignId('category_id')->constrained()->onDelete('cascade'); // Proper foreign key

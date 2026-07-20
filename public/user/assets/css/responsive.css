@@ -663,7 +663,8 @@
     width: 70px;
     height: 70px;
   }
-  .testimonial-card.style-one .client-info h5 {
+  .testimonial-card.style-one .client-info h5,
+  .testimonial-card.style-one .client-info .h5 {
     font-size: 20px;
   }
   .testimonial-card.style-two {
@@ -680,7 +681,8 @@
     width: calc(100% - 85px);
     margin-left: 15px;
   }
-  .testimonial-card.style-two .client-info-wrap .client-info h5 {
+  .testimonial-card.style-two .client-info-wrap .client-info h5,
+  .testimonial-card.style-two .client-info-wrap .client-info .h5 {
     font-size: 18px;
     line-height: 24px;
   }
@@ -708,7 +710,8 @@
     width: calc(100% - 85px);
     margin-left: 15px;
   }
-  .testimonial-card.style-three .client-info-wrap .client-info h5 {
+  .testimonial-card.style-three .client-info-wrap .client-info h5,
+  .testimonial-card.style-three .client-info-wrap .client-info .h5 {
     font-size: 18px;
     line-height: 24px;
   }
@@ -809,7 +812,7 @@
   .cta-wrap.style-one {
     padding: 50px 0;
   }
-  .cta-wrap.style-one h4, .cta-wrap.style-two h4, .cta-wrap.style-three h4 {
+  .cta-wrap.style-one h4, .cta-wrap.style-one .h4, .cta-wrap.style-two h4, .cta-wrap.style-two .h4, .cta-wrap.style-three h4, .cta-wrap.style-three .h4 {
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 10px;
@@ -1231,7 +1234,7 @@
     width: 38px;
     height: 38px;
   }
-  .cta-wrap.style-three .cta-content h4 {
+  .cta-wrap.style-three .cta-content h4, .cta-wrap.style-three .cta-content .h4 {
     margin-bottom: 15px;
   }
   .cta-wrap.style-three .cta-content .cta-contact {

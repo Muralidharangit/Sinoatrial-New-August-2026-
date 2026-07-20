@@ -6,11 +6,79 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="">
-    <meta name="description" content="" />
+    <meta name="description" content="Sinoatrial Medical Technologies delivers state-of-the-art medical equipment across India. Explore our advanced ICU ventilators, 4D ultrasound imaging systems, and patient monitors." />
     <meta name="author" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
+    <style>
+        .hero-badge {
+            display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff !important;
+    padding: 0px 16px;
+    font-size: 12px !important;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 10px !important;
+    
+        }
+         p.hero-badge{
+            padding-right:16px !important;
+         }
+        .hero-badge i {
+            font-size: 16px;
+            color: #ff4d4d;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            color: #ffffff !important;
+        }
+        .hero-badge:hover i {
+            transform: scale(1.2);
+        }
+        
+        .carousel-item.text-dark .hero-badge,
+        .carousel-item:not(.text-white) .hero-badge {
+            background: rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            
+        }
+        .carousel-item.text-dark .hero-badge i,
+        .carousel-item:not(.text-white) .hero-badge i {
+            color: #ff3b30;
+        }
+        .carousel-item.text-dark .hero-badge:hover,
+        .carousel-item:not(.text-white) .hero-badge:hover {
+            background: rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 0, 0, 0.25);
+            color: #1e1e1e !important;
+        }
+
+        @media (max-width: 575px) {
+            .hero-badge {
+                padding: 6px 12px;
+                font-size: 12px !important;
+                margin-bottom: 15px !important;
+            }
+            .hero-badge i {
+                font-size: 14px;
+                margin-right: 6px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -21,6 +89,8 @@
     <!--header start-->
     @include('user.layouts.header', ['categories' => $categories])
     <!--header end-->
+
+    <main>
 
     <!-- scrollUp Start Here -->
     {{-- <a href="#wrapper" data-type="section-switch" class="scrollUp">
@@ -68,20 +138,25 @@
                 <div class="hero-wrap style-three mt-0 pt-70">
                     <div class="hero-bg bg-f"></div>
                     <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce">
+                        class="hero-shape-one bounce" width="62" height="28">
                     <div class="container h-100">
                         <div class="row gx-5 align-items-center h-100">
                             <div class="col-lg-6">
                                 <div class="hero-content">
-                                    <h5 class="text-white">Precision Imaging for Women's Health</h5>
-                                    <h1>Voluson 4D <span style>Ultrasound
-                                        </span>& Imaging System </h1>
+                                    <p class="hero-badge"><i class="ri-heart-pulse-line"></i> Precision Imaging for Women's Health</p>
+                                    <h1>Advanced Patient <span style> Monitoring
+                                        </span>Biorun Multipara Patient </h1>
 
-                                    <p>Deliver crystal-clear visuals with real-time 4D imaging. Voluson enables accurate
-                                        fetal assessments, early diagnostics, and better care decisions with intuitive
-                                        controls and advanced imaging technologies.
+                                         
+
+
+
+                                    <p>Engineered for precision and continuous patient care, the Biorun Multipara Patient Monitor delivers real-time monitoring of ECG, SpO₂, NIBP, respiration, temperature, and pulse rate. Designed for ICUs, operation theatres, emergency departments, and critical care units, it ensures accurate monitoring with intelligent alarms and dependable performance.                         
 
                                         .</p>
+
+                                        <!-- badges  -->
+                                       
                                     <a href="{{ route('contact') }}" class="btn-two">Make
                                         An Appointment<i class="flaticon-right-arrow"></i></a>
 
@@ -102,8 +177,11 @@
 
                                 <div class="w-100 d-flex justify-content-center">
                                     <!-- Doctor Image -->
-                                    <img src="https://configure-my-voluson.com/data/s8touch-YAZ6mi6F.png" alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in">
+                                    <img src="{{ asset('user/assets/img/hero/voluson.webp') }}" 
+                                        srcset="{{ asset('user/assets/img/hero/voluson-300.webp') }} 300w, {{ asset('user/assets/img/hero/voluson.webp') }} 498w"
+                                        sizes="(max-width: 575px) 300px, 498px"
+                                        alt="Doctor"
+                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800">
 
                                 </div>
 
@@ -112,20 +190,20 @@
 
                                 <!-- Heart Icon -->
                                 <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="https://clinicmaster.dexignzone.com/xhtml/medical/images/hero-banner/heart.png"
-                                        alt="Heart" width="40">
+                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
+                                        alt="Heart" width="42" height="67">
                                 </div>
 
                                 <!-- Patient Recovered -->
                                 <div
                                     class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
                                     <div class="avatars d-flex me-2">
-                                        <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle"
-                                            width="24">
-                                        <img src="https://randomuser.me/api/portraits/women/22.jpg"
-                                            class="rounded-circle ms-n2" width="24">
-                                        <img src="https://randomuser.me/api/portraits/men/33.jpg"
-                                            class="rounded-circle ms-n2" width="24">
+                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}" class="rounded-circle"
+                                            width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
                                     </div>
                                     <small><strong class="text-primary">150k</strong>
                                         Patient recovers</small>
@@ -142,21 +220,17 @@
                 <div class="hero-wrap style-three mt-0 pt-70">
                     <div class="hero-bg bg-f"></div>
                     <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce">
+                        class="hero-shape-one bounce" width="62" height="28">
                     <div class="container h-100">
                         <div class="row gx-5 align-items-center h-100">
                             <div class="col-lg-6">
                                 <div class="hero-content">
-                                    <h5 class="text-white">Advanced Life-Support</h5>
-                                    <h1>ICU <span style>High-Quality
-
-                                        </span>Ventilator System </h1>
-                                    <p>Engineered for intensive care, this ventilator delivers precise airflow, oxygen
-                                        levels, and multiple ventilation modes. Designed for both adult and pediatric
-                                        patients, it ensures continuous and customizable respiratory support with safety
-                                        alarms and real-time monitoring.
-
-                                        .</p>
+                                    <p class="hero-badge"><i class="ri-flashlight-line"></i> Emergency Cardiac Care</p>
+                                    <h1>Biorun Biphasic <span style>Defibrillator</span></h1>
+                                    <p>Built for rapid life-saving intervention, the Biorun Biphasic Defibrillator delivers advanced biphasic shock therapy with high precision and reliability. Featuring intuitive controls, ECG monitoring, and comprehensive safety functions, it enables fast and effective cardiac resuscitation in hospitals, ambulances, and emergency care settings.</p>
+                                    
+                                    <!-- badges  -->
+                                   
                                     <a href="{{ route('contact') }}" class="btn-two">Make
                                         An Appointment<i class="flaticon-right-arrow"></i></a>
 
@@ -175,8 +249,11 @@
                                     <div class="circle circle-3"></div>
                                 </div>
                                 <div class="w-100 d-flex justify-content-center">
-                                    <img src="{{ asset('user/assets/img/hero/1.png') }}" alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in">
+                                    <img src="{{ asset('user/assets/img/hero/1.webp') }}" 
+                                        srcset="{{ asset('user/assets/img/hero/1-300.webp') }} 300w, {{ asset('user/assets/img/hero/1.webp') }} 498w"
+                                        sizes="(max-width: 575px) 300px, 498px"
+                                        alt="Doctor"
+                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
 
                                 </div>
                                 <!-- Doctor Image -->
@@ -185,20 +262,20 @@
 
                                 <!-- Heart Icon -->
                                 <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="https://clinicmaster.dexignzone.com/xhtml/medical/images/hero-banner/heart.png"
-                                        alt="Heart" width="40">
+                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
+                                        alt="Heart" width="42" height="67" loading="lazy">
                                 </div>
 
                                 <!-- Patient Recovered -->
                                 <div
                                     class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
                                     <div class="avatars d-flex me-2">
-                                        <img src="https://randomuser.me/api/portraits/men/11.jpg"
-                                            class="rounded-circle" width="24">
-                                        <img src="https://randomuser.me/api/portraits/women/22.jpg"
-                                            class="rounded-circle ms-n2" width="24">
-                                        <img src="https://randomuser.me/api/portraits/men/33.jpg"
-                                            class="rounded-circle ms-n2" width="24">
+                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}"
+                                            class="rounded-circle" width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
                                     </div>
                                     <small><strong class="text-primary">150k</strong>
                                         Patient recovers</small>
@@ -215,20 +292,18 @@
                 <div class="hero-wrap style-three mt-0 pt-70">
                     <div class="hero-bg bg-f"></div>
                     <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce">
+                        class="hero-shape-one bounce" width="62" height="28">
                     <div class="container h-100">
                         <div class="row gx-5 align-items-center h-100">
                             <div class="col-lg-6">
                                 <div class="hero-content">
-                                    <h5 class="text-white">Powerful Respiratory Support, Anytime, Anywhere.</h5>
-                                    <h1>OxyMag <span style>Portable Ventilator
-                                        </span>& Delivering </h1>
+                                    <p class="hero-badge"><i class="ri-pulse-line"></i> Maternal & Fetal Monitoring</p>
+                                    <h1>Bistos CTG <span style>Monitoring System</span></h1>
 
-                                    <p>OxyMag offers precise ventilation modes for adult and pediatric patients in
-                                        critical care. Its compact design, intuitive interface, and reliable performance
-                                        make it ideal for emergency and mobile healthcare.
-
-                                        .</p>
+                                    <p>Designed for dependable prenatal care, the Bistos CTG Monitoring System provides continuous monitoring of fetal heart rate and uterine contractions with exceptional accuracy. Its user-friendly interface, real-time data visualization, and reliable performance make it an ideal solution for maternity hospitals, labor rooms, and obstetric clinics.</p>
+                                    
+                                    <!-- badges  -->
+                                  
                                     <a href="{{ route('contact') }}" class="btn-two">Make
                                         An Appointment<i class="flaticon-right-arrow"></i></a>
 
@@ -247,8 +322,11 @@
                                     <div class="circle circle-3"></div>
                                 </div>
                                 <div class="w-100 d-flex justify-content-center">
-                                    <img src="{{ asset('user/assets/img/hero/3.png') }}" alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in">
+                                    <img src="{{ asset('user/assets/img/hero/3.webp') }}" 
+                                        srcset="{{ asset('user/assets/img/hero/3-300.webp') }} 300w, {{ asset('user/assets/img/hero/3.webp') }} 498w"
+                                        sizes="(max-width: 575px) 300px, 498px"
+                                        alt="Doctor"
+                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
                                 </div>
                                 <!-- Doctor Image -->
 
@@ -257,20 +335,20 @@
 
                                 <!-- Heart Icon -->
                                 <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="https://clinicmaster.dexignzone.com/xhtml/medical/images/hero-banner/heart.png"
-                                        alt="Heart" width="40">
+                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
+                                        alt="Heart" width="42" height="67" loading="lazy">
                                 </div>
 
                                 <!-- Patient Recovered -->
                                 <div
                                     class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
                                     <div class="avatars d-flex me-2">
-                                        <img src="https://randomuser.me/api/portraits/men/11.jpg"
-                                            class="rounded-circle" width="24">
-                                        <img src="https://randomuser.me/api/portraits/women/22.jpg"
-                                            class="rounded-circle ms-n2" width="24">
-                                        <img src="https://randomuser.me/api/portraits/men/33.jpg"
-                                            class="rounded-circle ms-n2" width="24">
+                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}"
+                                            class="rounded-circle" width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
                                     </div>
                                     <small><strong class="text-primary">150k</strong>
                                         Patient recovers</small>
@@ -287,23 +365,17 @@
                 <div class="hero-wrap style-three mt-0 pt-70">
                     <div class="hero-bg bg-f"></div>
                     <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce">
+                        class="hero-shape-one bounce" width="62" height="28">
                     <div class="container h-100">
                         <div class="row gx-5 align-items-center h-100">
                             <div class="col-lg-6">
                                 <div class="hero-content">
-                                    <h5 class="text-white">All over
-                                        India</h5>
-                                    <h1>Advanced Patient & <span style>Delivering reliable
-                                            Services
-                                        </span> </h1>
+                                    <p class="hero-badge"><i class="ri-hand-heart-line"></i> Advanced Neonatal Care</p>
+                                    <h1>Biorun Radiant <span style>Baby Warmer</span></h1>
 
-
-                                    <p>Ensure real-time patient data tracking with high-definition displays and advanced
-                                        multi-parameter monitoring. Ideal for ICUs, emergency rooms, and surgical units,
-                                        these monitors support better decision-making and patient care.
-
-                                        .</p>
+                                    <p>Designed to provide a safe and controlled thermal environment, the Biorun Radiant Baby Warmer helps maintain optimal body temperature for newborns and premature infants. Equipped with intelligent temperature control, advanced safety alarms, and an ergonomic design, it supports superior neonatal care in NICUs, delivery rooms, and pediatric departments.</p>
+                                    
+                                 
                                     <a href="{{ route('contact') }}" class="btn-two">Make
                                         An Appointment<i class="flaticon-right-arrow"></i></a>
 
@@ -323,8 +395,11 @@
                                 </div>
 
                                 <div class="w-100 d-flex justify-content-center">
-                                    <img src="{{ asset('user/assets/img/hero/5.png') }}" alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in">
+                                    <img src="{{ asset('user/assets/img/hero/5.webp') }}" 
+                                        srcset="{{ asset('user/assets/img/hero/5-300.webp') }} 300w, {{ asset('user/assets/img/hero/5.webp') }} 498w"
+                                        sizes="(max-width: 575px) 300px, 498px"
+                                        alt="Doctor"
+                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
                                 </div>
 
                                 <!-- Doctor Image -->
@@ -334,20 +409,20 @@
 
                                 <!-- Heart Icon -->
                                 <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="https://clinicmaster.dexignzone.com/xhtml/medical/images/hero-banner/heart.png"
-                                        alt="Heart" width="40">
+                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
+                                        alt="Heart" width="42" height="67" loading="lazy">
                                 </div>
 
                                 <!-- Patient Recovered -->
                                 <div
                                     class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
                                     <div class="avatars d-flex me-2">
-                                        <img src="https://randomuser.me/api/portraits/men/11.jpg"
-                                            class="rounded-circle" width="24">
-                                        <img src="https://randomuser.me/api/portraits/women/22.jpg"
-                                            class="rounded-circle ms-n2" width="24">
-                                        <img src="https://randomuser.me/api/portraits/men/33.jpg"
-                                            class="rounded-circle ms-n2" width="24">
+                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}"
+                                            class="rounded-circle" width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
                                     </div>
                                     <small><strong class="text-primary">150k</strong>
                                         Patient recovers</small>
@@ -399,7 +474,7 @@
                         <h2>
                             Welcome To Sinoatrial Medical
                             <span>Technologies <img src="{{ asset('user/assets/img/section-shape-2.png') }}"
-                                    alt="Image"></span>
+                                    alt="Image" width="64" height="64" loading="lazy"></span>
                         </h2>
                     </div>
                 </div>
@@ -409,7 +484,7 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" data-aos="flip-left" data-aos-delay="100"
                     data-aos-duration="1000">
                     <div class="feature-card">
-                        <span><img src="{{ asset('user/assets/img/icons/1.png') }}" alt width="58px"></span>
+                        <span><img src="{{ asset('user/assets/img/icons/1.png') }}" alt="Expert Manufacturing" width="58" height="58" loading="lazy"></span>
                         <h3>Expert Manufacturing</h3>
                         <p>Our skilled professionals ensure every product is
                             crafted with care, precision, and compliance to
@@ -421,7 +496,7 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" data-aos="flip-right" data-aos-delay="200"
                     data-aos-duration="1000">
                     <div class="feature-card">
-                        <span><img src="{{ asset('user/assets/img/icons/2.png') }}" alt width="58px"></span>
+                        <span><img src="{{ asset('user/assets/img/icons/2.png') }}" alt="Fast Nationwide Delivery" width="58" height="58" loading="lazy"></span>
                         <h3>Fast Nationwide Delivery</h3>
                         <p>With efficient logistics and a reliable supply
                             chain, we ensure prompt delivery of medical
@@ -433,7 +508,7 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="300"
                     data-aos-duration="1000">
                     <div class="feature-card">
-                        <span><img src="{{ asset('user/assets/img/icons/3.png') }}"alt width="58px"></span>
+                        <span><img src="{{ asset('user/assets/img/icons/3.png') }}" alt="Certified & Reliable Products" width="58" height="58" loading="lazy"></span>
                         <h3>Certified & Reliable Products</h3>
                         <p>Our equipment undergoes rigorous testing to meet
                             safety regulations and is trusted by corporate
@@ -445,7 +520,7 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="400"
                     data-aos-duration="1000">
                     <div class="feature-card">
-                        <span><img src="{{ asset('user/assets/img/icons/4.png') }}" alt width="58px"></span>
+                        <span><img src="{{ asset('user/assets/img/icons/4.png') }}" alt="Dedicated Support & Service" width="58" height="58" loading="lazy"></span>
                         <h3>Dedicated Support & Service</h3>
                         <p>We offer 24/7 technical support and service
                             assistance to ensure minimal downtime and
@@ -473,18 +548,18 @@
     <div class="about-wrap style-two ptb-100">
         <div class="container">
             <img src="{{ asset('user/assets/img/about/about-shape-3.png') }}" alt="Image"
-                class="about-shape-one moveHorizontal" data-aos="zoom-in" data-aos-delay="100">
+                class="about-shape-one moveHorizontal" data-aos="zoom-in" data-aos-delay="100" width="64" height="64" loading="lazy">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
                     <div class="about-img-wrap">
                         <img src="{{ asset('user/assets/img/about/about-shape-4.webp') }}" alt="Image"
-                            class="about-img-shape" data-aos="fade-up" data-aos-delay="300">
-                        <img src="{{ asset('user/assets/img/about/about-img-2.png') }}" alt="Image"
-                            class="about-img-one" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="{{ asset('user/assets/img/about/about-img-3.png') }}" alt="Image"
-                            class="about-img-two" data-aos="zoom-in" data-aos-delay="500">
+                            class="about-img-shape" data-aos="fade-up" data-aos-delay="300" width="74" height="61" loading="lazy">
+                        <img src="{{ asset('user/assets/img/about/about-img-2.webp') }}" alt="Image"
+                            class="about-img-one" data-aos="zoom-in" data-aos-delay="400" width="600" height="470" loading="lazy">
+                        <img src="{{ asset('user/assets/img/about/about-img-3.webp') }}" alt="Image"
+                            class="about-img-two" data-aos="zoom-in" data-aos-delay="500" width="424" height="300" loading="lazy">
                         <div class="promo-box" data-aos="fade-up" data-aos-delay="600">
-                            <h5>95%</h5>
+                            <p class="h5">95%</p>
                             <span>Positive Feedback</span>
                         </div>
                     </div>
@@ -495,7 +570,7 @@
                             <span>WHO WE ARE</span>
                             <h2>15 Years of Trusted Service in
                                 <span>Medical Technology
-                                    <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image">
+                                    <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
                                 </span>
                             </h2>
                             <p>Sinoatrial Medical Technologies is a
@@ -507,10 +582,10 @@
                                 across India.</p>
                         </div>
                         <div class="feature-item" data-aos="zoom-in-up" data-aos-delay="500">
-                            <span><img src="{{ asset('user/assets/img/about/like.svg') }}" alt="Image"></span>
-                            <h6>Delivering precision-driven and innovative
+                            <span><img src="{{ asset('user/assets/img/about/like.svg') }}" alt="Image" width="35" height="35" loading="lazy"></span>
+                            <p class="h6">Delivering precision-driven and innovative
                                 medical equipment with quality
-                                assurance.</h6>
+                                assurance.</p>
                         </div>
                         <p data-aos="fade-up" data-aos-delay="600">
                             We offer a wide range of medical accessories
@@ -533,9 +608,9 @@
     <div class="service-wrap style-two bg_optional ptb-100">
         <div class="container">
             <img src="{{ asset('user/assets/img/services/service-shape-3.png') }}" alt="Image"
-                class="service-shape moveHorizontal">
+                class="service-shape moveHorizontal" width="64" height="64" loading="lazy">
             <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Image"
-                class="service-shape-two bounce">
+                class="service-shape-two bounce" width="64" height="64" loading="lazy">
 
             <div class="row">
                 <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
@@ -543,7 +618,7 @@
                         <span>MEDICAL EQUIPMENT</span>
                         <h2>We Provide Advanced & Reliable
                             <span>Hospital Equipment
-                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image">
+                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
                             </span>
                         </h2>
                     </div>
@@ -558,7 +633,7 @@
                         <div class="swiper-slide">
                             <div class="service-card style-two">
                                 <span class="service-icon">
-                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt>
+                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
                                 </span>
                                 <span class="service-count">01</span>
                                 <h3><a href="#">SpO₂ Sensors</a></h3>
@@ -573,7 +648,7 @@
                         <div class="swiper-slide">
                             <div class="service-card style-two">
                                 <span class="service-icon">
-                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt>
+                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
                                 </span>
                                 <span class="service-count">02</span>
                                 <h3><a href="#">ECG Cables</a></h3>
@@ -588,7 +663,7 @@
                         <div class="swiper-slide">
                             <div class="service-card style-two">
                                 <span class="service-icon">
-                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt>
+                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
                                 </span>
                                 <span class="service-count">03</span>
                                 <h3><a href="#">Patient Monitoring
@@ -604,7 +679,7 @@
                         <div class="swiper-slide" data-aos="fade-left" data-aos-delay="500">
                             <div class="service-card style-two">
                                 <span class="service-icon">
-                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt>
+                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
                                 </span>
                                 <span class="service-count">04</span>
                                 <h3><a href="#">Custom Medical
@@ -622,9 +697,9 @@
                 <!-- Slider Navigation -->
                 <div class="service-slider-btn slider-btn">
                     <div class="service-prev prev-btn"><img src="{{ asset('user/assets/img/left-arrow.svg') }}"
-                            alt="Image"></div>
+                            alt="Image" width="24" height="24" loading="lazy"></div>
                     <div class="service-next next-btn"><img src="{{ asset('user/assets/img/right-arrow.svg') }}"
-                            alt="Image"></div>
+                            alt="Image" width="24" height="24" loading="lazy"></div>
                 </div>
             </div>
 
@@ -638,7 +713,7 @@
     <div class="wh-wrap style-one ptb-100">
         <div class="container">
             <img src="{{ asset('user/assets/img/about/wh-shape-3.png') }}" alt="Image" class="wh-shape-one"
-                data-aos="fade-down" data-aos-delay="100">
+                data-aos="fade-down" data-aos-delay="100" width="64" height="64" loading="lazy">
             <div class="row gx-5 align-items-center">
                 <!-- Content Left -->
                 <div class="col-lg-6">
@@ -650,7 +725,7 @@
                             <h2 data-aos="fade-up" data-aos-delay="400">
                                 Trusted by India’s Leading <span>Hospitals &
                                     Clinics</span>
-                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image">
+                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
                             </h2>
                             <p data-aos="fade-up" data-aos-delay="500">
                                 At Sinoatrial Medical Technologies, we
@@ -682,7 +757,7 @@
                 <div class="col-lg-6">
                     <div class="wh-img-wrap" data-aos="zoom-in-up" data-aos-delay="400">
                         <div class="wh-img">
-                            <img src="{{ asset('user/assets/img/about/wh-img-1.png') }}" alt="Image">
+                            <img src="{{ asset('user/assets/img/about/wh-img-1.webp') }}" alt="Image" width="700" height="670" loading="lazy">
                         </div>
                         <div class="circle-wrap" data-aos="flip-up" data-aos-delay="600">
                             <i class="flaticon-heartbeat"></i>
@@ -712,12 +787,12 @@
 
     <!-- Counter Section Start -->
     <div class="counter-wrap style-one pt-100 pb-75 bg_optional">
-        <img src="{{ asset('user/assets/img/counter-shape.webp') }}"alt="Image" class="counter-shape">
+        <img src="{{ asset('user/assets/img/counter-shape.webp') }}" alt="Image" class="counter-shape" width="1920" height="615" loading="lazy">
         <div class="container">
             <div class="counter-card-wrap">
                 <div class="counter-card" data-aos="zoom-in-up" data-aos-delay="100">
                     <span class="counter-icon">
-                        <img src="{{ asset('user/assets/img/icons/h.png') }}" alt>
+                        <img src="{{ asset('user/assets/img/icons/h.png') }}" alt="Hospital" width="64" height="64" loading="lazy">
                     </span>
                     <div class="counter-text">
                         <span class="counter">300</span>
@@ -726,7 +801,7 @@
                 </div>
                 <div class="counter-card" data-aos="zoom-in-up" data-aos-delay="200">
                     <span class="counter-icon">
-                        <img src="{{ asset('user/assets/img/icons/p.png') }}" alt>
+                        <img src="{{ asset('user/assets/img/icons/p.png') }}" alt="Products" width="64" height="64" loading="lazy">
                     </span>
                     <div class="counter-text">
                         <span class="counter">500</span>
@@ -735,7 +810,7 @@
                 </div>
                 <div class="counter-card" data-aos="zoom-in-up" data-aos-delay="300">
                     <span class="counter-icon">
-                        <img src="{{ asset('user/assets/img/icons/m.png') }}" alt>
+                        <img src="{{ asset('user/assets/img/icons/m.png') }}" alt="Expertise" width="64" height="64" loading="lazy">
                     </span>
                     <div class="counter-text">
                         <span class="counter">20</span>
@@ -744,7 +819,7 @@
                 </div>
                 <div class="counter-card" data-aos="zoom-in-up" data-aos-delay="400">
                     <span class="counter-icon">
-                        <img src="{{ asset('user/assets/img/icons/c.png') }}" alt>
+                        <img src="{{ asset('user/assets/img/icons/c.png') }}" alt="Clients" width="64" height="64" loading="lazy">
                     </span>
                     <div class="counter-text">
                         <span class="counter">1200</span>
@@ -761,7 +836,7 @@
     <div class="testimonial-wrap style-two pt-100 pb-75">
         <div class="container">
             <img src="{{ asset('user/assets/img/services/service-shape-3.png') }}" alt="Shape"
-                class="testimonial-shape-one bounce sm-none" data-aos="zoom-in" data-aos-delay="100">
+                class="testimonial-shape-one bounce sm-none" data-aos="zoom-in" data-aos-delay="100" width="64" height="64" loading="lazy">
 
             <div class="row mb-40 align-items-center">
                 <div class="col-xxl-6 col-xl-8 col-lg-7 col-md-8" data-aos="fade-up" data-aos-delay="100">
@@ -773,10 +848,10 @@
                 </div>
                 <div class="testimonial-slider-btn slider-btn" data-aos="fade-left" data-aos-delay="200">
                     <div class="testimonial-prev prev-btn">
-                        <img src="{{ asset('user/assets/img/left-arrow.svg') }}" alt="Left Arrow">
+                        <img src="{{ asset('user/assets/img/left-arrow.svg') }}" alt="Left Arrow" width="24" height="24" loading="lazy">
                     </div>
                     <div class="testimonial-next next-btn">
-                        <img src="{{ asset('user/assets/img/right-arrow.svg') }}" alt="Right Arrow">
+                        <img src="{{ asset('user/assets/img/right-arrow.svg') }}" alt="Right Arrow" width="24" height="24" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -789,11 +864,11 @@
                             <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="100">
                                 <div class="client-info-wrap">
                                     <div class="client-img">
-                                        <img src="https://png.pngtree.com/png-vector/20240131/ourmid/pngtree-man-profile-account-picture-character-png-image_11577305.png"
-                                            alt="Dr. Arun">
+                                        <img src="{{ asset('user/assets/img/team/team-4.webp') }}"
+                                            alt="Dr. Arun" width="64" height="64" loading="lazy">
                                     </div>
                                     <div class="client-info">
-                                        <h5>Dr. Arun Kumar</h5>
+                                        <p class="h5">Dr. Arun Kumar</p>
                                         <ul class="rating list-style">
                                             <li><i class="ri-star-fill"></i></li>
                                             <li><i class="ri-star-fill"></i></li>
@@ -818,11 +893,11 @@
                             <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="150">
                                 <div class="client-info-wrap">
                                     <div class="client-img">
-                                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/female-user-image-illustration-download-in-svg-png-gif-file-formats--person-girl-business-pack-illustrations-6515859.png?f=webp"
-                                            alt="Dr. Leena">
+                                        <img src="{{ asset('user/assets/img/team/team-5.webp') }}"
+                                            alt="Dr. Leena" width="64" height="64" loading="lazy">
                                     </div>
                                     <div class="client-info">
-                                        <h5>Dr. Leena George</h5>
+                                        <p class="h5">Dr. Leena George</p>
                                         <ul class="rating list-style">
                                             <li><i class="ri-star-fill"></i></li>
                                             <li><i class="ri-star-fill"></i></li>
@@ -847,11 +922,11 @@
                             <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="200">
                                 <div class="client-info-wrap">
                                     <div class="client-img">
-                                        <img src="https://png.pngtree.com/png-vector/20230903/ourmid/pngtree-man-avatar-isolated-png-image_9935806.png"
-                                            alt="Prakash">
+                                        <img src="{{ asset('user/assets/img/team/team-6.webp') }}"
+                                            alt="Prakash" width="64" height="64" loading="lazy">
                                     </div>
                                     <div class="client-info">
-                                        <h5>Mr. Prakash Nair</h5>
+                                        <p class="h5">Mr. Prakash Nair</p>
                                         <ul class="rating list-style">
                                             <li><i class="ri-star-fill"></i></li>
                                             <li><i class="ri-star-fill"></i></li>
@@ -876,11 +951,11 @@
                             <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="250">
                                 <div class="client-info-wrap">
                                     <div class="client-img">
-                                        <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-avatar-of-a-brunette-man-png-image_13379739.png"
-                                            alt="Ravi">
+                                        <img src="{{ asset('user/assets/img/team/team-7.webp') }}"
+                                            alt="Ravi" width="64" height="64" loading="lazy">
                                     </div>
                                     <div class="client-info">
-                                        <h5>Dr. Ravi</h5>
+                                        <p class="h5">Dr. Ravi</p>
                                         <span>Healthcare Consultant</span>
                                         <ul class="rating list-style">
                                             <li><i class="ri-star-fill"></i></li>
@@ -905,11 +980,11 @@
                             <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="300">
                                 <div class="client-info-wrap">
                                     <div class="client-img">
-                                        <img src="https://png.pngtree.com/png-vector/20240131/ourmid/pngtree-man-profile-account-picture-character-png-image_11577305.png"
-                                            alt="Naveen">
+                                        <img src="{{ asset('user/assets/img/team/team-8.webp') }}"
+                                            alt="Naveen" width="64" height="64" loading="lazy">
                                     </div>
                                     <div class="client-info">
-                                        <h5>Mr. Naveen Raj</h5>
+                                        <p class="h5">Mr. Naveen Raj</p>
                                         <span>Medical Distributor</span>
                                         <ul class="rating list-style">
                                             <li><i class="ri-star-fill"></i></li>
@@ -934,11 +1009,11 @@
                             <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="350">
                                 <div class="client-info-wrap">
                                     <div class="client-img">
-                                        <img src="https://finologyuk.com/wp-content/uploads/2025/03/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
-                                            alt="Ramesh">
+                                        <img src="{{ asset('user/assets/img/team/team-10.webp') }}"
+                                            alt="Ramesh" width="64" height="64" loading="lazy">
                                     </div>
                                     <div class="client-info">
-                                        <h5>Dr. Ramesh Kannan</h5>
+                                        <p class="h5">Dr. Ramesh Kannan</p>
                                         <span>Chief Surgeon</span>
                                         <ul class="rating list-style">
                                             <li><i class="ri-star-fill"></i></li>
@@ -967,17 +1042,17 @@
 
     <!-- CTA Section Start -->
     <div class="cta-wrap style-one bg_optional" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-        <img src="{{ asset('user/assets/img/cta-shape.webp') }}" alt="Image" class="cta-shape"
-            data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="{{ asset('user/assets/img/cta-shape.webp') }}" alt="Image" class="cta-shape" width="1920" height="397"
+            data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1000" loading="lazy">
         <div class="container text-center">
-            <h4 data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+            <p class="h4" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
                 Have Any Questions? Feel Free to Contact Our Team
-            </h4>
+            </p>
             <a class="cta-contact position-relative" href="tel:+1-123-456-7899" data-aos="flip-up"
                 data-aos-delay="500" data-aos-duration="1200">
                 +044-4542 8844
-                <img src="{{ asset('user/assets/img/1.png') }}" alt="Image" width="64px"
-                    class="position-absolute" data-aos="fade-in" data-aos-delay="800" data-aos-duration="1000">
+                <img src="{{ asset('user/assets/img/1.png') }}" alt="Image" width="64" height="64"
+                    class="position-absolute" data-aos="fade-in" data-aos-delay="800" data-aos-duration="1000" loading="lazy">
             </a>
             <a href="tel:+044-4542 8844" class="btn-two order_btn" data-aos="zoom-in-up" data-aos-delay="600"
                 data-aos-duration="1200">
@@ -1002,7 +1077,7 @@
                         <h2>
                             Stay Updated With Our Latest News & Blog
                             <span>Articles.</span>
-                            <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image">
+                            <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
                         </h2>
                     </div>
                 </div>
@@ -1013,7 +1088,7 @@
                     data-aos-duration="1000">
                     <div class="blog-card style-one">
                         <div class="blog-card-img">
-                            <img src="https://sinoatrial.in/images/new/blog_1.png" alt="spo2 sensor">
+                            <img src="https://sinoatrial.in/images/new/blog_1.png" alt="spo2 sensor" width="400" height="250" loading="lazy">
                         </div>
                         <div class="blog-card-info">
                             <a href="#" class="blog-date"><i class="flaticon-calendar"></i>Dec 22,
@@ -1036,7 +1111,7 @@
                     data-aos-duration="1000">
                     <div class="blog-card style-one">
                         <div class="blog-card-img">
-                            <img src="https://sinoatrial.in/images/new/blog_2.png" alt="Blood Pressure Accessories">
+                            <img src="https://sinoatrial.in/images/new/blog_2.png" alt="Blood Pressure Accessories" width="400" height="250" loading="lazy">
                         </div>
                         <div class="blog-card-info">
                             <a href="#" class="blog-date"><i class="flaticon-calendar"></i>Dec 22,
@@ -1062,7 +1137,7 @@
                     <div class="blog-card style-one">
                         <div class="blog-card-img">
                             <img src="https://sinoatrial.in/images/new/blog_3.png"
-                                alt="ECG Cables & Surgical Accessories">
+                                alt="ECG Cables & Surgical Accessories" width="400" height="250" loading="lazy">
                         </div>
                         <div class="blog-card-info">
                             <a href="#" class="blog-date"><i class="flaticon-calendar"></i>Dec 22,
@@ -1090,9 +1165,9 @@
     <div class="service-wrap style-two bg_optional ptb-100">
         <div class="container">
             <img src="{{ asset('user/assets/img/services/service-shape-3.png') }}" alt="Image"
-                class="service-shape moveHorizontal">
+                class="service-shape moveHorizontal" width="64" height="64" loading="lazy">
             <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Image"
-                class="service-shape-two bounce">
+                class="service-shape-two bounce" width="64" height="64" loading="lazy">
 
             <div class="row">
                 <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
@@ -1100,7 +1175,7 @@
                         <span>MEDICAL EQUIPMENT </span>
                         <h2>We Provide Best
                             <span>Installation
-                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image">
+                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
                             </span>
                         </h2>
                     </div>
@@ -1108,14 +1183,14 @@
             </div>
 
             <div class="service-slider-wrap" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-slider swiper">
+                <div class="installation-slider swiper">
                     <div class="swiper-wrapper">
 
                         <!-- Slide 1 - Left -->
                         <div class="swiper-slide">
                             <div class="d-flex justify-content-center">
 
-                                <img class="rounded" src="{{ asset('user/assets/img/IND/1.png') }}" alt>
+                                <img class="rounded" src="{{ asset('user/assets/img/IND/1.webp') }}" alt="Installation 1" width="350" height="350" loading="lazy">
 
 
                             </div>
@@ -1125,7 +1200,7 @@
                         <div class="swiper-slide">
                             <div class="d-flex justify-content-center">
 
-                                <img class="rounded" src=" {{ asset('user/assets/img/IND/2.png') }}" alt>
+                                <img class="rounded" src="{{ asset('user/assets/img/IND/2.webp') }}" alt="Installation 2" width="350" height="350" loading="lazy">
 
 
                             </div>
@@ -1135,7 +1210,7 @@
                         <div class="swiper-slide">
                             <div class="d-flex justify-content-center">
 
-                                <img class="rounded" src=" {{ asset('user/assets/img/IND/3.png') }}" alt>
+                                <img class="rounded" src="{{ asset('user/assets/img/IND/3.webp') }}" alt="Installation 3" width="350" height="350" loading="lazy">
 
 
                             </div>
@@ -1145,7 +1220,7 @@
                         <div class="swiper-slide">
                             <div class="d-flex justify-content-center">
 
-                                <img class="rounded" src=" {{ asset('user/assets/img/IND/4.png') }}" alt>
+                                <img class="rounded" src="{{ asset('user/assets/img/IND/4.webp') }}" alt="Installation 4" width="350" height="350" loading="lazy">
 
 
                             </div>
@@ -1155,7 +1230,7 @@
                         <div class="swiper-slide">
                             <div class="d-flex justify-content-center">
 
-                                <img src=" {{ asset('user/assets/img/IND/5.png') }}" alt>
+                                <img class="rounded" src="{{ asset('user/assets/img/IND/5.webp') }}" alt="Installation 5" width="350" height="350" loading="lazy">
 
 
                             </div>
@@ -1168,10 +1243,10 @@
 
                 <!-- Slider Navigation -->
                 <div class="service-slider-btn slider-btn">
-                    <div class="service-prev prev-btn"><img src="{{ asset('user/assets/img/left-arrow.svg') }}"
-                            alt="Image"></div>
-                    <div class="service-next next-btn"><img src="{{ asset('user/assets/img/right-arrow.svg') }}"
-                            alt="Image"></div>
+                    <div class="installation-prev prev-btn"><img src="{{ asset('user/assets/img/left-arrow.svg') }}"
+                            alt="Image" width="24" height="24" loading="lazy"></div>
+                    <div class="installation-next next-btn"><img src="{{ asset('user/assets/img/right-arrow.svg') }}"
+                            alt="Image" width="24" height="24" loading="lazy"></div>
                 </div>
             </div>
 
@@ -1180,14 +1255,11 @@
     <!-- Service Section End -->
 
 
+    </main>
+
     <!--footer start-->
     @include('user.layouts.footer')
     <!--footer end-->
-
-    <!-- Back to Top -->
-    <button type="button" id="backtotop" class="position-fixed text-center border-0 p-0">
-        <i class="ri-arrow-up-line"></i>
-    </button>
 
     {{-- main Layout Ends here --}}
 
@@ -1220,9 +1292,9 @@
 
                                 </div>
                                 <div class="item-content">
-                                    <h4 class="item-title">
+                                    <h3 class="item-title">
                                         {{ $product->name }}
-                                    </h4>
+                                    </h3>
                                     <div class="rate-items">
                                         @if ($product->rating > 0)
                                             @php

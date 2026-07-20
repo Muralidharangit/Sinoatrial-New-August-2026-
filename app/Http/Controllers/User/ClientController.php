@@ -116,7 +116,7 @@ class ClientController extends Controller
             'message' => $request->message,
         ]);
 
-        $adminEmail = env('MAIL_USERNAME', 'sangeeswty4@gmail.com'); // Fetch the admin email from the .env file
+        $adminEmail = env('MAIL_USERNAME') ?: 'muralidharan18898@gmail.com'; // Fetch the admin email from the .env file
         // Send email to admin or default email
         Mail::to($adminEmail)->send(new QuoteFormSubmitted($quote_info));
 
@@ -150,7 +150,7 @@ class ClientController extends Controller
                 'enquiry' => $request->input('enquiry'),
             ]);
 
-            $adminEmail = env('MAIL_USERNAME', 'sangeeswty4@gmail.com');
+            $adminEmail = env('MAIL_USERNAME') ?: 'muralidharan18898@gmail.com';
             Mail::to($adminEmail)->send(new ContactFormSubmitted($contact_info));
 
             return response()->json([

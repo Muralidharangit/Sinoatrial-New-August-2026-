@@ -6,11 +6,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content=" ">
-    <meta name="description" content="" />
-    <meta name="author" content="#" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Service</title>
+    <meta name="keywords" content="Sinoatrial, Medical, Technologies, Services, Support">
+    <meta name="description" content="Explore the professional services provided by Sinoatrial Medical Technologies, from installation and calibration to expert medical equipment maintenance." />
+    <meta name="author" content="Syscorp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services - Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
 </head>
 
@@ -22,6 +22,8 @@
     <!--header start-->
     @include('user.layouts.header', ['categories' => $categories])
     <!--header end-->
+
+    <main>
 
     <!-- scrollUp Start Here -->
     {{-- <a href="#wrapper" data-type="section-switch" class="scrollUp">
@@ -145,6 +147,8 @@
         </div>
     </div>
     <!-- Service Section End -->
+    </main>
+
     <!--footer start-->
     @include('user.layouts.footer')
     <!--footer end-->
