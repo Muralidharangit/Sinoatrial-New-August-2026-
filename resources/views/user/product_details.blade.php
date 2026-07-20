@@ -12,6 +12,7 @@
     <title>Product Details - Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
     <style>
+  /* sadasd */
         .modal-backdrop {
             display: none;
             --bs-backdrop-zindex: 8899;
