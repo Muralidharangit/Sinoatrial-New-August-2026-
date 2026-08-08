@@ -13,20 +13,6 @@
     <title>Products - Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
     <style>
-        li.active {
-            /* background-color: #2457aa; */
-            color: #2457aa
-        }
-
-        /* li.active a {
-            color: white !important;
-        } */
-        li.active a {
-            /* background-color: #2457aa; */
-            color: #2457aa !important;
-            font-weight: 700 !important;
-        }
-
         .modal-backdrop {
             display: none;
             --bs-backdrop-zindex: 8899;
@@ -194,23 +180,17 @@
 
     {{-- main Layout starts here --}}
 
-    <!-- Breadcrumb Start -->
-    <div class="breadcrumb-wrap bg-f br-2">
-        <!-- <img src="assets/img/breadcrumb/br-shape-1.webp" alt="Image" class="br-shape-one bounce sm-none"> -->
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-2.webp') }}" alt="Image"
-            class="br-shape-two moveHorizontal sm-none">
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-3.webp') }}" alt="Image" class="br-shape-three">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <h2>Product</h2>
-                <ul class="breadcrumb-menu list-style">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Product</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
+    @include('user.layouts.breadcrumb', [
+        'title' => 'Products',
+        'subtitle' => 'MEDICAL CATALOG',
+        'subtitle_icon' => 'ri-heart-pulse-line',
+        'description' => 'Browse our professional portfolio of state-of-the-art medical devices and cardiovascular diagnostic systems.',
+        'hero_icon' => '14.png',
+        'items' => [
+            ['label' => 'Home', 'url' => route('home'), 'icon' => 'ri-home-4-line'],
+            ['label' => 'Products', 'active' => true, 'icon' => 'ri-capsule-line']
+        ]
+    ])
     <section class="shop-wrap-layout1 py-5 bg-light">
         <div class="container">
             <div class="row">

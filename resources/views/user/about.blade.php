@@ -34,24 +34,17 @@
 
     {{-- main Layout starts here --}}
 
-    <!-- Breadcrumb Start -->
-    <div class="breadcrumb-wrap bg-f br-2">
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-1.webp') }}" alt="Image"
-            class="br-shape-one bounce sm-none">
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-2.webp') }}" alt="Image"
-            class="br-shape-two moveHorizontal sm-none">
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-3.webp') }}" alt="Image" class="br-shape-three">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <h2>About us</h2>
-                <ul class="breadcrumb-menu list-style">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>About us</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
+    @include('user.layouts.breadcrumb', [
+        'title' => 'About Us',
+        'subtitle' => 'ABOUT OUR COMPANY',
+        'subtitle_icon' => 'ri-shield-check-line',
+        'description' => 'Leading the way in advanced cardiac and medical technologies with a commitment to quality and innovation.',
+        'hero_icon' => '12.png',
+        'items' => [
+            ['label' => 'Home', 'url' => route('home'), 'icon' => 'ri-home-4-line'],
+            ['label' => 'About Us', 'active' => true, 'icon' => 'ri-information-line']
+        ]
+    ])
 
     <!-- Service Section End -->
 
@@ -65,7 +58,7 @@
                 <div class="col-lg-6">
                     <div class="wh-content" data-aos="fade-right" data-aos-delay="200">
                         <div class="content-title style-one">
-                            <span data-aos="fade-up" data-aos-delay="300">
+                            <span class="badge-tag" data-aos="fade-up" data-aos-delay="300">
                                 Why Choose Us
                             </span>
                             <h2 data-aos="fade-up" data-aos-delay="400">
@@ -187,7 +180,7 @@
             <div class="row mb-40 align-items-center">
                 <div class="col-xxl-6 col-xl-8 col-lg-7 col-md-8" data-aos="fade-up" data-aos-delay="100">
                     <div class="section-title style-one">
-                        <span>Client Testimonials</span>
+                        <span class="badge-tag">Client Testimonials</span>
                         <h2>Valuable Feedback From Our <span>Medical
                                 Equipment Clients</span></h2>
                     </div>

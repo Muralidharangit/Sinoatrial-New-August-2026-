@@ -475,7 +475,7 @@
     margin: 15px 0 0;
   }
   .footer-wrap.style-one .footer-top {
-    padding-top: 252px;
+    padding-top: 75px;
   }
   .footer-wrap.style-three .footer-top {
     padding-top: 190px;
@@ -537,7 +537,7 @@
     padding: 70px 50px;
   }
   .footer-wrap.style-one .footer-top {
-    padding-top: 267px;
+    /* padding-top: 267px; */
   }
   .footer-wrap.style-three .footer-top {
     padding-top: 210px;

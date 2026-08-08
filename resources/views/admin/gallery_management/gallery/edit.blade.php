@@ -6,7 +6,7 @@
 
             <div class="container">
                 <div class="d-flex justify-content-between">
-                    <h2>Edit Gallery</h2>
+                    <h2>Edit Gallery </h2>
                     <a href="{{ route('gallery.image.index') }}" class="btn btn-primary">Back</a>
                 </div>
                 <hr>

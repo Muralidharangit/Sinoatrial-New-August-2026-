@@ -26,6 +26,8 @@ Route::get('product-details/{name}', [ClientController::class, 'product_details'
 Route::get('contact', [ClientController::class, 'contact'])->name('contact');
 Route::post('contact-store', [ClientController::class, 'contactstore'])->name('contact.store');
 Route::post('/submit-quote', [ClientController::class, 'store'])->name('submit.quote');
+Route::get('career', [ClientController::class, 'career'])->name('career');
+Route::post('career/apply', [ClientController::class, 'careerApply'])->name('career.apply');
 
 Route::get('/category/{name}', [ClientController::class, 'categoryProducts'])->name('category.products');
 // Route::get('/product-details/{name}', [ClientController::class, 'ProductDetails'])->name('productsdetails');
@@ -142,4 +144,28 @@ Route::middleware(['auth'])->group(function () {
     Route::get('contact-index', [ContactController::class, 'index'])->name('contact.index');
     Route::get('getPermissions', [ContactController::class, 'getPermissions'])->name('contact.getPermissions');
     Route::delete('contact-delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
+
+    // Career Categories
+    Route::get('admin/career-categories', [\App\Http\Controllers\Admin\CareerCategoryController::class, 'index'])->name('admin.career_category.index');
+    Route::get('admin/get-career-categories', [\App\Http\Controllers\Admin\CareerCategoryController::class, 'getCategory'])->name('admin.career_category.get');
+    Route::get('admin/career-category-create', [\App\Http\Controllers\Admin\CareerCategoryController::class, 'create'])->name('admin.career_category.create');
+    Route::post('admin/career-category-store', [\App\Http\Controllers\Admin\CareerCategoryController::class, 'store'])->name('admin.career_category.store');
+    Route::get('admin/career-category-edit/{id}', [\App\Http\Controllers\Admin\CareerCategoryController::class, 'edit'])->name('admin.career_category.edit');
+    Route::put('admin/career-category-update/{id}', [\App\Http\Controllers\Admin\CareerCategoryController::class, 'update'])->name('admin.career_category.update');
+    Route::delete('admin/career-category-delete/{id}', [\App\Http\Controllers\Admin\CareerCategoryController::class, 'destroy'])->name('admin.career_category.delete');
+
+    // Career Jobs
+    Route::get('admin/career-jobs', [\App\Http\Controllers\Admin\CareerJobController::class, 'index'])->name('admin.career_job.index');
+    Route::get('admin/get-career-jobs', [\App\Http\Controllers\Admin\CareerJobController::class, 'getJob'])->name('admin.career_job.get');
+    Route::get('admin/career-job-create', [\App\Http\Controllers\Admin\CareerJobController::class, 'create'])->name('admin.career_job.create');
+    Route::post('admin/career-job-store', [\App\Http\Controllers\Admin\CareerJobController::class, 'store'])->name('admin.career_job.store');
+    Route::get('admin/career-job-edit/{id}', [\App\Http\Controllers\Admin\CareerJobController::class, 'edit'])->name('admin.career_job.edit');
+    Route::put('admin/career-job-update/{id}', [\App\Http\Controllers\Admin\CareerJobController::class, 'update'])->name('admin.career_job.update');
+    Route::delete('admin/career-job-delete/{id}', [\App\Http\Controllers\Admin\CareerJobController::class, 'destroy'])->name('admin.career_job.delete');
+
+    // Career Applications
+    Route::get('admin/career-applications', [\App\Http\Controllers\Admin\CareerApplicationController::class, 'index'])->name('admin.career_application.index');
+    Route::get('admin/get-career-applications', [\App\Http\Controllers\Admin\CareerApplicationController::class, 'getApplication'])->name('admin.career_application.get');
+    Route::get('admin/career-application-download/{id}', [\App\Http\Controllers\Admin\CareerApplicationController::class, 'downloadResume'])->name('admin.career_application.download');
+    Route::delete('admin/career-application-delete/{id}', [\App\Http\Controllers\Admin\CareerApplicationController::class, 'destroy'])->name('admin.career_application.delete');
 });

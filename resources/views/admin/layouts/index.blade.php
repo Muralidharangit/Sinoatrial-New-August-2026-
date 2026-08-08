@@ -181,6 +181,31 @@
                     </li>
                 @endcan
 
+                @can('careermanagement')
+                    <li class="menu-label">Career Management</li>
+                    <li>
+                        <a href="{{ route('admin.career_category.index') }}">
+                            <div class="parent-icon"><i class="fa-solid fa-list-check fs-5"></i>
+                            </div>
+                            <div class="menu-title">Category</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.career_job.index') }}">
+                            <div class="parent-icon"><i class="fa-solid fa-briefcase fs-5"></i>
+                            </div>
+                            <div class="menu-title">Job Details</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.career_application.index') }}">
+                            <div class="parent-icon"><i class="fa-solid fa-users fs-5"></i>
+                            </div>
+                            <div class="menu-title">Applications</div>
+                        </a>
+                    </li>
+                @endcan
+
 
 
             </ul>

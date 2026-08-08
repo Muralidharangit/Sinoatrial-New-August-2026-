@@ -59,8 +59,11 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img class="logo-light" src="{{ asset('user/assets/img/logo.webp') }}" alt="logo" width="300" height="60">
-                <img class="logo-dark" src="{{ asset('user/assets/img/logo.webp') }}" alt="logo" width="300" height="60">
+                <!-- <img class="logo-light main-logo" src="{{ asset('user/assets/img/logo.webp') }}" alt="logo">
+                <img class="logo-dark main-logo" src="{{ asset('user/assets/img/logo.webp') }}" alt="logo"> -->
+
+                <img class="logo-light main-logo" src="{{ asset('user/assets/img/logo.webp') }}" alt="logo">
+                <img class="logo-dark main-logo" src="{{ asset('user/assets/img/logo.webp') }}" alt="logo">
             </a>
             <div class="other-option d-flex align-items-center justify-content-end d-lg-none">
                 <a class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
@@ -81,6 +84,10 @@
                             class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
                     <li class="nav-item"><a href="{{ route('service') }}"
                             class="nav-link {{ request()->routeIs('service') ? 'active' : '' }}">Services</a></li>
+
+                    <li class="nav-item"><a href="{{ route('career') }}"
+                            class="nav-link {{ request()->routeIs('career') ? 'active' : '' }}">Careers</a></li>
+
                     <li class="nav-item"><a href="{{ route('product') }}"
                             class="nav-link {{ request()->routeIs('product') || request()->routeIs('category.products') || request()->routeIs('category.allproducts') || request()->routeIs('product') ? 'active' : '' }}">Products</a>
                     </li>
@@ -96,14 +103,7 @@
               <i class="flaticon-search"></i>
             </button> -->
                     </div>
-                    <div class="option-item">
-                        <div class="contact-item">
-                            <i class="flaticon-telephone"></i>
-                            <span>Phone Number</span>
-                            <a href="tel:968547856254">+044-4542
-                                8844</a>
-                        </div>
-                    </div>
+                  
                     <div class="option-item">
                         <a class="sidebar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
                             aria-controls="navbarOffcanvas" aria-label="Open Sidebar Menu">
@@ -124,7 +124,7 @@
 {{-- mobile header starts --}}
 <div class="responsive-navbar offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
-        <a href="index.html" class="logo d-inline-block">
+        <a href="{{ route('home') }}" class="logo d-inline-block">
             <img class="logo-light" src="{{ asset('user/assets/img/logo.webp') }}" alt="logo" width="300" height="60">
             <img class="logo-dark" src="{{ asset('user/assets/img/logo.webp') }}" alt="logo" width="300" height="60">
         </a>
@@ -148,13 +148,19 @@
             </div>
 
             <div class="accordion-item">
-                <a class="accordion-button without-icon" href="{{ route('service') }}">
+                <a class="accordion-button without-icon {{ request()->routeIs('service') ? 'active' : '' }}" href="{{ route('service') }}">
                     Services
                 </a>
             </div>
 
             <div class="accordion-item">
-                <a class="accordion-button without-icon" href="{{ route('product') }}">
+                <a class="accordion-button without-icon {{ request()->routeIs('career') ? 'active' : '' }}" href="{{ route('career') }}">
+                    Careers
+                </a>
+            </div>
+
+            <div class="accordion-item">
+                <a class="accordion-button without-icon {{ request()->routeIs('product') ? 'active' : '' }}" href="{{ route('product') }}">
                     Products
                 </a>
             </div>
@@ -191,11 +197,11 @@
                 </li>
                 <li>
                     <i class="flaticon-phone-call"></i>
-                    <a href="tel:968547856254">+ 98416 98 988</a>
+                    <a href="tel:+919841698988">+ 98416 98 988</a>
                 </li>
                 <li>
                     <i class="flaticon-phone-call"></i>
-                    <a href="tel:968547856254">+ 965944 68 37</a>
+                    <a href="tel:+919659446837">+ 965944 68 37</a>
                 </li>
             </ul>
             <ul class="social-profile list-style">
@@ -211,7 +217,7 @@
             <div class="contact-item">
                 <i class="flaticon-emergency-call"></i>
                 <span>Phone Number</span>
-                <a href="tel:968547856254">+968 547856 254</a>
+                <a href="tel:04445428844">044-4542 8844</a>
             </div>
         </div>
     </div>

@@ -3,20 +3,20 @@
   margin-right: 55px;
   position: relative;
   padding-left: 30px;
-  color: var(--offwhiteColor);
+  color: #fff;
 }
 .navbar-area .header-top .contact-info li i {
   position: absolute;
   top: 6px;
   left: 0;
-  color: var(--whiteColor);
+  color: #fff;
   line-height: 0.8;
 }
 .navbar-area .header-top .contact-info li a {
-  color: var(--offwhiteColor);
+ color: #fff;
 }
 .navbar-area .header-top .contact-info li a:hover {
-  color: var(--whiteColor);
+  color: #fff;
 }
 .navbar-area .header-top .contact-info li:last-child {
   margin-right: 0;
@@ -28,7 +28,7 @@
 }
 .navbar-area.style-one .header-top {
   padding: 9px 0 11px;
-  background-color: var(--titleColor);
+  background-color: #026ab6;
 }
 .navbar-area.style-two {
   box-shadow: 0px 7px 30px rgba(0, 10, 45, 0.05);

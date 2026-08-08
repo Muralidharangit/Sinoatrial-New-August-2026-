@@ -92,9 +92,9 @@
             <div class="row">
                 <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-sm-6">
                     <div class="footer-widget">
-                        <div class="bg-white rounded">
-                            <a href="#" class="footer-logo bg-white">
-                                <img class="logo-light" src="{{ asset('user/assets/img/logo.webp') }}" alt="Image" width="300" height="60" loading="lazy">
+                        <div class="bg-white ">
+                            <a href="{{ route('home') }}" >
+                                <img class="logo-light" src="{{ asset('user/assets/img/logo.webp') }}" alt="Image" width="100%" height="60" loading="lazy">
                             </a>
                         </div>
                         <p class="comp-desc">
@@ -161,10 +161,21 @@
                                     -</span><span>Closed</span></li>
                         </ul>
                         <div class="contact-info">
-                            <p class="h6"><i class="flaticon-phone-call"></i>Call
-                                Us</p>
-                            <a href="tel:08811234567899">044-4542
-                                8844</a>
+                            <p class="h6"><i class="flaticon-phone-call"></i>Call Us</p>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <a href="tel:04445428844" class="d-block text-nowrap">044-4542 8844</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="tel:+919841698988" class="d-block text-nowrap">+91 98416 98988</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="tel:+919841600013" class="d-block text-nowrap">+91 98416 00013</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="tel:+919094202070" class="d-block text-nowrap">+91 90942 02070</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -173,7 +184,7 @@
     </div>
 
     <p class="copyright-text">
-        <i class="ri-copyright-line"></i> 2025
+        <i class="ri-copyright-line"></i> 2026
         <span>The Theme Developed</span> by <a href="#">SyscorpTheme</a>
     </p>
 </footer>

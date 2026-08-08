@@ -75,6 +75,22 @@
                 });
             }
 
+            // About Slider
+            if (document.querySelector('.about-slider')) {
+                new Swiper(".about-slider", {
+                    spaceBetween: 20,
+                    grabCursor: true,
+                    loop: true,
+                    autoplay: {
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    },
+                    speed: 800,
+                    pagination: { el: ".about-slider-pagination", clickable: true },
+                    slidesPerView: 1
+                });
+            }
+
             // Installation Slider
             if (document.querySelector('.installation-slider')) {
                 new Swiper(".installation-slider", {

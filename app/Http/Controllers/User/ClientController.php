@@ -165,4 +165,60 @@ class ClientController extends Controller
             ], 500);
         }
     }
+
+    public function career()
+    {
+        $categories = Category::all(); // Product categories for header
+        $careerCategories = \App\Models\CareerCategory::where('status', 1)
+            ->with(['jobs' => function ($q) {
+                $q->where('status', 1);
+            }])
+            ->get();
+
+        return view('user.career', compact('categories', 'careerCategories'));
+    }
+
+    public function careerApply(Request $request)
+    {
+        $request->validate([
+            'full_name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|digits:10',
+            'experience_details' => 'required|string',
+            'department' => 'required|exists:career_categories,id',
+            'role' => 'required|string|max:255',
+            'resume' => 'required|file|mimes:pdf,doc,docx|max:5120', // Max 5MB
+            'cover_letter' => 'required|string',
+            'additional_comments' => 'nullable|string',
+        ]);
+
+        try {
+            $fileName = time() . '_' . uniqid() . '.' . $request->file('resume')->getClientOriginalExtension();
+            $request->file('resume')->move(public_path('uploads/resumes'), $fileName);
+            $resumePath = 'uploads/resumes/' . $fileName;
+
+            \App\Models\CareerApplication::create([
+                'full_name' => $request->full_name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'experience_details' => $request->experience_details,
+                'career_category_id' => $request->department,
+                'role' => $request->role,
+                'resume' => $resumePath,
+                'cover_letter' => $request->cover_letter,
+                'additional_comments' => $request->additional_comments,
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Your application has been submitted successfully!',
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Something went wrong while submitting your application. Please try again.',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
 }

@@ -38,23 +38,17 @@
 
 
     {{-- main Layout starts here --}}
-    <!-- Breadcrumb Start -->
-    <div class="breadcrumb-wrap bg-f br-2">
-        <!-- <img src="assets/img/breadcrumb/br-shape-1.webp" alt="Image" class="br-shape-one bounce sm-none"> -->
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-2.webp') }}" alt="Image"
-            class="br-shape-two moveHorizontal sm-none">
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-3.webp') }}" alt="Image" class="br-shape-three">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <h2>Gallery</h2>
-                <ul class="breadcrumb-menu list-style">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Gallery</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
+    @include('user.layouts.breadcrumb', [
+        'title' => 'Gallery',
+        'subtitle' => 'INSTALLATION GALLERY',
+        'subtitle_icon' => 'ri-image-line',
+        'description' => 'Visual showcase of our medical equipment installations, client setups, and advanced technological systems.',
+        'hero_icon' => '14.png',
+        'items' => [
+            ['label' => 'Home', 'url' => route('home'), 'icon' => 'ri-home-4-line'],
+            ['label' => 'Gallery', 'active' => true, 'icon' => 'ri-gallery-line']
+        ]
+    ])
 
 
     <!-- Service Section End -->
@@ -62,7 +56,7 @@
         <div class="row">
             <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
                 <div class="content-title style-one text-center mb-40" data-aos="fade-up" data-aos-delay="100">
-                    <span>MEDICAL EQUIPMENT</span>
+                    <span class="badge-tag">MEDICAL EQUIPMENT</span>
                     <h2>We Provide Advanced & Reliable
                         <span>Hospital Equipment
                             <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">

@@ -174,23 +174,18 @@
 
 
     {{-- main Layout starts here --}}
-    <!-- Breadcrumb Start -->
-    <div class="breadcrumb-wrap bg-f br-2">
-        <!-- <img src="assets/img/breadcrumb/br-shape-1.webp" alt="Image" class="br-shape-one bounce sm-none"> -->
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-2.webp') }}" alt="Image"
-            class="br-shape-two moveHorizontal sm-none">
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-3.webp') }}" alt="Image" class="br-shape-three">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <h2>Categories Details</h2>
-                <ul class="breadcrumb-menu list-style">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Categories</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
+    @include('user.layouts.breadcrumb', [
+        'title' => $category->name ?? 'Categories Details',
+        'subtitle' => 'PRODUCT CATEGORIES',
+        'subtitle_icon' => 'ri-grid-fill',
+        'description' => 'High-quality specialized medical technologies tailored for professional healthcare environments.',
+        'hero_icon' => '12.png',
+        'items' => [
+            ['label' => 'Home', 'url' => route('home'), 'icon' => 'ri-home-4-line'],
+            ['label' => 'Products', 'url' => route('product'), 'icon' => 'ri-capsule-line'],
+            ['label' => $category->name ?? 'Categories', 'active' => true, 'icon' => 'ri-layout-grid-line']
+        ]
+    ])
 
     <section class="shop-wrap-layout1 py-5 bg-light">
         <div class="container">

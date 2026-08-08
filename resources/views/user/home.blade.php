@@ -132,10 +132,88 @@
             </div> -->
 
         <div class="carousel-inner">
+            
 
-            <div class="carousel-item active bg-primary text-white">
+
+             <div class="carousel-item active bg-primary text-white">
                 <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 pt-70">
+                <div class="hero-wrap style-three mt-0 pt-0">
+                    <div class="hero-bg bg-f"></div>
+                    <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
+                        class="hero-shape-one bounce" width="62" height="28">
+                    <div class="container h-100">
+                        <div class="row gx-5 align-items-center h-100">
+                            <div class="col-lg-6">
+                               <div class="hero-content">
+    <p class="hero-badge"><i class="ri-heart-pulse-line"></i> Your Trusted Biomedical Partner</p>
+    <h1>Complete Biomedical <span style="">Equipment Service</span> & Maintenance Solutions</h1>
+
+    <p>Engineered for precision and continuous healthcare operations, Sinoatrial Medical Technologies provides expert installation, repair, AMC/CMC, and calibration across all hospital and laboratory equipment. From ICUs and operation theatres to emergency rooms, we ensure maximum uptime, safety, and reliability for patient monitors, ventilators, defibrillators, anesthesia machines, infant incubators, pumps, and diagnostic devices with 24/7 support.</p>
+
+    <!-- badges -->
+   
+    <a href="{{ route('contact') }}" class="btn-two">Get In Touch<i class="flaticon-right-arrow"></i></a>
+</div>
+                            </div>
+
+                            <!-- Right Image with Effects -->
+                            <!-- Right Image with Effects -->
+
+                            <!-- Right Image & Animation -->
+                            <div class="col-lg-6 position-relative">
+                                <!-- Background Circle -->
+                                <div class="circle-wrapper position-absolute top-50 start-50 translate-middle">
+                                    <div class="circle circle-1"></div>
+                                    <div class="circle circle-2"></div>
+                                    <div class="circle circle-3"></div>
+                                </div>
+
+                                <div class="w-100 d-flex justify-content-center">
+                                    <!-- Doctor Image -->
+                                    <img src="{{ asset('user/assets/img/hero/5.webp') }}" 
+                                        srcset="{{ asset('user/assets/img/hero/5s.webp') }} 300w, {{ asset('user/assets/img/hero/5.webp') }} 498w"
+                                        sizes="(max-width: 575px) 300px, 498px"
+                                        alt="Doctor"
+                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800">
+
+                                </div>
+
+
+                                <!-- Diagnosis Stat -->
+
+                                <!-- Heart Icon -->
+                                <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
+                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
+                                        alt="Heart" width="42" height="67">
+                                </div>
+
+                                <!-- Patient Recovered -->
+                                <div
+                                    class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
+                                    <div class="avatars d-flex me-2">
+                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}" class="rounded-circle"
+                                            width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
+                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
+                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
+                                    </div>
+                                    <small class="text-black"><strong class="text-black">150k</strong>
+                                        Patient recovers</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero Section End -->
+            </div>
+
+
+             
+
+            <div class="carousel-item  bg-primary text-white">
+                <!-- Hero Section Start -->
+                <div class="hero-wrap style-three mt-0 ">
                     <div class="hero-bg bg-f"></div>
                     <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
                         class="hero-shape-one bounce" width="62" height="28">
@@ -177,8 +255,8 @@
 
                                 <div class="w-100 d-flex justify-content-center">
                                     <!-- Doctor Image -->
-                                    <img src="{{ asset('user/assets/img/hero/voluson.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/voluson-300.webp') }} 300w, {{ asset('user/assets/img/hero/voluson.webp') }} 498w"
+                                    <img src="{{ asset('user/assets/img/hero/2.webp') }}" 
+                                        srcset="{{ asset('user/assets/img/hero/2s.webp') }} 300w, {{ asset('user/assets/img/hero/2.webp') }} 498w"
                                         sizes="(max-width: 575px) 300px, 498px"
                                         alt="Doctor"
                                         class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800">
@@ -205,7 +283,7 @@
                                         <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
                                             class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
                                     </div>
-                                    <small><strong class="text-primary">150k</strong>
+                                    <small><strong class="text-black">150k</strong>
                                         Patient recovers</small>
                                 </div>
                             </div>
@@ -217,7 +295,7 @@
 
             <div class="carousel-item bg-success text-white">
                 <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 pt-70">
+                <div class="hero-wrap style-three mt-0 ">
                     <div class="hero-bg bg-f"></div>
                     <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
                         class="hero-shape-one bounce" width="62" height="28">
@@ -249,8 +327,8 @@
                                     <div class="circle circle-3"></div>
                                 </div>
                                 <div class="w-100 d-flex justify-content-center">
-                                    <img src="{{ asset('user/assets/img/hero/1.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/1-300.webp') }} 300w, {{ asset('user/assets/img/hero/1.webp') }} 498w"
+                                    <img src="{{ asset('user/assets/img/hero/4.webp') }}" 
+                                        srcset="{{ asset('user/assets/img/hero/4s.webp') }} 300w, {{ asset('user/assets/img/hero/4.webp') }} 498w"
                                         sizes="(max-width: 575px) 300px, 498px"
                                         alt="Doctor"
                                         class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
@@ -289,7 +367,7 @@
 
             <div class="carousel-item bg-warning text-dark">
                 <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 pt-70">
+                <div class="hero-wrap style-three mt-0 ">
                     <div class="hero-bg bg-f"></div>
                     <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
                         class="hero-shape-one bounce" width="62" height="28">
@@ -323,7 +401,7 @@
                                 </div>
                                 <div class="w-100 d-flex justify-content-center">
                                     <img src="{{ asset('user/assets/img/hero/3.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/3-300.webp') }} 300w, {{ asset('user/assets/img/hero/3.webp') }} 498w"
+                                        srcset="{{ asset('user/assets/img/hero/3s.webp') }} 300w, {{ asset('user/assets/img/hero/3.webp') }} 498w"
                                         sizes="(max-width: 575px) 300px, 498px"
                                         alt="Doctor"
                                         class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
@@ -362,7 +440,7 @@
 
             <div class="carousel-item bg-warning text-dark">
                 <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 pt-70">
+                <div class="hero-wrap style-three mt-0 ">
                     <div class="hero-bg bg-f"></div>
                     <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
                         class="hero-shape-one bounce" width="62" height="28">
@@ -395,8 +473,8 @@
                                 </div>
 
                                 <div class="w-100 d-flex justify-content-center">
-                                    <img src="{{ asset('user/assets/img/hero/5.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/5-300.webp') }} 300w, {{ asset('user/assets/img/hero/5.webp') }} 498w"
+                                    <img src="{{ asset('user/assets/img/hero/1.webp') }}" 
+                                        srcset="{{ asset('user/assets/img/hero/1s.webp') }} 300w, {{ asset('user/assets/img/hero/1.webp') }} 498w"
                                         sizes="(max-width: 575px) 300px, 498px"
                                         alt="Doctor"
                                         class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
@@ -470,7 +548,7 @@
                 <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
                     <div class="section-title style-one text-center mb-40" data-aos="fade-down"
                         data-aos-duration="1000">
-                        <span>Our Work</span>
+                        <span class="badge-tag">Our Work</span>
                         <h2>
                             Welcome To Sinoatrial Medical
                             <span>Technologies <img src="{{ asset('user/assets/img/section-shape-2.png') }}"
@@ -489,7 +567,7 @@
                         <p>Our skilled professionals ensure every product is
                             crafted with care, precision, and compliance to
                             international medical standards.</p>
-                        <a href="#">Read More</a>
+                        <!-- <a href="{{ route('about') }}">Read More</a> -->
                     </div>
                 </div>
 
@@ -501,7 +579,7 @@
                         <p>With efficient logistics and a reliable supply
                             chain, we ensure prompt delivery of medical
                             equipment across India’s healthcare network.</p>
-                        <a href="#">Read More</a>
+                        <!-- <a href="{{ route('about') }}">Read More</a> -->
                     </div>
                 </div>
 
@@ -513,7 +591,7 @@
                         <p>Our equipment undergoes rigorous testing to meet
                             safety regulations and is trusted by corporate
                             hospitals throughout the country.</p>
-                        <a href="#">Read More</a>
+                        <!-- <a href="{{ route('about') }}">Read More</a> -->
                     </div>
                 </div>
 
@@ -526,14 +604,14 @@
                             assistance to ensure minimal downtime and
                             maximum performance in healthcare
                             facilities.</p>
-                        <a href="#">Read More</a>
+                        <!-- <a href="{{ route('about') }}">Read More</a> -->
                     </div>
                 </div>
             </div>
 
             <div class="d-flex justify-content-center mt-4" data-aos="fade-up" data-aos-delay="500"
                 data-aos-duration="1200">
-                <a href="book-appointment.html" class="btn-two">Book
+                <a href="{{ route('contact') }}" class="btn-two">Book
                     Appointment</a>
             </div>
         </div>
@@ -560,40 +638,31 @@
                             class="about-img-two" data-aos="zoom-in" data-aos-delay="500" width="424" height="300" loading="lazy">
                         <div class="promo-box" data-aos="fade-up" data-aos-delay="600">
                             <p class="h5">95%</p>
-                            <span>Positive Feedback</span>
+                            <span >Positive Feedback</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 pe-xxl-0" data-aos="fade-left" data-aos-delay="300">
                     <div class="about-content">
                         <div class="content-title style-one" data-aos="fade-up" data-aos-delay="400">
-                            <span>WHO WE ARE</span>
+                            <span class="badge-tag">WHO WE ARE</span>
                             <h2>15 Years of Trusted Service in
                                 <span>Medical Technology
                                     <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
                                 </span>
                             </h2>
-                            <p>Sinoatrial Medical Technologies is a
-                                Chennai-based provider of high-quality
-                                hospital equipment and accessories. With
-                                locations in MGR Nagar and K.K. Nagar, we
-                                supply advanced, reliable solutions tailored
-                                to the needs of top hospitals and clinics
-                                across India.</p>
+                            <p> Sinoatrial Medical Technologies is a trusted provider of medical equipment sales, installation, and service across Chennai and surrounding districts. With over 15 years of experience, we deliver reliable healthcare solutions to hospitals, clinics, diagnostic centers, and healthcare facilities..</p>
+                            <p>
+We offer a wide range of medical equipment, including Patient Monitors, Defibrillators, Ventilators, ECG Machines, Syringe Pumps, Infusion Pumps, Fetal Monitors, Suction Units, Pulse Oximeters, and other critical care devices, along with genuine accessories. Our focus on quality, prompt service, and dependable after-sales support ensures reliable performance and customer satisfaction
+                            </p>
+
+                               
+
                         </div>
-                        <div class="feature-item" data-aos="zoom-in-up" data-aos-delay="500">
-                            <span><img src="{{ asset('user/assets/img/about/like.svg') }}" alt="Image" width="35" height="35" loading="lazy"></span>
-                            <p class="h6">Delivering precision-driven and innovative
-                                medical equipment with quality
-                                assurance.</p>
-                        </div>
-                        <p data-aos="fade-up" data-aos-delay="600">
-                            We offer a wide range of medical accessories
-                            including SpO₂ sensors, ECG cables, and
-                            monitoring accessories—all designed to meet
-                            rigorous healthcare standards.
-                        </p>
-                        <a href="book-appointment.html" class="btn-two" data-aos="zoom-in" data-aos-delay="700">Get
+
+                       
+                        <!-- swiper content we  -->
+                        <a href="{{ route('contact') }}" class="btn-two" data-aos="zoom-in" data-aos-delay="700">Get
                             in
                             Touch</a>
                     </div>
@@ -604,21 +673,21 @@
     <!-- About Section End -->
 
     <!-- Service Section Start -->
-    <!-- Service Section Start -->
+
+     <!-- Service Section Start -->
     <div class="service-wrap style-two bg_optional ptb-100">
         <div class="container">
             <img src="{{ asset('user/assets/img/services/service-shape-3.png') }}" alt="Image"
                 class="service-shape moveHorizontal" width="64" height="64" loading="lazy">
-            <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Image"
-                class="service-shape-two bounce" width="64" height="64" loading="lazy">
+            
 
             <div class="row">
                 <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
                     <div class="content-title style-one text-center mb-40" data-aos="fade-up" data-aos-delay="100">
-                        <span>MEDICAL EQUIPMENT</span>
+                        <span class="badge-tag">MEDICAL EQUIPMENT</span>
                         <h2>We Provide Advanced & Reliable
                             <span>Hospital Equipment
-                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
+                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy" class="d-sm-none">
                             </span>
                         </h2>
                     </div>
@@ -637,9 +706,7 @@
                                 </span>
                                 <span class="service-count">01</span>
                                 <h3><a href="#">SpO₂ Sensors</a></h3>
-                                <p>High-precision sensors for accurate
-                                    oxygen saturation monitoring in critical
-                                    and routine care.</p>
+                                <p>Providing genuine medical accessories such as ECG cables, SpO₂ sensors, NIBP cuffs, temperature probes, IBP cables and other compatible spare parts.</p>
                                 <a href="#" class="btn-three">Read More<i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
@@ -651,10 +718,8 @@
                                     <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
                                 </span>
                                 <span class="service-count">02</span>
-                                <h3><a href="#">ECG Cables</a></h3>
-                                <p>Durable and shielded ECG cables designed
-                                    for accurate cardiac monitoring and
-                                    diagnostics.</p>
+                                <h3><a href="#">Critical Care Equipment</a></h3>
+                                <p>roviding advanced ICU and emergency care equipment, including ventilators, defibrillators, infusion pumps, and syringe pumps.</p>
                                 <a href="#" class="btn-three">Read More<i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
@@ -666,11 +731,8 @@
                                     <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
                                 </span>
                                 <span class="service-count">03</span>
-                                <h3><a href="#">Patient Monitoring
-                                        Accessories</a></h3>
-                                <p>Comprehensive range of accessories
-                                    compatible with major monitoring systems
-                                    and brands.</p>
+                                <h3><a href="#">Diagnostic Equipment</a></h3>
+                                <p>Offering reliable diagnostic solutions, including ECG machines, Holter monitors, ABPM systems, and spirometers.</p>
                                 <a href="#" class="btn-three">Read More<i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
@@ -682,11 +744,8 @@
                                     <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
                                 </span>
                                 <span class="service-count">04</span>
-                                <h3><a href="#">Custom Medical
-                                        Solutions</a></h3>
-                                <p>Tailor-made device and cable solutions
-                                    for specialized medical applications and
-                                    OEM requirements.</p>
+                                <h3><a href="#">Home Healthcare Equipment</a></h3>
+                                <p>Providing reliable home healthcare solutions for safe and comfortable patient care, like Bipap, Cpap, BP Apparatus, Glucometer and monitoring devices.</p>
                                 <a href="#" class="btn-three">Read More<i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
@@ -706,6 +765,7 @@
         </div>
     </div>
     <!-- Service Section End -->
+    
 
     <!-- Service Section End -->
 
@@ -719,7 +779,7 @@
                 <div class="col-lg-6">
                     <div class="wh-content" data-aos="fade-right" data-aos-delay="200">
                         <div class="content-title style-one">
-                            <span data-aos="fade-up" data-aos-delay="300">
+                            <span class="badge-tag" data-aos="fade-up" data-aos-delay="300">
                                 Why Choose Us
                             </span>
                             <h2 data-aos="fade-up" data-aos-delay="400">
@@ -746,9 +806,8 @@
                             <li data-aos="fade-left" data-aos-delay="900">Dedicated post-sales
                                 and support service</li>
                         </ul>
-                        <a href="tel:+919123456789" class="btn-two" data-aos="zoom-in" data-aos-delay="1000">
-                            <i class="flaticon-phone-call"></i>+91 91234
-                            56789
+                        <a href="tel:+919659446837" class="btn-two" data-aos="zoom-in" data-aos-delay="1000">
+                            <i class="flaticon-phone-call"></i>+91 96594 46837
                         </a>
                     </div>
                 </div>
@@ -841,7 +900,7 @@
             <div class="row mb-40 align-items-center">
                 <div class="col-xxl-6 col-xl-8 col-lg-7 col-md-8" data-aos="fade-up" data-aos-delay="100">
                     <div class="section-title style-one">
-                        <span>Client Testimonials</span>
+                        <span class="badge-tag">Client Testimonials</span>
                         <h2>Valuable Feedback From Our <span>Medical
                                 Equipment Clients</span></h2>
                     </div>
@@ -1048,13 +1107,13 @@
             <p class="h4" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
                 Have Any Questions? Feel Free to Contact Our Team
             </p>
-            <a class="cta-contact position-relative" href="tel:+1-123-456-7899" data-aos="flip-up"
+            <a class="cta-contact position-relative" href="tel:04445428844" data-aos="flip-up"
                 data-aos-delay="500" data-aos-duration="1200">
-                +044-4542 8844
+                044-4542 8844
                 <img src="{{ asset('user/assets/img/1.png') }}" alt="Image" width="64" height="64"
                     class="position-absolute" data-aos="fade-in" data-aos-delay="800" data-aos-duration="1000" loading="lazy">
             </a>
-            <a href="tel:+044-4542 8844" class="btn-two order_btn" data-aos="zoom-in-up" data-aos-delay="600"
+            <a href="{{ route('contact') }}" class="btn-two order_btn" data-aos="zoom-in-up" data-aos-delay="600"
                 data-aos-duration="1200">
                 Order an Appointment
             </a>

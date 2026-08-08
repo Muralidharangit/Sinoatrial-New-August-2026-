@@ -26,26 +26,17 @@
         <!--header end-->
 
         <main>
-        <!-- page-title -->
-        <div class="ttm-page-title-row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="d-flex flex-column justify-content-center align-items-center">
-                            <div class="page-title-heading">
-                                <h1 class="title">Shop</h1>
-                            </div>
-                            <div class="breadcrumb-wrapper mt-2">
-                                <span class="mr-1"><i class="ti ti-home"></i></span>
-                                <a title="Homepage" href="{{ route('home') }}">Home</a>
-                                <span class="ttm-bread-sep">&nbsp;/&nbsp;</span>
-                                <span class="ttm-textcolor-skincolor">Shop</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- page-title end-->
+    @include('user.layouts.breadcrumb', [
+        'title' => 'Shop Products',
+        'subtitle' => 'PRODUCT CATALOG',
+        'subtitle_icon' => 'ri-grid-fill',
+        'description' => 'Explore our medical technologies and find the perfect equipment for your clinical needs.',
+        'hero_icon' => '12.png',
+        'items' => [
+            ['label' => 'Home', 'url' => route('home'), 'icon' => 'ri-home-4-line'],
+            ['label' => 'Shop', 'active' => true, 'icon' => 'ri-shopping-bag-3-line']
+        ]
+    ])
 
         <!--site-main start-->
         <div class="site-main">

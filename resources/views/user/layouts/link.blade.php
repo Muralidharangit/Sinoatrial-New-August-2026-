@@ -8,9 +8,9 @@
 
  <!-- Preload Critical CSS -->
  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
- <link rel="preload" href="{{ asset('user/assets/css/header.css') }}" as="style">
- <link rel="preload" href="{{ asset('user/assets/css/style.css') }}" as="style">
- <link rel="preload" href="{{ asset('user/assets/css/responsive.css') }}" as="style">
+ <link rel="preload" href="{{ asset('user/assets/css/header.css') }}?v={{ filemtime(public_path('user/assets/css/header.css')) }}" as="style">
+ <link rel="preload" href="{{ asset('user/assets/css/style.css') }}?v={{ filemtime(public_path('user/assets/css/style.css')) }}" as="style">
+ <link rel="preload" href="{{ asset('user/assets/css/responsive.css') }}?v={{ filemtime(public_path('user/assets/css/responsive.css')) }}" as="style">
 
  <!-- CDN Preconnects -->
  <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -33,9 +33,9 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </noscript>
- <link rel="stylesheet" href="{{ asset('user/assets/css/header.css') }}">
- <link rel="stylesheet" href="{{ asset('user/assets/css/style.css') }}">
- <link rel="stylesheet" href="{{ asset('user/assets/css/responsive.css') }}">
+ <link rel="stylesheet" href="{{ asset('user/assets/css/header.css') }}?v={{ filemtime(public_path('user/assets/css/header.css')) }}">
+ <link rel="stylesheet" href="{{ asset('user/assets/css/style.css') }}?v={{ filemtime(public_path('user/assets/css/style.css')) }}">
+ <link rel="stylesheet" href="{{ asset('user/assets/css/responsive.css') }}?v={{ filemtime(public_path('user/assets/css/responsive.css')) }}">
 
  <!-- Non-Critical Stylesheets (Asynchronous) -->
  <link rel="stylesheet" href="{{ asset('user/assets/css/aos.css') }}" media="print" onload="this.media='all'">
@@ -94,4 +94,10 @@
          display: inline-flex;
          align-items: center;
      }
+
+
+
+.carousel-control-next, .carousel-control-prev {
+ 
+    width: 4% !important;}
  </style>

@@ -120,23 +120,18 @@
 
     {{-- main Layout starts here --}}
 
-    <!-- Breadcrumb Start -->
-    <div class="breadcrumb-wrap bg-f br-2">
-        <!-- <img src="assets/img/breadcrumb/br-shape-1.webp" alt="Image" class="br-shape-one bounce sm-none"> -->
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-2.webp') }}" alt="Image"
-            class="br-shape-two moveHorizontal sm-none">
-        <img src="{{ asset('user/assets/img/breadcrumb/br-shape-3.webp') }}" alt="Image" class="br-shape-three">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <h2>Product Details</h2>
-                <ul class="breadcrumb-menu list-style">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Product Details</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
+    @include('user.layouts.breadcrumb', [
+        'title' => 'Product Details',
+        'subtitle' => 'PRODUCT SPECIFICATION',
+        'subtitle_icon' => 'ri-price-tag-3-line',
+        'description' => 'Detailed technical specifications, clinical applications, and advanced features of our devices.',
+        'hero_icon' => '12.png',
+        'items' => [
+            ['label' => 'Home', 'url' => route('home'), 'icon' => 'ri-home-4-line'],
+            ['label' => 'Products', 'url' => route('product'), 'icon' => 'ri-capsule-line'],
+            ['label' => 'Product Details', 'active' => true, 'icon' => 'ri-article-line']
+        ]
+    ])
 
     <section class="shop-details-wrap py-5 bg-light">
         <div class="container">
@@ -207,7 +202,7 @@
                             precision.
                         </p> --}}
 
-                        <a href="{{ route('contact') }}">
+                        <a href="{{ route('contact') }}?product={{ urlencode($product->name) }}">
                             <button class="btn btn-primary me-3 btn-two px-4 py-2">Contact
                                 Us</button>
                         </a>
