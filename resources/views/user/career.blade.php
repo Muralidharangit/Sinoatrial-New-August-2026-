@@ -551,11 +551,9 @@
 
                 <!-- Department Tabs -->
                 <div class="dept-tabs">
-                    <button class="dept-tab-btn active" onclick="filterDepartment('all')">All Departments</button>
+                    <button class="dept-tab-btn active" onclick="filterDepartment(this, 'all')">All Departments</button>
                     @foreach($careerCategories as $cCat)
-                        @if($cCat->jobs->count() > 0)
-                            <button class="dept-tab-btn" onclick="filterDepartment('dept-{{ $cCat->id }}')">{{ $cCat->name }}</button>
-                        @endif
+                        <button class="dept-tab-btn" onclick="filterDepartment(this, 'dept-{{ $cCat->id }}')">{{ $cCat->name }}</button>
                     @endforeach
                 </div>
 
@@ -631,7 +629,9 @@
 
                         <!-- No Jobs Fallback -->
                         <div id="noJobsMessage" class="no-jobs-msg" style="{{ $hasJobs ? 'display: none;' : '' }}">
-                            Currently there are no open vacancies in this department. Please feel free to submit a general application below.
+                            <i class="ri-briefcase-4-line" style="font-size: 36px; color: #2457aa; margin-bottom: 10px; display: block;"></i>
+                            <h5 style="font-weight: 700; color: #000a2d; margin-bottom: 6px;">No Jobs Available</h5>
+                            <p style="margin: 0; color: #666;">Currently there are no open vacancies in this department. Please feel free to submit a general application below.</p>
                         </div>
                     </div>
                 </div>
@@ -803,10 +803,12 @@
 
     <script>
         // Filter Jobs by Department
-        function filterDepartment(dept) {
+        function filterDepartment(btn, dept) {
             // Update active state of filter buttons
             $(".dept-tab-btn").removeClass("active");
-            event.target.classList.add("active");
+            if (btn) {
+                $(btn).addClass("active");
+            }
 
             let matchedCount = 0;
 
