@@ -181,6 +181,17 @@
                     </li>
                 @endcan
 
+                @can('testimonialmanagement')
+                    <li class="menu-label">Testimonial Management</li>
+                    <li>
+                        <a href="{{ route('admin.testimonial.index') }}">
+                            <div class="parent-icon"><i class="fa-solid fa-comments fs-5"></i>
+                            </div>
+                            <div class="menu-title">Testimonials</div>
+                        </a>
+                    </li>
+                @endcan
+
                 @can('careermanagement')
                     <li class="menu-label">Career Management</li>
                     <li>

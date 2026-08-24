@@ -41,20 +41,42 @@
         var navbar = document.getElementById("navbar");
         if (navbar) {
             window.addEventListener('scroll', function() {
-                navbar.classList.toggle('sticky', window.scrollY >= 150);
+                navbar.classList.toggle('sticky', window.scrollY >= 120);
             }, { passive: true });
         }
 
         // Back to Top
         var topbutton = document.getElementById("backtotop");
         if (topbutton) {
-            topbutton.addEventListener('click', function() {
+            topbutton.addEventListener('click', function(e) {
+                e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
             });
             window.addEventListener('scroll', function() {
                 topbutton.style.opacity = (document.documentElement.scrollTop > 200) ? "1" : "0";
             }, { passive: true });
         }
+
+        // Smooth Scroll for Internal Anchor Links (#)
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (href && href !== '#' && href.startsWith('#')) {
+                    var targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        var headerOffset = 85;
+                        var elementPosition = targetElement.getBoundingClientRect().top;
+                        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                }
+            });
+        });
 
         // ---- Swiper: initialise only if elements exist ----
         if (typeof Swiper !== 'undefined') {
@@ -71,6 +93,55 @@
                         0:    { slidesPerView: 1 },
                         768:  { slidesPerView: 2 },
                         1200: { slidesPerView: 3 }
+                    }
+                });
+            }
+
+            // Mobile Brand Slider (Auto move 2 logos at a time)
+            if (document.querySelector('.mobile-brand-slider')) {
+                new Swiper(".mobile-brand-slider", {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                    spaceBetween: 12,
+                    grabCursor: true,
+                    loop: true,
+                    autoplay: {
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    },
+                    speed: 700,
+                    pagination: {
+                        el: ".mobile-brand-pagination",
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        0:   { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 12 },
+                        576: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 15 }
+                    }
+                });
+            }
+
+            // Our Clients Continuous Logo Slider
+            if (document.querySelector('.clients-slider')) {
+                new Swiper(".clients-slider", {
+                    slidesPerView: 5,
+                    spaceBetween: 24,
+                    grabCursor: true,
+                    loop: true,
+                    autoplay: {
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    },
+                    speed: 800,
+                    pagination: {
+                        el: ".clients-pagination",
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        0:    { slidesPerView: 2, spaceBetween: 15 },
+                        576:  { slidesPerView: 3, spaceBetween: 20 },
+                        768:  { slidesPerView: 4, spaceBetween: 24 },
+                        1200: { slidesPerView: 5, spaceBetween: 28 }
                     }
                 });
             }

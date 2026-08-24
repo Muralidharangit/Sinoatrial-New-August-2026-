@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\QuoteController;
 use App\Http\Controllers\Admin\UserManagement\PermissionController;
 use App\Http\Controllers\Admin\UserManagement\RoleController;
 use App\Http\Controllers\Admin\UserManagement\UserController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\GalleryCategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\User\ClientController;
@@ -28,6 +29,7 @@ Route::post('contact-store', [ClientController::class, 'contactstore'])->name('c
 Route::post('/submit-quote', [ClientController::class, 'store'])->name('submit.quote');
 Route::get('career', [ClientController::class, 'career'])->name('career');
 Route::post('career/apply', [ClientController::class, 'careerApply'])->name('career.apply');
+Route::post('testimonial-submit', [ClientController::class, 'testimonialSubmit'])->name('testimonial.submit');
 
 Route::get('/category/{name}', [ClientController::class, 'categoryProducts'])->name('category.products');
 // Route::get('/product-details/{name}', [ClientController::class, 'ProductDetails'])->name('productsdetails');
@@ -168,4 +170,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/get-career-applications', [\App\Http\Controllers\Admin\CareerApplicationController::class, 'getApplication'])->name('admin.career_application.get');
     Route::get('admin/career-application-download/{id}', [\App\Http\Controllers\Admin\CareerApplicationController::class, 'downloadResume'])->name('admin.career_application.download');
     Route::delete('admin/career-application-delete/{id}', [\App\Http\Controllers\Admin\CareerApplicationController::class, 'destroy'])->name('admin.career_application.delete');
+
+    // Testimonial Management
+    Route::get('admin/testimonial-index', [TestimonialController::class, 'index'])->name('admin.testimonial.index');
+    Route::get('admin/get-testimonials', [TestimonialController::class, 'getTestimonials'])->name('admin.testimonial.get');
+    Route::get('admin/testimonial-create', [TestimonialController::class, 'create'])->name('admin.testimonial.create');
+    Route::post('admin/testimonial-store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
+    Route::get('admin/testimonial-edit/{id}', [TestimonialController::class, 'edit'])->name('admin.testimonial.edit');
+    Route::put('admin/testimonial-update/{id}', [TestimonialController::class, 'update'])->name('admin.testimonial.update');
+    Route::delete('admin/testimonial-delete/{id}', [TestimonialController::class, 'destroy'])->name('admin.testimonial.delete');
 });
