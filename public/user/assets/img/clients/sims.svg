@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 90" width="100%" height="100%">
+  <circle cx="35" cy="38" r="14" fill="none" stroke="#f57c00" stroke-width="4"/>
+  <path d="M35 18 L35 24 M35 52 L35 58 M15 38 L21 38 M49 38 L55 38" stroke="#f57c00" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="65" y="45" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="34" fill="#0d47a1" letter-spacing="1">SIMS</text>
+  <text x="65" y="60" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="8.5" fill="#1565c0" letter-spacing="0.5">SRM INSTITUTES FOR MEDICAL SCIENCE</text>
+  <line x1="65" y1="65" x2="260" y2="65" stroke="#1565c0" stroke-width="1"/>
+  <text x="120" y="75" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="8" fill="#546e7a" letter-spacing="1">CHENNAI INDIA</text>
+</svg>

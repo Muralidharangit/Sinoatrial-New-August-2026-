@@ -36,6 +36,9 @@
  <link rel="stylesheet" href="{{ asset('user/assets/css/header.css') }}?v={{ filemtime(public_path('user/assets/css/header.css')) }}">
  <link rel="stylesheet" href="{{ asset('user/assets/css/style.css') }}?v={{ filemtime(public_path('user/assets/css/style.css')) }}">
  <link rel="stylesheet" href="{{ asset('user/assets/css/responsive.css') }}?v={{ filemtime(public_path('user/assets/css/responsive.css')) }}">
+ @if (request()->routeIs('home', 'about'))
+ <link rel="stylesheet" href="{{ asset('user/assets/css/home-custom.css') }}?v={{ filemtime(public_path('user/assets/css/home-custom.css')) }}">
+ @endif
 
  <!-- Non-Critical Stylesheets (Asynchronous) -->
  <link rel="stylesheet" href="{{ asset('user/assets/css/aos.css') }}" media="print" onload="this.media='all'">

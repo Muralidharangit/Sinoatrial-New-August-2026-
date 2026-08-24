@@ -172,231 +172,282 @@
     <!-- Counter Section End -->
 
     <!-- Testimonial Section Start -->
-    <div class="testimonial-wrap style-two pt-100 pb-75">
+    <div class="testimonial-wrap-new position-relative">
         <div class="container">
-            <img src="{{ asset('user/assets/img/services/service-shape-3.png') }}" alt="Shape"
-                class="testimonial-shape-one bounce sm-none" data-aos="zoom-in" data-aos-delay="100">
-
-            <div class="row mb-40 align-items-center">
-                <div class="col-xxl-6 col-xl-8 col-lg-7 col-md-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="section-title style-one">
-                        <span class="badge-tag">Client Testimonials</span>
-                        <h2>Valuable Feedback From Our <span>Medical
-                                Equipment Clients</span></h2>
+            
+            <!-- Section Header -->
+            <div class="testimonial-header-wrapper">
+                <div class="testimonial-header-left" data-aos="fade-up" data-aos-delay="100">
+                    <div class="content-title style-one text-start m-0">
+                        <span class="about-pill-badge">CLIENT TESTIMONIALS</span>
+                        <h2 data-aos="fade-up" data-aos-delay="400">
+                            Valuable Feedback From Our <span>Medical Equipment Clients</span>
+                            <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
+                        </h2>
+                        <p data-aos="fade-up" data-aos-delay="500">
+                            Trusted by leading hospitals, ICUs, and biomedical engineers across India.
+                        </p>
                     </div>
                 </div>
-                <div class="testimonial-slider-btn slider-btn" data-aos="fade-left" data-aos-delay="200">
-                    <div class="testimonial-prev prev-btn">
-                        <img src="{{ asset('user/assets/img/left-arrow.svg') }}" alt="Left Arrow">
-                    </div>
-                    <div class="testimonial-next next-btn">
-                        <img src="{{ asset('user/assets/img/right-arrow.svg') }}" alt="Right Arrow">
+
+                <div class="testimonial-nav-group" data-aos="fade-left" data-aos-delay="200">
+                    <button class="testimonial-btn-red" id="open-feedback-btn">
+                        <i class="ri-chat-new-line"></i> Share Feedback
+                    </button>
+                    <button class="testimonial-arrow-btn testimonial-prev" aria-label="Previous Testimonial">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button class="testimonial-arrow-btn testimonial-next" aria-label="Next Testimonial">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Testimonial Cards Slider -->
+            <div class="testimonial-slider-wrap">
+                <div class="testimonial-slider-two swiper">
+                    <div class="swiper-wrapper">
+                        @if(isset($testimonials) && count($testimonials) > 0)
+                            @foreach($testimonials as $testimonial)
+                                <div class="swiper-slide">
+                                    <div class="modern-testimonial-card">
+                                        <div>
+                                            <div class="testimonial-top-row">
+                                                <div class="client-profile-box">
+                                                    @if(isset($testimonial->image) && $testimonial->image)
+                                                        <img src="{{ asset('storage/' . $testimonial->image) }}" alt="{{ $testimonial->name }}" class="client-avatar-img">
+                                                    @else
+                                                        <div class="client-avatar-placeholder">
+                                                            {{ strtoupper(substr($testimonial->name, 0, 1)) }}
+                                                        </div>
+                                                    @endif
+                                                    <div class="client-details">
+                                                        <h5>{{ $testimonial->name }}</h5>
+                                                        <span>{{ $testimonial->designation ?? 'Healthcare Professional' }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="quote-icon-badge">
+                                                    <i class="ri-double-quotes-r"></i>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial-stars">
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    @if($i <= $testimonial->rating)
+                                                        <i class="ri-star-fill"></i>
+                                                    @else
+                                                        <i class="ri-star-line" style="color: #cbd5e1;"></i>
+                                                    @endif
+                                                @endfor
+                                            </div>
+
+                                            <div class="testimonial-quote-body">
+                                                "{{ $testimonial->comment }}"
+                                            </div>
+                                        </div>
+
+                                        <div class="testimonial-footer-trust">
+                                            <span>Sinoatrial Client</span>
+                                            <span class="verified-tag"><i class="ri-shield-check-fill"></i> Verified Partner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <!-- Demo Testimonial 1 -->
+                            <div class="swiper-slide">
+                                <div class="modern-testimonial-card">
+                                    <div>
+                                        <div class="testimonial-top-row">
+                                            <div class="client-profile-box">
+                                                <img src="{{ asset('user/assets/img/clients/client-1.webp') }}" alt="Dr. Arun Kumar" class="client-avatar-img" onerror="this.outerHTML='<div class=\'client-avatar-placeholder\'>A</div>'">
+                                                <div class="client-details">
+                                                    <h5>Dr. Arun Kumar</h5>
+                                                    <span>Biomedical Director, Apollo Hospitals</span>
+                                                </div>
+                                            </div>
+                                            <div class="quote-icon-badge">
+                                                <i class="ri-double-quotes-r"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+
+                                        <div class="testimonial-quote-body">
+                                            "We've been using Sinoatrial's SpO₂ sensors and ECG cables for over 2 years now. The signal precision and build quality in critical care ICU settings are unmatched."
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-footer-trust">
+                                        <span>ICU & Cardiac Care</span>
+                                        <span class="verified-tag"><i class="ri-shield-check-fill"></i> Verified Partner</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Demo Testimonial 2 -->
+                            <div class="swiper-slide">
+                                <div class="modern-testimonial-card">
+                                    <div>
+                                        <div class="testimonial-top-row">
+                                            <div class="client-profile-box">
+                                                <img src="{{ asset('user/assets/img/clients/client-2.webp') }}" alt="Priya Sharma" class="client-avatar-img" onerror="this.outerHTML='<div class=\'client-avatar-placeholder\'>P</div>'">
+                                                <div class="client-details">
+                                                    <h5>Priya Sharma</h5>
+                                                    <span>Purchase Head, Fortis Healthcare</span>
+                                                </div>
+                                            </div>
+                                            <div class="quote-icon-badge">
+                                                <i class="ri-double-quotes-r"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+
+                                        <div class="testimonial-quote-body">
+                                            "The team at Sinoatrial Medical is exceptionally responsive. Their emergency equipment maintenance and fast dispatch of calibration cables keeps our operations running smoothly."
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-footer-trust">
+                                        <span>Procurement Partner</span>
+                                        <span class="verified-tag"><i class="ri-shield-check-fill"></i> Verified Partner</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Demo Testimonial 3 -->
+                            <div class="swiper-slide">
+                                <div class="modern-testimonial-card">
+                                    <div>
+                                        <div class="testimonial-top-row">
+                                            <div class="client-profile-box">
+                                                <img src="{{ asset('user/assets/img/clients/client-3.webp') }}" alt="Dr. Rajesh Varma" class="client-avatar-img" onerror="this.outerHTML='<div class=\'client-avatar-placeholder\'>R</div>'">
+                                                <div class="client-details">
+                                                    <h5>Dr. Rajesh Varma</h5>
+                                                    <span>Senior Cardiologist, Kauvery Hospital</span>
+                                                </div>
+                                            </div>
+                                            <div class="quote-icon-badge">
+                                                <i class="ri-double-quotes-r"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+
+                                        <div class="testimonial-quote-body">
+                                            "Outstanding technical support and pricing. Sinoatrial is our trusted vendor for patient monitoring probes, accessories, and diagnostic cable sets."
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-footer-trust">
+                                        <span>Cardiology Dept</span>
+                                        <span class="verified-tag"><i class="ri-shield-check-fill"></i> Verified Partner</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
 
-            <div class="testimonial-slider-wrap style-two" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-slider-two swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="100">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="https://png.pngtree.com/png-vector/20240131/ourmid/pngtree-man-profile-account-picture-character-png-image_11577305.png"
-                                            alt="Dr. Arun">
-                                    </div>
-                                    <div class="client-info">
-                                        <h5>Dr. Arun Kumar</h5>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>We’ve been using Sinoatrial’s SpO₂
-                                        sensors and ECG cables for over 2
-                                        years now, and the quality is
-                                        unmatched.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="150">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/female-user-image-illustration-download-in-svg-png-gif-file-formats--person-girl-business-pack-illustrations-6515859.png?f=webp"
-                                            alt="Dr. Leena">
-                                    </div>
-                                    <div class="client-info">
-                                        <h5>Dr. Leena George</h5>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>The team at Sinoatrial Medical is
-                                        incredibly professional. Their
-                                        response time and service support
-                                        are exceptional.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="200">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="https://png.pngtree.com/png-vector/20230903/ourmid/pngtree-man-avatar-isolated-png-image_9935806.png"
-                                            alt="Prakash">
-                                    </div>
-                                    <div class="client-info">
-                                        <h5>Mr. Prakash Nair</h5>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>Their range of accessories and
-                                        sensors meet all our needs with
-                                        top-notch safety and
-                                        reliability.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="250">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-avatar-of-a-brunette-man-png-image_13379739.png"
-                                            alt="Ravi">
-                                    </div>
-                                    <div class="client-info">
-                                        <h5>Dr. Ravi</h5>
-                                        <span>Healthcare Consultant</span>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>I appreciate their focus on quality
-                                        and innovation. Their products are
-                                        durable and reliable.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="300">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="https://png.pngtree.com/png-vector/20240131/ourmid/pngtree-man-profile-account-picture-character-png-image_11577305.png"
-                                            alt="Naveen">
-                                    </div>
-                                    <div class="client-info">
-                                        <h5>Mr. Naveen Raj</h5>
-                                        <span>Medical Distributor</span>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>One of the best suppliers we've
-                                        worked with. Their prompt delivery
-                                        and service are remarkable.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 6 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="350">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="https://finologyuk.com/wp-content/uploads/2025/03/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
-                                            alt="Ramesh">
-                                    </div>
-                                    <div class="client-info">
-                                        <h5>Dr. Ramesh Kannan</h5>
-                                        <span>Chief Surgeon</span>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>Sinoatrial's commitment to precision
-                                        gives us confidence in their
-                                        critical care equipment.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> <!-- swiper-wrapper -->
-                </div> <!-- testimonial-slider-two -->
-            </div> <!-- testimonial-slider-wrap -->
-        </div> <!-- container -->
+        </div>
     </div>
     <!-- Testimonial Section End -->
 
+    <!-- Add Testimonial Modal Popup -->
+    <div class="feedback-modal-backdrop" id="feedbackModalBackdrop">
+        <div class="feedback-modal-card">
+            <div class="feedback-modal-header">
+                <h3>Share Your Valuable Feedback</h3>
+                <button class="feedback-modal-close" id="close-feedback-btn">&times;</button>
+            </div>
+            
+            <form id="feedbackForm" class="feedback-modal-body">
+                <div class="feedback-form-row">
+                    <div class="feedback-form-col-left">
+                        <div class="feedback-input-group">
+                            <label for="modal-client-name">Full Name</label>
+                            <input type="text" id="modal-client-name" placeholder="Dr. Jane Doe" required>
+                        </div>
+                        <div class="feedback-input-group">
+                            <label for="modal-client-role">Designation / Role</label>
+                            <input type="text" id="modal-client-role" placeholder="e.g. Chief Medical Officer" required>
+                        </div>
+                        <div class="feedback-input-group">
+                            <label>Your Rating</label>
+                            <div class="interactive-stars" id="modal-stars-rating">
+                                <i class="ri-star-fill star-input" data-value="1"></i>
+                                <i class="ri-star-fill star-input" data-value="2"></i>
+                                <i class="ri-star-fill star-input" data-value="3"></i>
+                                <i class="ri-star-fill star-input" data-value="4"></i>
+                                <i class="ri-star-fill star-input" data-value="5"></i>
+                            </div>
+                            <input type="hidden" id="modal-rating-value" value="5">
+                        </div>
+                    </div>
+                    
+                    <div class="feedback-form-col-right">
+                        <div class="feedback-input-group h-100 d-flex flex-column">
+                            <label for="modal-client-comment">Your Feedback</label>
+                            <textarea id="modal-client-comment" placeholder="We appreciate your review! Write your comments here..." style="flex-grow: 1;" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feedback-form-footer text-end mt-4">
+                    <button type="submit" class="btn-two submit-feedback-btn px-4 py-2" style="border-radius: 30px; font-size: 14px; border: none;">
+                        Submit Review <i class="ri-send-plane-fill ms-2"></i>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="feedback-success-overlay" id="feedbackSuccessOverlay">
+                <div class="success-message-box">
+                    <div class="success-icon-wrap">
+                        <i class="ri-checkbox-circle-fill"></i>
+                    </div>
+                    <h4>Thank You!</h4>
+                    <p>Your feedback has been successfully submitted and added to our testimonials.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CTA Section Start -->
-    <div class="cta-wrap style-one bg_optional" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-        <img src="{{ asset('user/assets/img/cta-shape.webp') }}" alt="Image" class="cta-shape"
-            data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1000">
+    <div class="cta-wrap style-one my-1 positi" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" style="background: #0043a6; /* Fallback for older browsers */
+background: -webkit-linear-gradient(left, #0043a6, #db0a24);
+background: -moz-linear-gradient(left, #0043a6, #db0a24);
+background: linear-gradient(to right, #0043a6, #db0a24);">
+        <!-- <img src="{{ asset('user/assets/img/cta-shape.webp') }}" alt="Image" class="cta-shape" width="1920" height="207" loading="lazy"> -->
         <div class="container text-center">
-            <h4 data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
-                Have Any Questions? Feel Free to Contact Our Team
-            </h4>
-            <a class="cta-contact position-relative" href="tel:+1-123-456-7899" data-aos="flip-up"
-                data-aos-delay="500" data-aos-duration="1200">
+           
+            <h2 class="text-white">Order Your Medical Equipment With Us</h2>
+            <p class="text-white">Have Any Questions? Feel Free to Contact Our Team</p>
+             <!-- <img src="{{ asset('user/assets/img/1.png') }}" alt="Image" width="64" height="64" class="position-absolute" data-aos="fade-in" data-aos-delay="800" data-aos-duration="1000" loading="lazy"> -->
+            <a class="cta-contact position-relative" href="tel:04445428844" data-aos="flip-up" data-aos-delay="500" data-aos-duration="1200">
                 +044-4542 8844
-                <img src="{{ asset('user/assets/img/1.png') }}" alt="Image" width="64px"
-                    class="position-absolute" data-aos="fade-in" data-aos-delay="800" data-aos-duration="1000">
+               
             </a>
-            <a href="tel:+919123456789" class="btn-two order_btn" data-aos="zoom-in-up" data-aos-delay="600"
-                data-aos-duration="1200">
-                Order an Appointment
-            </a>
+           
         </div>
     </div>
     <!-- CTA Section End -->
@@ -411,6 +462,134 @@
 
     <!-- Javascript -->
     @include('user.layouts.script')
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Feedback Modal Handlers
+            const backdrop = document.getElementById('feedbackModalBackdrop');
+            const openBtn = document.getElementById('open-feedback-btn');
+            const closeBtn = document.getElementById('close-feedback-btn');
+            const form = document.getElementById('feedbackForm');
+            const starsContainer = document.getElementById('modal-stars-rating');
+            const ratingInput = document.getElementById('modal-rating-value');
+            const successOverlay = document.getElementById('feedbackSuccessOverlay');
+
+            if (openBtn && backdrop) {
+                openBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    backdrop.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                function closeModal() {
+                    backdrop.classList.remove('show');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        if (form) form.reset();
+                        if (successOverlay) successOverlay.classList.remove('show');
+                        if (ratingInput) ratingInput.value = '5';
+                        highlightStars(5);
+                    }, 400);
+                }
+
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+                backdrop.addEventListener('click', function(e) {
+                    if (e.target === backdrop) {
+                        closeModal();
+                    }
+                });
+
+                const stars = starsContainer ? starsContainer.querySelectorAll('.star-input') : [];
+                
+                function highlightStars(val) {
+                    stars.forEach(star => {
+                        const starVal = parseInt(star.getAttribute('data-value'));
+                        if (starVal <= val) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+
+                highlightStars(5);
+
+                stars.forEach(star => {
+                    star.addEventListener('mouseenter', function() {
+                        const val = parseInt(this.getAttribute('data-value'));
+                        highlightStars(val);
+                    });
+
+                    if (starsContainer) {
+                        starsContainer.addEventListener('mouseleave', function() {
+                            const currentVal = parseInt(ratingInput.value);
+                            highlightStars(currentVal);
+                        });
+                    }
+
+                    star.addEventListener('click', function() {
+                        const val = parseInt(this.getAttribute('data-value'));
+                        ratingInput.value = val;
+                        highlightStars(val);
+                    });
+                });
+
+                if (form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const name = document.getElementById('modal-client-name').value;
+                        const role = document.getElementById('modal-client-role').value;
+                        const rating = parseInt(ratingInput.value);
+                        const comment = document.getElementById('modal-client-comment').value;
+                        
+                        const submitBtn = form.querySelector('button[type="submit"]');
+                        if (submitBtn) {
+                            submitBtn.disabled = true;
+                            submitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Submitting...';
+                        }
+
+                        fetch('{{ route("testimonial.submit") }}', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                name: name,
+                                designation: role,
+                                rating: rating,
+                                comment: comment
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (submitBtn) {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = 'Submit Review <i class="ri-send-plane-fill ms-2"></i>';
+                            }
+
+                            if (data.success) {
+                                if (successOverlay) successOverlay.classList.add('show');
+                                setTimeout(closeModal, 2500);
+                            } else {
+                                alert(data.message || 'Something went wrong. Please try again.');
+                            }
+                        })
+                        .catch(error => {
+                            if (submitBtn) {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = 'Submit Review <i class="ri-send-plane-fill ms-2"></i>';
+                            }
+                            console.error('Error submitting feedback:', error);
+                            alert('Something went wrong. Please try again.');
+                        });
+                    });
+                }
+            }
+        });
+    </script>
     {{-- main Layout Ends here --}}
 
 </body>
