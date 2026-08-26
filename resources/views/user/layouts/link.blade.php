@@ -26,16 +26,19 @@
  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('user/assets/img/favicon.png') }}">
 
  <!-- Critical CSS -->
- <!-- <link rel="stylesheet" href="{{ asset('user/assets/css/bootstrap.min.css') }}"> -->
+ <link rel="stylesheet" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
   <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <noscript>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-</noscript>
+</noscript> -->
  <link rel="stylesheet" href="{{ asset('user/assets/css/header.css') }}?v={{ filemtime(public_path('user/assets/css/header.css')) }}">
  <link rel="stylesheet" href="{{ asset('user/assets/css/style.css') }}?v={{ filemtime(public_path('user/assets/css/style.css')) }}">
  <link rel="stylesheet" href="{{ asset('user/assets/css/responsive.css') }}?v={{ filemtime(public_path('user/assets/css/responsive.css')) }}">
+ @if (request()->routeIs('home', 'about'))
+ <link rel="stylesheet" href="{{ asset('user/assets/css/home-custom.css') }}?v={{ filemtime(public_path('user/assets/css/home-custom.css')) }}">
+ @endif
 
  <!-- Non-Critical Stylesheets (Asynchronous) -->
  <link rel="stylesheet" href="{{ asset('user/assets/css/aos.css') }}" media="print" onload="this.media='all'">

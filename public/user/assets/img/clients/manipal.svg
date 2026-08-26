@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 90" width="100%" height="100%">
+  <circle cx="35" cy="45" r="22" fill="#00796b"/>
+  <path d="M35 30 V60 M20 45 H50" stroke="#ffffff" stroke-width="6"/>
+  <text x="68" y="48" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="28" fill="#004d40">Manipal</text>
+  <text x="68" y="66" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="14" fill="#00796b" letter-spacing="2">HOSPITALS</text>
+</svg>

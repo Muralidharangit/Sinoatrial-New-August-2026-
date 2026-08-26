@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             UserTableSeeder::class,
             CareerDataSeeder::class,
+            TestimonialSeeder::class,
         ]);
     }
 }

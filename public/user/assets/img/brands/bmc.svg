@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect x="15" y="20" width="4" height="20" fill="#2e7d32"/>
+  <rect x="22" y="14" width="4" height="30" fill="#43a047"/>
+  <rect x="29" y="24" width="4" height="16" fill="#66bb6a"/>
+  <text x="42" y="38" font-family="'Arial Black', sans-serif" font-size="24" font-weight="900" fill="#263238" letter-spacing="1">BMC</text>
+</svg>

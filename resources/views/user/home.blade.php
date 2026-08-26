@@ -11,74 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sinoatrial Medical Technologies</title>
     @include('user.layouts.link')
-    <style>
-        .hero-badge {
-            display: inline-flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #ffffff !important;
-    padding: 0px 16px;
-    font-size: 12px !important;
-    font-weight: 600;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    margin-bottom: 10px !important;
-    
-        }
-         p.hero-badge{
-            padding-right:16px !important;
-         }
-        .hero-badge i {
-            font-size: 16px;
-            color: #ff4d4d;
-            margin-right: 8px;
-            transition: transform 0.3s ease;
-        }
-        .hero-badge:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
-            color: #ffffff !important;
-        }
-        .hero-badge:hover i {
-            transform: scale(1.2);
-        }
-        
-        .carousel-item.text-dark .hero-badge,
-        .carousel-item:not(.text-white) .hero-badge {
-            background: rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            
-        }
-        .carousel-item.text-dark .hero-badge i,
-        .carousel-item:not(.text-white) .hero-badge i {
-            color: #ff3b30;
-        }
-        .carousel-item.text-dark .hero-badge:hover,
-        .carousel-item:not(.text-white) .hero-badge:hover {
-            background: rgba(0, 0, 0, 0.15);
-            border-color: rgba(0, 0, 0, 0.25);
-            color: #1e1e1e !important;
-        }
-
-        @media (max-width: 575px) {
-            .hero-badge {
-                padding: 6px 12px;
-                font-size: 12px !important;
-                margin-bottom: 15px !important;
-            }
-            .hero-badge i {
-                font-size: 14px;
-                margin-right: 6px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -91,16 +23,6 @@
     <!--header end-->
 
     <main>
-
-    <!-- scrollUp Start Here -->
-    {{-- <a href="#wrapper" data-type="section-switch" class="scrollUp">
-        <i class="fas fa-angle-double-up"></i>
-    </a> --}}
-    <!-- scrollUp End Here -->
-
-
-    {{-- main Layout starts here --}}
-    <!-- Start Responsive Navbar Area -->
 
     <!-- Start Search Modal -->
     <div class="modal fade searchModal" id="searchModal" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -118,693 +40,648 @@
     </div>
     <!-- End Search Modal -->
 
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000"
-        data-bs-wrap="true">
+    <!-- laptop Swiper Full Image Banner Carousel -->
+    <div class="hero-swiper-wrapper full-banner-wrapper d-none d-md-block">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
 
-        <!-- <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel"
-                    data-bs-slide-to="0" class="active" aria-current="true"
-                    aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#heroCarousel"
-                    data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#heroCarousel"
-                    data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div> -->
-
-        <div class="carousel-inner">
-            
-
-
-             <div class="carousel-item active bg-primary text-white">
-                <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 pt-0">
-                    <div class="hero-bg bg-f"></div>
-                    <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce" width="62" height="28">
-                    <div class="container h-100">
-                        <div class="row gx-5 align-items-center h-100">
-                            <div class="col-lg-6">
-                               <div class="hero-content">
-    <p class="hero-badge"><i class="ri-heart-pulse-line"></i> Your Trusted Biomedical Partner</p>
-    <h1>Complete Biomedical <span style="">Equipment Service</span> & Maintenance Solutions</h1>
-
-    <p>Engineered for precision and continuous healthcare operations, Sinoatrial Medical Technologies provides expert installation, repair, AMC/CMC, and calibration across all hospital and laboratory equipment. From ICUs and operation theatres to emergency rooms, we ensure maximum uptime, safety, and reliability for patient monitors, ventilators, defibrillators, anesthesia machines, infant incubators, pumps, and diagnostic devices with 24/7 support.</p>
-
-    <!-- badges -->
-   
-    <a href="{{ route('contact') }}" class="btn-two">Get In Touch<i class="flaticon-right-arrow"></i></a>
-</div>
-                            </div>
-
-                            <!-- Right Image with Effects -->
-                            <!-- Right Image with Effects -->
-
-                            <!-- Right Image & Animation -->
-                            <div class="col-lg-6 position-relative">
-                                <!-- Background Circle -->
-                                <div class="circle-wrapper position-absolute top-50 start-50 translate-middle">
-                                    <div class="circle circle-1"></div>
-                                    <div class="circle circle-2"></div>
-                                    <div class="circle circle-3"></div>
-                                </div>
-
-                                <div class="w-100 d-flex justify-content-center">
-                                    <!-- Doctor Image -->
-                                    <img src="{{ asset('user/assets/img/hero/5.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/5s.webp') }} 300w, {{ asset('user/assets/img/hero/5.webp') }} 498w"
-                                        sizes="(max-width: 575px) 300px, 498px"
-                                        alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800">
-
-                                </div>
-
-
-                                <!-- Diagnosis Stat -->
-
-                                <!-- Heart Icon -->
-                                <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
-                                        alt="Heart" width="42" height="67">
-                                </div>
-
-                                <!-- Patient Recovered -->
-                                <div
-                                    class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
-                                    <div class="avatars d-flex me-2">
-                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}" class="rounded-circle"
-                                            width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                    </div>
-                                    <small class="text-black"><strong class="text-black">150k</strong>
-                                        Patient recovers</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+         
+                <!-- Banner Slide 1 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/bn1.png') }}" alt="Sinoatrial Medical Technology Banner 1" class="hero-banner-img">
                 </div>
-                <!-- Hero Section End -->
+
+                <!-- Banner Slide 2 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/bn2.png') }}" alt="Sinoatrial Medical Technology Banner 2" class="hero-banner-img">
+                </div>
+
+                <!-- Banner Slide 3 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/bn3.png') }}" alt="Sinoatrial Medical Technology Banner 3" class="hero-banner-img">
+                </div>
+
+                <!-- Banner Slide 4 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/bn4.png') }}" alt="Sinoatrial Medical Technology Banner 4" class="hero-banner-img">
+                </div>
+
+                <!-- Banner Slide 5 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/bn5.png') }}" alt="Sinoatrial Medical Technology Banner 5" class="hero-banner-img">
+                </div>
+
             </div>
 
-
-             
-
-            <div class="carousel-item  bg-primary text-white">
-                <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 ">
-                    <div class="hero-bg bg-f"></div>
-                    <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce" width="62" height="28">
-                    <div class="container h-100">
-                        <div class="row gx-5 align-items-center h-100">
-                            <div class="col-lg-6">
-                                <div class="hero-content">
-                                    <p class="hero-badge"><i class="ri-heart-pulse-line"></i> Precision Imaging for Women's Health</p>
-                                    <h1>Advanced Patient <span style> Monitoring
-                                        </span>Biorun Multipara Patient </h1>
-
-                                         
-
-
-
-                                    <p>Engineered for precision and continuous patient care, the Biorun Multipara Patient Monitor delivers real-time monitoring of ECG, SpO₂, NIBP, respiration, temperature, and pulse rate. Designed for ICUs, operation theatres, emergency departments, and critical care units, it ensures accurate monitoring with intelligent alarms and dependable performance.                         
-
-                                        .</p>
-
-                                        <!-- badges  -->
-                                       
-                                    <a href="{{ route('contact') }}" class="btn-two">Make
-                                        An Appointment<i class="flaticon-right-arrow"></i></a>
-
-                                </div>
-                            </div>
-
-                            <!-- Right Image with Effects -->
-                            <!-- Right Image with Effects -->
-
-                            <!-- Right Image & Animation -->
-                            <div class="col-lg-6 position-relative">
-                                <!-- Background Circle -->
-                                <div class="circle-wrapper position-absolute top-50 start-50 translate-middle">
-                                    <div class="circle circle-1"></div>
-                                    <div class="circle circle-2"></div>
-                                    <div class="circle circle-3"></div>
-                                </div>
-
-                                <div class="w-100 d-flex justify-content-center">
-                                    <!-- Doctor Image -->
-                                    <img src="{{ asset('user/assets/img/hero/2.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/2s.webp') }} 300w, {{ asset('user/assets/img/hero/2.webp') }} 498w"
-                                        sizes="(max-width: 575px) 300px, 498px"
-                                        alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800">
-
-                                </div>
-
-
-                                <!-- Diagnosis Stat -->
-
-                                <!-- Heart Icon -->
-                                <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
-                                        alt="Heart" width="42" height="67">
-                                </div>
-
-                                <!-- Patient Recovered -->
-                                <div
-                                    class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
-                                    <div class="avatars d-flex me-2">
-                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}" class="rounded-circle"
-                                            width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                    </div>
-                                    <small><strong class="text-black">150k</strong>
-                                        Patient recovers</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hero Section End -->
-            </div>
-
-            <div class="carousel-item bg-success text-white">
-                <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 ">
-                    <div class="hero-bg bg-f"></div>
-                    <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce" width="62" height="28">
-                    <div class="container h-100">
-                        <div class="row gx-5 align-items-center h-100">
-                            <div class="col-lg-6">
-                                <div class="hero-content">
-                                    <p class="hero-badge"><i class="ri-flashlight-line"></i> Emergency Cardiac Care</p>
-                                    <h1>Biorun Biphasic <span style>Defibrillator</span></h1>
-                                    <p>Built for rapid life-saving intervention, the Biorun Biphasic Defibrillator delivers advanced biphasic shock therapy with high precision and reliability. Featuring intuitive controls, ECG monitoring, and comprehensive safety functions, it enables fast and effective cardiac resuscitation in hospitals, ambulances, and emergency care settings.</p>
-                                    
-                                    <!-- badges  -->
-                                   
-                                    <a href="{{ route('contact') }}" class="btn-two">Make
-                                        An Appointment<i class="flaticon-right-arrow"></i></a>
-
-                                </div>
-                            </div>
-
-                            <!-- Right Image with Effects -->
-                            <!-- Right Image with Effects -->
-
-                            <!-- Right Image & Animation -->
-                            <div class="col-lg-6 position-relative">
-                                <!-- Background Circle -->
-                                <div class="circle-wrapper position-absolute top-50 start-50 translate-middle">
-                                    <div class="circle circle-1"></div>
-                                    <div class="circle circle-2"></div>
-                                    <div class="circle circle-3"></div>
-                                </div>
-                                <div class="w-100 d-flex justify-content-center">
-                                    <img src="{{ asset('user/assets/img/hero/4.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/4s.webp') }} 300w, {{ asset('user/assets/img/hero/4.webp') }} 498w"
-                                        sizes="(max-width: 575px) 300px, 498px"
-                                        alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
-
-                                </div>
-                                <!-- Doctor Image -->
-
-                                <!-- Diagnosis Stat -->
-
-                                <!-- Heart Icon -->
-                                <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
-                                        alt="Heart" width="42" height="67" loading="lazy">
-                                </div>
-
-                                <!-- Patient Recovered -->
-                                <div
-                                    class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
-                                    <div class="avatars d-flex me-2">
-                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}"
-                                            class="rounded-circle" width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                    </div>
-                                    <small><strong class="text-primary">150k</strong>
-                                        Patient recovers</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hero Section End -->
-            </div>
-
-            <div class="carousel-item bg-warning text-dark">
-                <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 ">
-                    <div class="hero-bg bg-f"></div>
-                    <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce" width="62" height="28">
-                    <div class="container h-100">
-                        <div class="row gx-5 align-items-center h-100">
-                            <div class="col-lg-6">
-                                <div class="hero-content">
-                                    <p class="hero-badge"><i class="ri-pulse-line"></i> Maternal & Fetal Monitoring</p>
-                                    <h1>Bistos CTG <span style>Monitoring System</span></h1>
-
-                                    <p>Designed for dependable prenatal care, the Bistos CTG Monitoring System provides continuous monitoring of fetal heart rate and uterine contractions with exceptional accuracy. Its user-friendly interface, real-time data visualization, and reliable performance make it an ideal solution for maternity hospitals, labor rooms, and obstetric clinics.</p>
-                                    
-                                    <!-- badges  -->
-                                  
-                                    <a href="{{ route('contact') }}" class="btn-two">Make
-                                        An Appointment<i class="flaticon-right-arrow"></i></a>
-
-                                </div>
-                            </div>
-
-                            <!-- Right Image with Effects -->
-                            <!-- Right Image with Effects -->
-
-                            <!-- Right Image & Animation -->
-                            <div class="col-lg-6 position-relative">
-                                <!-- Background Circle -->
-                                <div class="circle-wrapper position-absolute top-50 start-50 translate-middle">
-                                    <div class="circle circle-1"></div>
-                                    <div class="circle circle-2"></div>
-                                    <div class="circle circle-3"></div>
-                                </div>
-                                <div class="w-100 d-flex justify-content-center">
-                                    <img src="{{ asset('user/assets/img/hero/3.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/3s.webp') }} 300w, {{ asset('user/assets/img/hero/3.webp') }} 498w"
-                                        sizes="(max-width: 575px) 300px, 498px"
-                                        alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
-                                </div>
-                                <!-- Doctor Image -->
-
-
-                                <!-- Diagnosis Stat -->
-
-                                <!-- Heart Icon -->
-                                <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
-                                        alt="Heart" width="42" height="67" loading="lazy">
-                                </div>
-
-                                <!-- Patient Recovered -->
-                                <div
-                                    class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
-                                    <div class="avatars d-flex me-2">
-                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}"
-                                            class="rounded-circle" width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                    </div>
-                                    <small><strong class="text-primary">150k</strong>
-                                        Patient recovers</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hero Section End -->
-            </div>
-
-            <div class="carousel-item bg-warning text-dark">
-                <!-- Hero Section Start -->
-                <div class="hero-wrap style-three mt-0 ">
-                    <div class="hero-bg bg-f"></div>
-                    <img src="{{ asset('user/assets/img/hero/hero-shape-7.webp') }}" alt="Image"
-                        class="hero-shape-one bounce" width="62" height="28">
-                    <div class="container h-100">
-                        <div class="row gx-5 align-items-center h-100">
-                            <div class="col-lg-6">
-                                <div class="hero-content">
-                                    <p class="hero-badge"><i class="ri-hand-heart-line"></i> Advanced Neonatal Care</p>
-                                    <h1>Biorun Radiant <span style>Baby Warmer</span></h1>
-
-                                    <p>Designed to provide a safe and controlled thermal environment, the Biorun Radiant Baby Warmer helps maintain optimal body temperature for newborns and premature infants. Equipped with intelligent temperature control, advanced safety alarms, and an ergonomic design, it supports superior neonatal care in NICUs, delivery rooms, and pediatric departments.</p>
-                                    
-                                 
-                                    <a href="{{ route('contact') }}" class="btn-two">Make
-                                        An Appointment<i class="flaticon-right-arrow"></i></a>
-
-                                </div>
-                            </div>
-
-                            <!-- Right Image with Effects -->
-                            <!-- Right Image with Effects -->
-
-                            <!-- Right Image & Animation -->
-                            <div class="col-lg-6 position-relative">
-                                <!-- Background Circle -->
-                                <div class="circle-wrapper position-absolute top-50 start-50 translate-middle">
-                                    <div class="circle circle-1"></div>
-                                    <div class="circle circle-2"></div>
-                                    <div class="circle circle-3"></div>
-                                </div>
-
-                                <div class="w-100 d-flex justify-content-center">
-                                    <img src="{{ asset('user/assets/img/hero/1.webp') }}" 
-                                        srcset="{{ asset('user/assets/img/hero/1s.webp') }} 300w, {{ asset('user/assets/img/hero/1.webp') }} 498w"
-                                        sizes="(max-width: 575px) 300px, 498px"
-                                        alt="Doctor"
-                                        class="img-fluid position-relative z-1 floating" data-aos="zoom-in" width="498" height="800" loading="lazy">
-                                </div>
-
-                                <!-- Doctor Image -->
-
-
-                                <!-- Diagnosis Stat -->
-
-                                <!-- Heart Icon -->
-                                <div class="heart-icon position-absolute" data-aos="zoom-in" data-aos-delay="200">
-                                    <img src="{{ asset('user/assets/img/hero/heart.webp') }}"
-                                        alt="Heart" width="42" height="67" loading="lazy">
-                                </div>
-
-                                <!-- Patient Recovered -->
-                                <div
-                                    class="patient-recovered position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center p-2 px-3">
-                                    <div class="avatars d-flex me-2">
-                                        <img src="{{ asset('user/assets/img/team/team-1.webp') }}"
-                                            class="rounded-circle" width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-2.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                        <img src="{{ asset('user/assets/img/team/team-3.webp') }}"
-                                            class="rounded-circle ms-n2" width="24" height="24" alt="Patient Avatar">
-                                    </div>
-                                    <small><strong class="text-primary">150k</strong>
-                                        Patient recovers</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hero Section End -->
-            </div>
-
-        </div>
-
-        <!-- <button class="carousel-control-prev" type="button"
-                data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"
-                    aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button"
-                data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"
-                    aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button> -->
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <!-- Feature Section Start -->
-    <!-- Feature Section Start -->
-    <!-- Feature Section Start -->
-    <div class="bg_optional">
-        <div class="container pt-100 pb-70">
-            <div class="row">
-                <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-                    <div class="section-title style-one text-center mb-40" data-aos="fade-down"
-                        data-aos-duration="1000">
-                        <span class="badge-tag">Our Work</span>
-                        <h2>
-                            Welcome To Sinoatrial Medical
-                            <span>Technologies <img src="{{ asset('user/assets/img/section-shape-2.png') }}"
-                                    alt="Image" width="64" height="64" loading="lazy"></span>
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center feature-card-wrap">
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" data-aos="flip-left" data-aos-delay="100"
-                    data-aos-duration="1000">
-                    <div class="feature-card">
-                        <span><img src="{{ asset('user/assets/img/icons/1.png') }}" alt="Expert Manufacturing" width="58" height="58" loading="lazy"></span>
-                        <h3>Expert Manufacturing</h3>
-                        <p>Our skilled professionals ensure every product is
-                            crafted with care, precision, and compliance to
-                            international medical standards.</p>
-                        <!-- <a href="{{ route('about') }}">Read More</a> -->
-                    </div>
-                </div>
-
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" data-aos="flip-right" data-aos-delay="200"
-                    data-aos-duration="1000">
-                    <div class="feature-card">
-                        <span><img src="{{ asset('user/assets/img/icons/2.png') }}" alt="Fast Nationwide Delivery" width="58" height="58" loading="lazy"></span>
-                        <h3>Fast Nationwide Delivery</h3>
-                        <p>With efficient logistics and a reliable supply
-                            chain, we ensure prompt delivery of medical
-                            equipment across India’s healthcare network.</p>
-                        <!-- <a href="{{ route('about') }}">Read More</a> -->
-                    </div>
-                </div>
-
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="300"
-                    data-aos-duration="1000">
-                    <div class="feature-card">
-                        <span><img src="{{ asset('user/assets/img/icons/3.png') }}" alt="Certified & Reliable Products" width="58" height="58" loading="lazy"></span>
-                        <h3>Certified & Reliable Products</h3>
-                        <p>Our equipment undergoes rigorous testing to meet
-                            safety regulations and is trusted by corporate
-                            hospitals throughout the country.</p>
-                        <!-- <a href="{{ route('about') }}">Read More</a> -->
-                    </div>
-                </div>
-
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" data-aos="zoom-in-up" data-aos-delay="400"
-                    data-aos-duration="1000">
-                    <div class="feature-card">
-                        <span><img src="{{ asset('user/assets/img/icons/4.png') }}" alt="Dedicated Support & Service" width="58" height="58" loading="lazy"></span>
-                        <h3>Dedicated Support & Service</h3>
-                        <p>We offer 24/7 technical support and service
-                            assistance to ensure minimal downtime and
-                            maximum performance in healthcare
-                            facilities.</p>
-                        <!-- <a href="{{ route('about') }}">Read More</a> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-center mt-4" data-aos="fade-up" data-aos-delay="500"
-                data-aos-duration="1200">
-                <a href="{{ route('contact') }}" class="btn-two">Book
-                    Appointment</a>
-            </div>
+            <!-- Swiper Controls -->
+            <div class="swiper-button-prev hero-swiper-prev"></div>
+            <div class="swiper-button-next hero-swiper-next"></div>
+            <div class="swiper-pagination hero-swiper-pagination"></div>
         </div>
     </div>
-    <!-- Feature Section End -->
 
-    <!-- Feature Section End -->
+    <!-- mobile Swiper Full Image Banner Carousel -->
+    <div class="hero-swiper-wrapper full-banner-wrapper d-block d-md-none">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
 
-    <!-- Feature Section End -->
+                <!-- Mobile Banner Slide 1 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/mb1.png') }}" alt="Sinoatrial Medical Technology Mobile Banner 1" class="hero-banner-img">
+                </div>
 
-    <!-- About Section Start -->
-    <div class="about-wrap style-two ptb-100">
+                <!-- Mobile Banner Slide 2 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/mb2.png') }}" alt="Sinoatrial Medical Technology Mobile Banner 2" class="hero-banner-img">
+                </div>
+
+                <!-- Mobile Banner Slide 3 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/mb3.png') }}" alt="Sinoatrial Medical Technology Mobile Banner 3" class="hero-banner-img">
+                </div>
+
+                <!-- Mobile Banner Slide 4 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/mb4.png') }}" alt="Sinoatrial Medical Technology Mobile Banner 4" class="hero-banner-img">
+                </div>
+
+                <!-- Mobile Banner Slide 5 -->
+                <div class="swiper-slide hero-banner-slide">
+                    <img src="{{ asset('user/assets/img/hero/mb5.png') }}" alt="Sinoatrial Medical Technology Mobile Banner 5" class="hero-banner-img">
+                </div>
+
+            </div>
+
+            <!-- Swiper Controls -->
+            <div class="swiper-button-prev hero-swiper-prev"></div>
+            <div class="swiper-button-next hero-swiper-next"></div>
+            <div class="swiper-pagination hero-swiper-pagination"></div>
+        </div>
+    </div>
+
+
+
+       <!-- About Section Start -->
+    <div class="about-section-wrap position-relative">
         <div class="container">
-            <img src="{{ asset('user/assets/img/about/about-shape-3.png') }}" alt="Image"
-                class="about-shape-one moveHorizontal" data-aos="zoom-in" data-aos-delay="100" width="64" height="64" loading="lazy">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-                    <div class="about-img-wrap">
-                        <img src="{{ asset('user/assets/img/about/about-shape-4.webp') }}" alt="Image"
-                            class="about-img-shape" data-aos="fade-up" data-aos-delay="300" width="74" height="61" loading="lazy">
-                        <img src="{{ asset('user/assets/img/about/about-img-2.webp') }}" alt="Image"
-                            class="about-img-one" data-aos="zoom-in" data-aos-delay="400" width="600" height="470" loading="lazy">
-                        <img src="{{ asset('user/assets/img/about/about-img-3.webp') }}" alt="Image"
-                            class="about-img-two" data-aos="zoom-in" data-aos-delay="500" width="424" height="300" loading="lazy">
-                        <div class="promo-box" data-aos="fade-up" data-aos-delay="600">
-                            <p class="h5">95%</p>
-                            <span >Positive Feedback</span>
+            <div class="row align-items-center gx-lg-5 gy-4 flex-column-reverse flex-lg-row">
+                
+                <!-- Left Column: Doctor Image + 3 Stat Cards -->
+                <div class="col-lg-5 col-12" data-aos="fade-right" data-aos-delay="100">
+                    <div class="about-doctor-card">
+                        <img src="{{ asset('user/assets/img/about/about-doctor.png') }}" 
+                             alt="15 Years of Trusted Service in Medical Technology" 
+                             class="about-doctor-img" loading="lazy">
+                        
+                        <!-- 3 Stat Cards Row -->
+                        <div class="about-stats-container">
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <div class="about-stat-card">
+                                        <div class="stat-icon-wrapper">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="44" height="44" rx="12" fill="url(#stat_bg_1)"/>
+                                                <path d="M22 10L25.1 16.3L32 17.3L27 22.2L28.2 29L22 25.7L15.8 29L17 22.2L12 17.3L18.9 16.3L22 10Z" fill="#03348e" fill-opacity="0.15" stroke="#03348e" stroke-width="2" stroke-linejoin="round"/>
+                                                <path d="M17 28L15 34L22 31L29 34L27 28" stroke="#dc0307" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="22" cy="20" r="4" fill="#dc0307"/>
+                                                <defs>
+                                                    <linearGradient id="stat_bg_1" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                                        <stop offset="1" stop-color="#dc0307" stop-opacity="0.08"/>
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="stat-number-blue">15+</div>
+                                        <p class="stat-text-muted">Years Experience</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="about-stat-card">
+                                        <div class="stat-icon-wrapper">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="44" height="44" rx="12" fill="url(#stat_bg_2)"/>
+                                                <path d="M14 19C14 14.6 17.6 11 22 11C26.4 11 30 14.6 30 19C30 25.5 22 31 22 31C22 31 14 25.5 14 19Z" fill="#dc0307" fill-opacity="0.15" stroke="#dc0307" stroke-width="2" stroke-linejoin="round"/>
+                                                <path d="M17 19H20L21.5 16L23.5 22L25 18L26.5 19H29" stroke="#03348e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="22" cy="11" r="2.5" fill="#dc0307"/>
+                                                <defs>
+                                                    <linearGradient id="stat_bg_2" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#dc0307" stop-opacity="0.1"/>
+                                                        <stop offset="1" stop-color="#03348e" stop-opacity="0.08"/>
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="stat-number-blue">500+</div>
+                                        <p class="stat-text-muted">Happy Customers</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="about-stat-card">
+                                        <div class="stat-icon-wrapper">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="44" height="44" rx="12" fill="url(#stat_bg_3)"/>
+                                                <path d="M13 14H31V30H13V14Z" fill="#03348e" fill-opacity="0.12" stroke="#03348e" stroke-width="2" stroke-linejoin="round"/>
+                                                <path d="M18 30V34M26 30V34M15 34H29" stroke="#03348e" stroke-width="2" stroke-linecap="round"/>
+                                                <path d="M17 22L20 25L27 18" stroke="#dc0307" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <circle cx="29" cy="14" r="2.5" fill="#dc0307"/>
+                                                <defs>
+                                                    <linearGradient id="stat_bg_3" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                                        <stop offset="1" stop-color="#dc0307" stop-opacity="0.08"/>
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="stat-number-blue">1200+</div>
+                                        <p class="stat-text-muted">Installations</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 pe-xxl-0" data-aos="fade-left" data-aos-delay="300">
-                    <div class="about-content">
-                        <div class="content-title style-one" data-aos="fade-up" data-aos-delay="400">
-                            <span class="badge-tag">WHO WE ARE</span>
-                            <h2>15 Years of Trusted Service in
-                                <span>Medical Technology
-                                    <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
-                                </span>
-                            </h2>
-                            <p> Sinoatrial Medical Technologies is a trusted provider of medical equipment sales, installation, and service across Chennai and surrounding districts. With over 15 years of experience, we deliver reliable healthcare solutions to hospitals, clinics, diagnostic centers, and healthcare facilities..</p>
-                            <p>
-We offer a wide range of medical equipment, including Patient Monitors, Defibrillators, Ventilators, ECG Machines, Syringe Pumps, Infusion Pumps, Fetal Monitors, Suction Units, Pulse Oximeters, and other critical care devices, along with genuine accessories. Our focus on quality, prompt service, and dependable after-sales support ensures reliable performance and customer satisfaction
-                            </p>
 
-                               
-
+                <!-- Right Column: Content & Features Grid -->
+                <div class="col-lg-7 col-12" data-aos="fade-left" data-aos-delay="200">
+                    <div class="about-content-wrapper content-title style-one ps-lg-3 position-relative">
+                        
+                        <!-- Top Right Decorative Dots Pattern -->
+                        <div class="position-absolute top-0 end-0 d-none d-md-block opacity-75" style="z-index: 1;">
+                            <svg width="84" height="64" viewBox="0 0 84 64" fill="none">
+                                <pattern id="aboutDotPattern" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+                                    <circle cx="4" cy="4" r="2" fill="#03348e" opacity="0.35"/>
+                                </pattern>
+                                <rect width="84" height="64" fill="url(#aboutDotPattern)"/>
+                            </svg>
                         </div>
 
-                       
-                        <!-- swiper content we  -->
-                        <a href="{{ route('contact') }}" class="btn-two" data-aos="zoom-in" data-aos-delay="700">Get
-                            in
-                            Touch</a>
+                        <!-- Pill Badge -->
+                        <div>
+                            <span class="about-pill-badge">ABOUT US</span>
+                        </div>
+
+                        <!-- Heading with Red Accent & Pulse Wave Icon -->
+                        <h2 class="about-main-title  ">
+                            15 Years of Trusted Service<br>
+                            in <span class="text-red">Medical Technology</span>
+                            <svg class="pulse-wave-svg" width="46" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 10H12L16 2L22 18L28 6L32 12L36 10H48" stroke="#03348e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </h2>
+
+                        <!-- Description Paragraph -->
+                        <p class="about-description-text">
+                                Sinoatrial Medical Technologies is a trusted provider of medical equipment sales, installation, and service across Chennai and surrounding districts. With over 15 years of experience, we deliver reliable healthcare solutions to hospitals, clinics, diagnostic centers, and healthcare facilities..
+                        </p>
+
+                         <p class="about-description-text">
+                            We offer a wide range of medical equipment, including Patient Monitors, Defibrillators, Ventilators, ECG Machines, Syringe Pumps, Infusion Pumps, Fetal Monitors, Suction Units, Pulse Oximeters, and other critical care devices, along with genuine accessories. Our focus on quality, prompt service, and dependable after-sales support ensures reliable performance and customer satisfaction
+                         </p>
+
+                    
+
+
+
+
+
+                        <!-- 4 Features Row -->
+                        <div class="about-features-row">
+                            <div class="about-feature-col">
+                                <div class="feature-icon-box-small">
+                                    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="42" height="42" rx="10" fill="url(#feat_bg_1)"/>
+                                        <path d="M21 9L12 13V21C12 27.2 15.8 32.5 21 34C26.2 32.5 30 27.2 30 21V13L21 9Z" fill="#03348e" fill-opacity="0.12" stroke="#03348e" stroke-width="2" stroke-linejoin="round"/>
+                                        <path d="M17 21L20 24L25 18" stroke="#dc0307" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <defs>
+                                            <linearGradient id="feat_bg_1" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                                <stop offset="1" stop-color="#dc0307" stop-opacity="0.08"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h4 class="feature-item-title">Quality Products</h4>
+                                <p class="feature-item-desc">BIS & ISO Certified</p>
+                            </div>
+
+                            <div class="about-feature-col">
+                                <div class="feature-icon-box-small">
+                                    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="42" height="42" rx="10" fill="url(#feat_bg_2)"/>
+                                        <path d="M12 22V19C12 14 16 10 21 10C26 10 30 14 30 19V22" stroke="#03348e" stroke-width="2" stroke-linecap="round"/>
+                                        <rect x="10" y="20" width="4" height="8" rx="2" fill="#03348e"/>
+                                        <rect x="28" y="20" width="4" height="8" rx="2" fill="#03348e"/>
+                                        <path d="M30 24H32C33.1 24 34 24.9 34 26V27C34 28.1 33.1 29 32 29H28" stroke="#03348e" stroke-width="1.8" stroke-linecap="round"/>
+                                        <circle cx="26" cy="29" r="2" fill="#dc0307"/>
+                                        <path d="M15 22H17L18.5 19.5L20.5 24.5L22 21L23.5 22H26" stroke="#dc0307" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <defs>
+                                            <linearGradient id="feat_bg_2" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                                <stop offset="1" stop-color="#dc0307" stop-opacity="0.08"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h4 class="feature-item-title">Reliable Support</h4>
+                                <p class="feature-item-desc">Expert Service Team</p>
+                            </div>
+
+                            <div class="about-feature-col">
+                                <div class="feature-icon-box-small">
+                                    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="42" height="42" rx="10" fill="url(#feat_bg_3)"/>
+                                        <path d="M8 16H13M6 21H11M7 26H12" stroke="#dc0307" stroke-width="1.8" stroke-linecap="round"/>
+                                        <path d="M14 15H25V27H14V15Z" fill="#03348e" fill-opacity="0.12" stroke="#03348e" stroke-width="2" stroke-linejoin="round"/>
+                                        <path d="M25 19H30L34 23V27H25V19Z" fill="#03348e" fill-opacity="0.2" stroke="#03348e" stroke-width="2" stroke-linejoin="round"/>
+                                        <circle cx="18" cy="28" r="3" fill="#ffffff" stroke="#dc0307" stroke-width="2"/>
+                                        <circle cx="30" cy="28" r="3" fill="#ffffff" stroke="#dc0307" stroke-width="2"/>
+                                        <defs>
+                                            <linearGradient id="feat_bg_3" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                                <stop offset="1" stop-color="#dc0307" stop-opacity="0.08"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h4 class="feature-item-title">Pan India Delivery</h4>
+                                <p class="feature-item-desc">Fast & Secure</p>
+                            </div>
+
+                            <div class="about-feature-col">
+                                <div class="feature-icon-box-small">
+                                    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="42" height="42" rx="10" fill="url(#feat_bg_4)"/>
+                                        <path d="M27.5 13.5C25.8 11.8 23 11.8 21.3 13.5L13.5 21.3C11.8 23 11.8 25.8 13.5 27.5C15.2 29.2 18 29.2 19.7 27.5L27.5 19.7C29.2 18 29.2 15.2 27.5 13.5Z" fill="#03348e" fill-opacity="0.12" stroke="#03348e" stroke-width="2" stroke-linejoin="round"/>
+                                        <path d="M23 18L26 21" stroke="#dc0307" stroke-width="2.5" stroke-linecap="round"/>
+                                        <circle cx="27" cy="14" r="2" fill="#dc0307"/>
+                                        <circle cx="14" cy="27" r="2" fill="#03348e"/>
+                                        <defs>
+                                            <linearGradient id="feat_bg_4" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                                <stop offset="1" stop-color="#dc0307" stop-opacity="0.08"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h4 class="feature-item-title">After Sales Service</h4>
+                                <p class="feature-item-desc">Always Here to Help</p>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div>
+                            <a href="{{ route('about') }}" class="btn-know-more-about">
+                                Know More About Us <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
     <!-- About Section End -->
 
-    <!-- Service Section Start -->
+   
 
-     <!-- Service Section Start -->
-    <div class="service-wrap style-two bg_optional ptb-100">
+    <!-- Feature Section Start -->
+    <div class="modern-feature-section">
         <div class="container">
-            <img src="{{ asset('user/assets/img/services/service-shape-3.png') }}" alt="Image"
-                class="service-shape moveHorizontal" width="64" height="64" loading="lazy">
-            
+            <div class="row mb-4 align-items-center">
+                <div class="col-lg-8 col-md-7 col-12 content-title style-one" data-aos="fade-up" data-aos-delay="100">
+                    <span class="modern-section-badge">WHY CHOOSE US</span>
+                    <h2 class="modern-section-title mt-2">
+                        Welcome to <span class="text-red">Sinoatrial</span> Medical Technologies
+                        <svg class="pulse-wave-svg" width="46" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 10H12L16 2L22 18L28 6L32 12L36 10H48" stroke="#03348e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </h2>
+                </div>
+                <div class="col-lg-4 col-md-5 col-12 text-md-end text-start mt-3 mt-md-0" data-aos="fade-left" data-aos-delay="200">
+                    <a href="{{ route('product') }}" class="btn-feature-red">
+                        View All Services <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
 
-            <div class="row">
-                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-                    <div class="content-title style-one text-center mb-40" data-aos="fade-up" data-aos-delay="100">
-                        <span class="badge-tag">MEDICAL EQUIPMENT</span>
-                        <h2>We Provide Advanced & Reliable
-                            <span>Hospital Equipment
-                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy" class="d-sm-none">
-                            </span>
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1 -->
+                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="modern-feature-card-new">
+                        <div class="feature-card-icon-box">
+                            <svg width="68" height="68" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="16" fill="url(#grad_bg_1)"/>
+                                <path d="M32 16C33.1 16 34 16.9 34 18V20.1C36.3 20.6 38.4 21.6 40.2 23L41.7 21.5C42.5 20.7 43.8 20.7 44.6 21.5L46.5 23.4C47.3 24.2 47.3 25.5 46.5 26.3L45 27.8C46.4 29.6 47.4 31.7 47.9 34H50C51.1 34 52 34.9 52 36C52 37.1 51.1 38 50 38H47.9C47.4 40.3 46.4 42.4 45 44.2L46.5 45.7C47.3 46.5 47.3 47.8 46.5 48.6L44.6 50.5C43.8 51.3 42.5 51.3 41.7 50.5L40.2 49C38.4 50.4 36.3 51.4 34 51.9V54C34 55.1 33.1 56 32 56C30.9 56 30 55.1 30 54V51.9C27.7 51.4 25.6 50.4 23.8 49L22.3 50.5C21.5 51.3 20.2 51.3 19.4 50.5L17.5 48.6C16.7 47.8 16.7 46.5 17.5 45.7L19 44.2C17.6 42.4 16.6 40.3 16.1 38H14C12.9 38 12 37.1 12 36C12 34.9 12.9 34 14 34H16.1C16.6 31.7 17.6 29.6 19 27.8L17.5 26.3C16.7 25.5 16.7 24.2 17.5 23.4L19.4 21.5C20.2 20.7 21.5 20.7 22.3 21.5L23.8 23C25.6 21.6 27.7 20.6 30 20.1V18C30 16.9 30.9 16 32 16Z" fill="#03348e" fill-opacity="0.12"/>
+                                <circle cx="32" cy="36" r="14" stroke="#03348e" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M24 36H27L29 31L32 41L35 33L37 36H40" stroke="#e31b23" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="32" cy="18" r="3" fill="#e31b23"/>
+                                <circle cx="48" cy="36" r="3" fill="#03348e"/>
+                                <defs>
+                                    <linearGradient id="grad_bg_1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                        <stop offset="1" stop-color="#e31b23" stop-opacity="0.08"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3>Expert Manufacturing</h3>
+                        <p>State-of-the-art infrastructure and precision engineering ensure high quality, durable, and reliable medical devices.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="modern-feature-card-new">
+                        <div class="feature-card-icon-box">
+                            <svg width="68" height="68" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="16" fill="url(#grad_bg_2)"/>
+                                <path d="M12 24H20M8 32H16M14 40H22" stroke="#e31b23" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M22 22H38V40H22V22Z" fill="#03348e" fill-opacity="0.12" stroke="#03348e" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M38 28H46L52 34V40H38V28Z" fill="#03348e" fill-opacity="0.2" stroke="#03348e" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M30 25C28.3 25 27 26.3 27 28C27 30.5 30 33 30 33C30 33 33 30.5 33 28C33 26.3 31.7 25 30 25Z" fill="#e31b23"/>
+                                <circle cx="28" cy="42" r="4" fill="#ffffff" stroke="#e31b23" stroke-width="3"/>
+                                <circle cx="46" cy="42" r="4" fill="#ffffff" stroke="#e31b23" stroke-width="3"/>
+                                <defs>
+                                    <linearGradient id="grad_bg_2" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                        <stop offset="1" stop-color="#e31b23" stop-opacity="0.08"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3>Fast Nationwide Delivery</h3>
+                        <p>Our strong logistics network ensures timely and secure delivery of medical equipment wherever it's needed.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="modern-feature-card-new">
+                        <div class="feature-card-icon-box">
+                            <svg width="68" height="68" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="16" fill="url(#grad_bg_3)"/>
+                                <path d="M32 14L18 20V32C18 41.5 24 49.5 32 52C40 49.5 46 41.5 46 32V20L32 14Z" fill="#03348e" fill-opacity="0.1" stroke="#03348e" stroke-width="3" stroke-linejoin="round"/>
+                                <circle cx="32" cy="32" r="11" fill="#ffffff" stroke="#e31b23" stroke-width="2.5"/>
+                                <path d="M26 32L30 36L38 27" stroke="#e31b23" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 18L33.2 20.4L35.8 20.8L33.9 22.7L34.4 25.3L32 24.1L29.6 25.3L30.1 22.7L28.2 20.8L30.8 20.4L32 18Z" fill="#e31b23"/>
+                                <defs>
+                                    <linearGradient id="grad_bg_3" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                        <stop offset="1" stop-color="#e31b23" stop-opacity="0.08"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3>Certified & Reliable Products</h3>
+                        <p>All products are BIS & ISO certified, ensuring safety, performance, and long-term reliability.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="modern-feature-card-new">
+                        <div class="feature-card-icon-box">
+                            <svg width="68" height="68" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="16" fill="url(#grad_bg_4)"/>
+                                <path d="M18 34V30C18 22.3 24.3 16 32 16C39.7 16 46 22.3 46 30V34" stroke="#03348e" stroke-width="3" stroke-linecap="round"/>
+                                <rect x="15" y="32" width="6" height="12" rx="3" fill="#03348e"/>
+                                <rect x="43" y="32" width="6" height="12" rx="3" fill="#03348e"/>
+                                <path d="M46 38H49C50.7 38 52 39.3 52 41V42C52 43.7 50.7 45 49 45H43" stroke="#03348e" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="41" cy="45" r="2.5" fill="#e31b23"/>
+                                <path d="M23 34H26L28 29L31 39L34 32L36 35H39" stroke="#e31b23" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="grad_bg_4" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#03348e" stop-opacity="0.1"/>
+                                        <stop offset="1" stop-color="#e31b23" stop-opacity="0.08"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3>Dedicated Support & Service</h3>
+                        <p>Our expert support team is always ready to help with installation, training, and after-sales service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature Section End -->
+
+ 
+
+    <!-- Featured Brands Section Start -->
+    <div class="featured-brands-wrap bg-white">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-8 text-center">
+                    <div class="content-title style-one text-center" data-aos="fade-down" data-aos-duration="1000">
+                        <span class="about-pill-badge">DISCOVER OUR</span>
+                        <h2>Featured Brands & <span>Technologies</span>
+                            <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Shape" width="64" height="64" loading="lazy">
                         </h2>
                     </div>
                 </div>
             </div>
 
-            <div class="service-slider-wrap" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-slider swiper">
-                    <div class="swiper-wrapper">
-
-                        <!-- Slide 1 - Left -->
-                        <div class="swiper-slide">
-                            <div class="service-card style-two">
-                                <span class="service-icon">
-                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
-                                </span>
-                                <span class="service-count">01</span>
-                                <h3><a href="#">SpO₂ Sensors</a></h3>
-                                <p>Providing genuine medical accessories such as ECG cables, SpO₂ sensors, NIBP cuffs, temperature probes, IBP cables and other compatible spare parts.</p>
-                                <a href="#" class="btn-three">Read More<i class="flaticon-right-arrow"></i></a>
-                            </div>
+            <!-- Double Marquee Running in Opposite Directions -->
+            <div class="marquee-wrapper">
+                <div class="marquee-container">
+                    
+                    <!-- Row 1: Left to Right -->
+                    <div class="marquee-track marquee-ltr">
+                        <div class="marquee-set">
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/1.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/2.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/3.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/4.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/5.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/6.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/7.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/14.svg') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/15.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
                         </div>
-
-                        <!-- Slide 2 - Bottom Center -->
-                        <div class="swiper-slide">
-                            <div class="service-card style-two">
-                                <span class="service-icon">
-                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
-                                </span>
-                                <span class="service-count">02</span>
-                                <h3><a href="#">Critical Care Equipment</a></h3>
-                                <p>roviding advanced ICU and emergency care equipment, including ventilators, defibrillators, infusion pumps, and syringe pumps.</p>
-                                <a href="#" class="btn-three">Read More<i class="flaticon-right-arrow"></i></a>
-                            </div>
+                        <div class="marquee-set">
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/1.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/2.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/3.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/4.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/5.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/6.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/7.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/14.svg') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/15.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
                         </div>
-
-                        <!-- Slide 3 - Top -->
-                        <div class="swiper-slide">
-                            <div class="service-card style-two">
-                                <span class="service-icon">
-                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
-                                </span>
-                                <span class="service-count">03</span>
-                                <h3><a href="#">Diagnostic Equipment</a></h3>
-                                <p>Offering reliable diagnostic solutions, including ECG machines, Holter monitors, ABPM systems, and spirometers.</p>
-                                <a href="#" class="btn-three">Read More<i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 - Right to Left (like car movement) -->
-                        <div class="swiper-slide" data-aos="fade-left" data-aos-delay="500">
-                            <div class="service-card style-two">
-                                <span class="service-icon">
-                                    <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Service Icon" width="64" height="64" loading="lazy">
-                                </span>
-                                <span class="service-count">04</span>
-                                <h3><a href="#">Home Healthcare Equipment</a></h3>
-                                <p>Providing reliable home healthcare solutions for safe and comfortable patient care, like Bipap, Cpap, BP Apparatus, Glucometer and monitoring devices.</p>
-                                <a href="#" class="btn-three">Read More<i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
 
-                <!-- Slider Navigation -->
-                <div class="service-slider-btn slider-btn">
-                    <div class="service-prev prev-btn"><img src="{{ asset('user/assets/img/left-arrow.svg') }}"
-                            alt="Image" width="24" height="24" loading="lazy"></div>
-                    <div class="service-next next-btn"><img src="{{ asset('user/assets/img/right-arrow.svg') }}"
-                            alt="Image" width="24" height="24" loading="lazy"></div>
+                    <!-- Row 2: Right to Left -->
+                    <div class="marquee-track marquee-rtl">
+                        <div class="marquee-set">
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/8.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/9.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/10.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/11.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/12.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box brand-marquee-box-dark"><img src="{{ asset('user/assets/img/MEquip_log/13.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                        </div>
+                        <div class="marquee-set">
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/8.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/9.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/10.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/11.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/12.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box brand-marquee-box-dark"><img src="{{ asset('user/assets/img/MEquip_log/13.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
         </div>
     </div>
-    <!-- Service Section End -->
-    
+    <!-- Featured Brands Section End -->
 
-    <!-- Service Section End -->
+
+    <!-- NEW DESIGN TRUSTED SECTION -->
+    <section class="medical-banner">
+        <div class="banner-wrapper">
+
+            <!-- LEFT CONTENT -->
+            <div class="banner-content">
+                <span class="about-pill-badge">OUR COMMITMENT</span>
+                <h2>
+                    Trusted by India's Leading
+                    <span>
+                        Hospitals & Clinics
+                        <svg class="title-ecg-wave" width="70" height="22" viewBox="0 0 120 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 17 H35 L42 4 L49 30 L56 10 L62 22 L68 17 H120" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </h2>
+
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-icon"><i class="ri-check-line"></i></span>
+                        <span>Wide range of medical devices</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon"><i class="ri-check-line"></i></span>
+                        <span>Trusted by 1200+ healthcare providers</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon"><i class="ri-check-line"></i></span>
+                        <span>Reliable after-sales support</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon"><i class="ri-check-line"></i></span>
+                        <span>Training and installation by experts</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon"><i class="ri-check-line"></i></span>
+                        <span>Pan India presence</span>
+                    </div>
+                </div>
+
+                <a href="{{ route('about') }}" class="banner-btn">
+                    Our Customers <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <!-- RIGHT IMAGE & STATS CONTAINER -->
+            <div class="banner-image-container">
+                <div class="banner-image">
+                    <img src="{{ asset('user/assets/img/bn1.png') }}" alt="Trusted Hospitals & Clinics" style="filter: blur(0px) brightness(0.9);                    <img src="{{ asset('user/assets/img/bn1.png') }}" alt="Trusted Hospitals & Clinics" 
+">
+                </div>
+
+                <!-- STATISTICS OVERLAY -->
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 8L12 3L3 8V16L12 21L21 16V8Z" stroke="#03348e" stroke-width="1.8" stroke-linejoin="round"/>
+                                <path d="M12 3V11.5M21 8L12 11.5M3 8L12 11.5" stroke="#03348e" stroke-width="1.8" stroke-linejoin="round"/>
+                                <path d="M12 14.5M10.5 14.5H13.5M12 13V16" stroke="#e31b23" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">300+</span>
+                            <span class="stat-text">Products Range</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 21V19C16 16.7909 14.2091 15 12 15C9.79086 15 8 16.7909 8 19V21" stroke="#03348e" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="12" cy="7" r="4" stroke="#03348e" stroke-width="1.8"/>
+                                <path d="M18.5 7.5C18.5 7.5 19.5 6 21 7.5C22.5 9 20.5 11 18.5 12.5C16.5 11 14.5 9 16 7.5C17.5 6 18.5 7.5 18.5 7.5Z" fill="#e31b23"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-text">Happy Customers</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21C16.4183 21 20 17.4183 20 13C20 8.58172 16.4183 5 12 5C7.58172 5 4 8.58172 4 13C4 17.4183 7.58172 21 12 21Z" stroke="#03348e" stroke-width="1.8"/>
+                                <path d="M12 2V5M12 21V23M2 13H5M19 13H22" stroke="#03348e" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="12" cy="13" r="3" fill="#e31b23"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-text">States Covered</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21H21M5 21V7L12 3L19 7V21M9 10H15M9 14H15M9 18H15" stroke="#03348e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 8V12M10 10H14" stroke="#e31b23" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">1200+</span>
+                            <span class="stat-text">Trusted Clinics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- NEW DESIGN TRUSTED SECTION END -->
+
 
     <!-- Why Choose Us Section Start -->
     <div class="wh-wrap style-one ptb-100">
         <div class="container">
-            <img src="{{ asset('user/assets/img/about/wh-shape-3.png') }}" alt="Image" class="wh-shape-one"
-                data-aos="fade-down" data-aos-delay="100" width="64" height="64" loading="lazy">
+            <img src="{{ asset('user/assets/img/about/wh-shape-3.png') }}" alt="Image" class="wh-shape-one" data-aos="fade-down" data-aos-delay="100" width="64" height="64" loading="lazy">
             <div class="row gx-5 align-items-center">
-                <!-- Content Left -->
                 <div class="col-lg-6">
                     <div class="wh-content" data-aos="fade-right" data-aos-delay="200">
                         <div class="content-title style-one">
-                            <span class="badge-tag" data-aos="fade-up" data-aos-delay="300">
+                            <span class="about-pill-badge" data-aos="fade-up" data-aos-delay="300">
                                 Why Choose Us
                             </span>
                             <h2 data-aos="fade-up" data-aos-delay="400">
-                                Trusted by India’s Leading <span>Hospitals &
-                                    Clinics</span>
+                                Trusted by India’s Leading <span>Hospitals & Clinics</span>
                                 <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
                             </h2>
                             <p data-aos="fade-up" data-aos-delay="500">
-                                At Sinoatrial Medical Technologies, we
-                                prioritize safety, innovation, and
-                                performance.
-                                Our products are developed with deep
-                                technical expertise and a strong focus on
-                                hospital-grade reliability.
+                                At Sinoatrial Medical Technologies, we prioritize safety, innovation, and performance. All our biomedical equipment undergoes rigorous quality control to ensure hospital-grade reliability.
                             </p>
                         </div>
                         <ul class="feature-list list-style">
-                            <li data-aos="fade-left" data-aos-delay="600">ISO-compliant,
-                                quality-tested equipment</li>
-                            <li data-aos="fade-left" data-aos-delay="700">In-house R&D for
-                                innovative solutions</li>
-                            <li data-aos="fade-left" data-aos-delay="800">Trusted by top
-                                hospitals and medical chains</li>
-                            <li data-aos="fade-left" data-aos-delay="900">Dedicated post-sales
-                                and support service</li>
+                            <li data-aos="fade-left" data-aos-delay="600">ISO-compliant, quality-tested equipment</li>
+                            <li data-aos="fade-left" data-aos-delay="700">In-house R&D for medical accessories</li>
+                            <li data-aos="fade-left" data-aos-delay="800">Trusted by top hospitals and medical chains</li>
+                            <li data-aos="fade-left" data-aos-delay="900">Dedicated post-sales and support service</li>
                         </ul>
                         <a href="tel:+919659446837" class="btn-two" data-aos="zoom-in" data-aos-delay="1000">
                             <i class="flaticon-phone-call"></i>+91 96594 46837
@@ -816,26 +693,7 @@ We offer a wide range of medical equipment, including Patient Monitors, Defibril
                 <div class="col-lg-6">
                     <div class="wh-img-wrap" data-aos="zoom-in-up" data-aos-delay="400">
                         <div class="wh-img">
-                            <img src="{{ asset('user/assets/img/about/wh-img-1.webp') }}" alt="Image" width="700" height="670" loading="lazy">
-                        </div>
-                        <div class="circle-wrap" data-aos="flip-up" data-aos-delay="600">
-                            <i class="flaticon-heartbeat"></i>
-                            <div class="circle-text">
-                                <svg class="rotate" viewBox="0 0 300 300">
-                                    <defs>
-                                        <path id="circlePath_one"
-                                            d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
-                                    </defs>
-                                    <g>
-                                        <use xlink:href="#circlePath_one" fill="none" />
-                                        <text fill="#000A2D">
-                                            <textpath xlink:href="#circlePath_one">
-                                                MEDICAL INNOVATION TRUST
-                                            </textpath>
-                                        </text>
-                                    </g>
-                                </svg>
-                            </div>
+                            <img src="{{ asset('user/assets/img/about/wh-img-1.png') }}" alt="Image" width="700" height="670" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -844,542 +702,601 @@ We offer a wide range of medical equipment, including Patient Monitors, Defibril
     </div>
     <!-- Why Choose Us Section End -->
 
-    <!-- Counter Section Start -->
-    <div class="counter-wrap style-one pt-100 pb-75 bg_optional">
-        <img src="{{ asset('user/assets/img/counter-shape.webp') }}" alt="Image" class="counter-shape" width="1920" height="615" loading="lazy">
+    <!-- Testimonial Section Start -->
+    <div class="testimonial-wrap-new position-relative">
         <div class="container">
-            <div class="counter-card-wrap">
-                <div class="counter-card" data-aos="zoom-in-up" data-aos-delay="100">
-                    <span class="counter-icon">
-                        <img src="{{ asset('user/assets/img/icons/h.png') }}" alt="Hospital" width="64" height="64" loading="lazy">
-                    </span>
-                    <div class="counter-text">
-                        <span class="counter">300</span>
-                        <p>Hospitals Served</p>
+            
+            <!-- Section Header -->
+            <div class="testimonial-header-wrapper">
+                <div class="testimonial-header-left" data-aos="fade-up" data-aos-delay="100">
+                    <div class="content-title style-one text-start m-0">
+                        <span class="about-pill-badge">CLIENT TESTIMONIALS</span>
+                        <h2 data-aos="fade-up" data-aos-delay="400">
+                            Valuable Feedback From Our <span>Medical Equipment Clients</span>
+                            <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
+                        </h2>
+                        <p data-aos="fade-up" data-aos-delay="500">
+                            Trusted by leading hospitals, ICUs, and biomedical engineers across India.
+                        </p>
                     </div>
                 </div>
-                <div class="counter-card" data-aos="zoom-in-up" data-aos-delay="200">
-                    <span class="counter-icon">
-                        <img src="{{ asset('user/assets/img/icons/p.png') }}" alt="Products" width="64" height="64" loading="lazy">
-                    </span>
-                    <div class="counter-text">
-                        <span class="counter">500</span>
-                        <p>Products Delivered</p>
-                    </div>
+
+                <div class="testimonial-nav-group" data-aos="fade-left" data-aos-delay="200">
+                    <button class="testimonial-btn-red" id="open-feedback-btn">
+                        <i class="ri-chat-new-line"></i> Share Feedback
+                    </button>
+                    <button class="testimonial-arrow-btn testimonial-prev" aria-label="Previous Testimonial">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button class="testimonial-arrow-btn testimonial-next" aria-label="Next Testimonial">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
                 </div>
-                <div class="counter-card" data-aos="zoom-in-up" data-aos-delay="300">
-                    <span class="counter-icon">
-                        <img src="{{ asset('user/assets/img/icons/m.png') }}" alt="Expertise" width="64" height="64" loading="lazy">
-                    </span>
-                    <div class="counter-text">
-                        <span class="counter">20</span>
-                        <p>Years of Expertise</p>
-                    </div>
-                </div>
-                <div class="counter-card" data-aos="zoom-in-up" data-aos-delay="400">
-                    <span class="counter-icon">
-                        <img src="{{ asset('user/assets/img/icons/c.png') }}" alt="Clients" width="64" height="64" loading="lazy">
-                    </span>
-                    <div class="counter-text">
-                        <span class="counter">1200</span>
-                        <p>Satisfied Clients</p>
+            </div>
+
+            <!-- Testimonial Cards Slider -->
+            <div class="testimonial-slider-wrap">
+                <div class="testimonial-slider-two swiper">
+                    <div class="swiper-wrapper">
+                        @if(isset($testimonials) && count($testimonials) > 0)
+                            @foreach($testimonials as $testimonial)
+                                <div class="swiper-slide">
+                                    <div class="modern-testimonial-card">
+                                        <div>
+                                            <div class="testimonial-top-row">
+                                                <div class="client-profile-box">
+                                                    @if(isset($testimonial->image) && $testimonial->image)
+                                                        <img src="{{ asset('storage/' . $testimonial->image) }}" alt="{{ $testimonial->name }}" class="client-avatar-img">
+                                                    @else
+                                                        <div class="client-avatar-placeholder">
+                                                            {{ strtoupper(substr($testimonial->name, 0, 1)) }}
+                                                        </div>
+                                                    @endif
+                                                    <div class="client-details">
+                                                        <h5>{{ $testimonial->name }}</h5>
+                                                        <span>{{ $testimonial->designation ?? 'Healthcare Professional' }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="quote-icon-badge">
+                                                    <i class="ri-double-quotes-r"></i>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial-stars">
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    @if($i <= $testimonial->rating)
+                                                        <i class="ri-star-fill"></i>
+                                                    @else
+                                                        <i class="ri-star-line" style="color: #cbd5e1;"></i>
+                                                    @endif
+                                                @endfor
+                                            </div>
+
+                                            <div class="testimonial-quote-body">
+                                                "{{ $testimonial->comment }}"
+                                            </div>
+                                        </div>
+
+                                        <div class="testimonial-footer-trust">
+                                            <span>Sinoatrial Client</span>
+                                            <span class="verified-tag"><i class="ri-shield-check-fill"></i> Verified Partner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <!-- Demo Testimonial 1 -->
+                            <div class="swiper-slide">
+                                <div class="modern-testimonial-card">
+                                    <div>
+                                        <div class="testimonial-top-row">
+                                            <div class="client-profile-box">
+                                                <img src="{{ asset('user/assets/img/clients/client-1.webp') }}" alt="Dr. Arun Kumar" class="client-avatar-img" onerror="this.outerHTML='<div class=\'client-avatar-placeholder\'>A</div>'">
+                                                <div class="client-details">
+                                                    <h5>Dr. Arun Kumar</h5>
+                                                    <span>Biomedical Director, Apollo Hospitals</span>
+                                                </div>
+                                            </div>
+                                            <div class="quote-icon-badge">
+                                                <i class="ri-double-quotes-r"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+
+                                        <div class="testimonial-quote-body">
+                                            "We've been using Sinoatrial's SpO₂ sensors and ECG cables for over 2 years now. The signal precision and build quality in critical care ICU settings are unmatched."
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-footer-trust">
+                                        <span>ICU & Cardiac Care</span>
+                                        <span class="verified-tag"><i class="ri-shield-check-fill"></i> Verified Partner</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Demo Testimonial 2 -->
+                            <div class="swiper-slide">
+                                <div class="modern-testimonial-card">
+                                    <div>
+                                        <div class="testimonial-top-row">
+                                            <div class="client-profile-box">
+                                                <img src="{{ asset('user/assets/img/clients/client-2.webp') }}" alt="Priya Sharma" class="client-avatar-img" onerror="this.outerHTML='<div class=\'client-avatar-placeholder\'>P</div>'">
+                                                <div class="client-details">
+                                                    <h5>Priya Sharma</h5>
+                                                    <span>Purchase Head, Fortis Healthcare</span>
+                                                </div>
+                                            </div>
+                                            <div class="quote-icon-badge">
+                                                <i class="ri-double-quotes-r"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+
+                                        <div class="testimonial-quote-body">
+                                            "The team at Sinoatrial Medical is exceptionally responsive. Their emergency equipment maintenance and fast dispatch of calibration cables keeps our operations running smoothly."
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-footer-trust">
+                                        <span>Procurement Partner</span>
+                                        <span class="verified-tag"><i class="ri-shield-check-fill"></i> Verified Partner</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Demo Testimonial 3 -->
+                            <div class="swiper-slide">
+                                <div class="modern-testimonial-card">
+                                    <div>
+                                        <div class="testimonial-top-row">
+                                            <div class="client-profile-box">
+                                                <img src="{{ asset('user/assets/img/clients/client-3.webp') }}" alt="Dr. Rajesh Varma" class="client-avatar-img" onerror="this.outerHTML='<div class=\'client-avatar-placeholder\'>R</div>'">
+                                                <div class="client-details">
+                                                    <h5>Dr. Rajesh Varma</h5>
+                                                    <span>Senior Cardiologist, Kauvery Hospital</span>
+                                                </div>
+                                            </div>
+                                            <div class="quote-icon-badge">
+                                                <i class="ri-double-quotes-r"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+
+                                        <div class="testimonial-quote-body">
+                                            "Outstanding technical support and pricing. Sinoatrial is our trusted vendor for patient monitoring probes, accessories, and diagnostic cable sets."
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-footer-trust">
+                                        <span>Cardiology Dept</span>
+                                        <span class="verified-tag"><i class="ri-shield-check-fill"></i> Verified Partner</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-    <!-- Counter Section End -->
-
-    <!-- Testimonial Section Start -->
-    <div class="testimonial-wrap style-two pt-100 pb-75">
-        <div class="container">
-            <img src="{{ asset('user/assets/img/services/service-shape-3.png') }}" alt="Shape"
-                class="testimonial-shape-one bounce sm-none" data-aos="zoom-in" data-aos-delay="100" width="64" height="64" loading="lazy">
-
-            <div class="row mb-40 align-items-center">
-                <div class="col-xxl-6 col-xl-8 col-lg-7 col-md-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="section-title style-one">
-                        <span class="badge-tag">Client Testimonials</span>
-                        <h2>Valuable Feedback From Our <span>Medical
-                                Equipment Clients</span></h2>
-                    </div>
-                </div>
-                <div class="testimonial-slider-btn slider-btn" data-aos="fade-left" data-aos-delay="200">
-                    <div class="testimonial-prev prev-btn">
-                        <img src="{{ asset('user/assets/img/left-arrow.svg') }}" alt="Left Arrow" width="24" height="24" loading="lazy">
-                    </div>
-                    <div class="testimonial-next next-btn">
-                        <img src="{{ asset('user/assets/img/right-arrow.svg') }}" alt="Right Arrow" width="24" height="24" loading="lazy">
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-slider-wrap style-two" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-slider-two swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="100">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="{{ asset('user/assets/img/team/team-4.webp') }}"
-                                            alt="Dr. Arun" width="64" height="64" loading="lazy">
-                                    </div>
-                                    <div class="client-info">
-                                        <p class="h5">Dr. Arun Kumar</p>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>We’ve been using Sinoatrial’s SpO₂
-                                        sensors and ECG cables for over 2
-                                        years now, and the quality is
-                                        unmatched.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="150">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="{{ asset('user/assets/img/team/team-5.webp') }}"
-                                            alt="Dr. Leena" width="64" height="64" loading="lazy">
-                                    </div>
-                                    <div class="client-info">
-                                        <p class="h5">Dr. Leena George</p>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>The team at Sinoatrial Medical is
-                                        incredibly professional. Their
-                                        response time and service support
-                                        are exceptional.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="200">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="{{ asset('user/assets/img/team/team-6.webp') }}"
-                                            alt="Prakash" width="64" height="64" loading="lazy">
-                                    </div>
-                                    <div class="client-info">
-                                        <p class="h5">Mr. Prakash Nair</p>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>Their range of accessories and
-                                        sensors meet all our needs with
-                                        top-notch safety and
-                                        reliability.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="250">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="{{ asset('user/assets/img/team/team-7.webp') }}"
-                                            alt="Ravi" width="64" height="64" loading="lazy">
-                                    </div>
-                                    <div class="client-info">
-                                        <p class="h5">Dr. Ravi</p>
-                                        <span>Healthcare Consultant</span>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>I appreciate their focus on quality
-                                        and innovation. Their products are
-                                        durable and reliable.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="300">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="{{ asset('user/assets/img/team/team-8.webp') }}"
-                                            alt="Naveen" width="64" height="64" loading="lazy">
-                                    </div>
-                                    <div class="client-info">
-                                        <p class="h5">Mr. Naveen Raj</p>
-                                        <span>Medical Distributor</span>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>One of the best suppliers we've
-                                        worked with. Their prompt delivery
-                                        and service are remarkable.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 6 -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-card style-two" data-aos="fade-up" data-aos-delay="350">
-                                <div class="client-info-wrap">
-                                    <div class="client-img">
-                                        <img src="{{ asset('user/assets/img/team/team-10.webp') }}"
-                                            alt="Ramesh" width="64" height="64" loading="lazy">
-                                    </div>
-                                    <div class="client-info">
-                                        <p class="h5">Dr. Ramesh Kannan</p>
-                                        <span>Chief Surgeon</span>
-                                        <ul class="rating list-style">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li><i class="ri-star-fill"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="client-quote">
-                                    <span class="quote-icon"><i class="flaticon-quote"></i></span>
-                                    <p>Sinoatrial's commitment to precision
-                                        gives us confidence in their
-                                        critical care equipment.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> <!-- swiper-wrapper -->
-                </div> <!-- testimonial-slider-two -->
-            </div> <!-- testimonial-slider-wrap -->
-        </div> <!-- container -->
-    </div>
     <!-- Testimonial Section End -->
 
+    <!-- Add Testimonial Modal Popup -->
+    <div class="feedback-modal-backdrop" id="feedbackModalBackdrop">
+        <div class="feedback-modal-card">
+            <div class="feedback-modal-header">
+                <h3>Share Your Valuable Feedback</h3>
+                <button class="feedback-modal-close" id="close-feedback-btn">&times;</button>
+            </div>
+            
+            <form id="feedbackForm" class="feedback-modal-body">
+                <div class="feedback-form-row">
+                    <div class="feedback-form-col-left">
+                        <div class="feedback-input-group">
+                            <label for="modal-client-name">Full Name</label>
+                            <input type="text" id="modal-client-name" placeholder="Dr. Jane Doe" required>
+                        </div>
+                        <div class="feedback-input-group">
+                            <label for="modal-client-role">Designation / Role</label>
+                            <input type="text" id="modal-client-role" placeholder="e.g. Chief Medical Officer" required>
+                        </div>
+                        <div class="feedback-input-group">
+                            <label>Your Rating</label>
+                            <div class="interactive-stars" id="modal-stars-rating">
+                                <i class="ri-star-fill star-input" data-value="1"></i>
+                                <i class="ri-star-fill star-input" data-value="2"></i>
+                                <i class="ri-star-fill star-input" data-value="3"></i>
+                                <i class="ri-star-fill star-input" data-value="4"></i>
+                                <i class="ri-star-fill star-input" data-value="5"></i>
+                            </div>
+                            <input type="hidden" id="modal-rating-value" value="5">
+                        </div>
+                    </div>
+                    
+                    <div class="feedback-form-col-right">
+                        <div class="feedback-input-group h-100 d-flex flex-column">
+                            <label for="modal-client-comment">Your Feedback</label>
+                            <textarea id="modal-client-comment" placeholder="We appreciate your review! Write your comments here..." style="flex-grow: 1;" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feedback-form-footer text-end mt-4">
+                    <button type="submit" class="btn-two submit-feedback-btn px-4 py-2" style="border-radius: 30px; font-size: 14px; border: none;">
+                        Submit Review <i class="ri-send-plane-fill ms-2"></i>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="feedback-success-overlay" id="feedbackSuccessOverlay">
+                <div class="success-message-box">
+                    <div class="success-icon-wrap">
+                        <i class="ri-checkbox-circle-fill"></i>
+                    </div>
+                    <h4>Thank You!</h4>
+                    <p>Your feedback has been successfully submitted and added to our testimonials.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CTA Section Start -->
-    <div class="cta-wrap style-one bg_optional" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-        <img src="{{ asset('user/assets/img/cta-shape.webp') }}" alt="Image" class="cta-shape" width="1920" height="397"
-            data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1000" loading="lazy">
+    <div class="cta-wrap style-one my-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" style="background: #0043a6; /* Fallback for older browsers */
+background: -webkit-linear-gradient(left, #0043a6, #db0a24);
+background: -moz-linear-gradient(left, #0043a6, #db0a24);
+background: linear-gradient(to right, #0043a6, #db0a24);">
+        <img src="{{ asset('user/assets/img/cta-shape.webp') }}" alt="Image" class="cta-shape" width="1920" height="397" loading="lazy">
         <div class="container text-center">
-            <p class="h4" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
-                Have Any Questions? Feel Free to Contact Our Team
-            </p>
-            <a class="cta-contact position-relative" href="tel:04445428844" data-aos="flip-up"
-                data-aos-delay="500" data-aos-duration="1200">
-                044-4542 8844
-                <img src="{{ asset('user/assets/img/1.png') }}" alt="Image" width="64" height="64"
-                    class="position-absolute" data-aos="fade-in" data-aos-delay="800" data-aos-duration="1000" loading="lazy">
+           
+            <h2 class="text-white">Order Your Medical Equipment With Us</h2>
+            <p class="text-white">Have Any Questions? Feel Free to Contact Our Team</p>
+             <!-- <img src="{{ asset('user/assets/img/1.png') }}" alt="Image" width="64" height="64" class="position-absolute" data-aos="fade-in" data-aos-delay="800" data-aos-duration="1000" loading="lazy"> -->
+            <a class="cta-contact position-relative" href="tel:04445428844" data-aos="flip-up" data-aos-delay="500" data-aos-duration="1200">
+                +044-4542 8844
+               
             </a>
-            <a href="{{ route('contact') }}" class="btn-two order_btn" data-aos="zoom-in-up" data-aos-delay="600"
-                data-aos-duration="1200">
-                Order an Appointment
-            </a>
+           
         </div>
     </div>
     <!-- CTA Section End -->
 
-    <!-- Blog Section Start -->
-    <div class="blog-wrap style-one pt-100 pb-75 bg_optional" data-aos="fade-up" data-aos-delay="100">
+    <!-- Our Clients Section Start -->
+    <div class="clients-section-exact " data-aos="fade-up" data-aos-delay="100">
         <div class="container">
-            <!-- <img src="assets/img/blog/blog-shape-1.webp" alt="Image"
-                    class="blog-shape sm-none bounce"
-                    data-aos="zoom-in" data-aos-delay="200"
-                    data-aos-duration="1000"> -->
+            
+            <!-- Section Title Header (Inline pill & title on same line) -->
+            <!-- <div class="clients-header-inline" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+                <span class="about-pill-badge">OUR CLIENTS</span>
+                <h2 class="clients-title">
+                    Trusted by Our <span class="title-red">Valued Clients</span> <span class="title-arrows">⟶⟶</span>
+                </h2>
 
-            <div class="row">
-                <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-                    <div class="section-title style-one text-center mb-40" data-aos="fade-down" data-aos-delay="300">
-                        <span>Our Latest Articles</span>
-                        <h2>
-                            Stay Updated With Our Latest News & Blog
-                            <span>Articles.</span>
-                            <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
-                        </h2>
+                 
+            </div> -->
+
+                    <div class="content-title style-one text-center">
+                            <span class="about-pill-badge">OUR CLIENTS</span>
+                            <h2 data-aos="fade-up" data-aos-delay="400">
+                               Trusted by Our  <span>Valued Clients</span>
+                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
+                            </h2>
+                            <p data-aos="fade-up" data-aos-delay="500">
+                                At Sinoatrial Medical Technologies, we prioritize safety, innovation, and performance. All our biomedical equipment undergoes rigorous quality control to ensure hospital-grade reliability.
+                            </p>
+                    </div>
+
+            <!-- Slider Wrapper with Side Nav Buttons -->
+            <div class="clients-slider-container" data-aos="fade-up" data-aos-delay="300">
+                
+                <!-- Side Navigation Buttons -->
+                <button class="clients-nav-btn clients-nav-prev" aria-label="Previous Clients Slide">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <button class="clients-nav-btn clients-nav-next" aria-label="Next Clients Slide">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+
+                <div class="clients-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        @for($i = 1; $i <= 19; $i++)
+                            <div class="swiper-slide">
+                                <div class="client-logo-card {{ in_array($i, [1, 9]) ? 'client-logo-card-dark' : '' }}">
+                                    <img src="{{ asset('user/assets/img/Clients/' . $i . '.png') }}" alt="Client Logo {{ $i }}" loading="lazy">
+                                </div>
+                            </div>
+                        @endfor
                     </div>
                 </div>
+
+                <!-- Bottom Swiper Pagination Dots -->
+                <div class="clients-pagination-dots swiper-pagination"></div>
             </div>
 
-            <div class="row justify-content-center">
-                <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-right" data-aos-delay="400"
-                    data-aos-duration="1000">
-                    <div class="blog-card style-one">
-                        <div class="blog-card-img">
-                            <img src="https://sinoatrial.in/images/new/blog_1.png" alt="spo2 sensor" width="400" height="250" loading="lazy">
-                        </div>
-                        <div class="blog-card-info">
-                            <a href="#" class="blog-date"><i class="flaticon-calendar"></i>Dec 22,
-                                2022</a>
-                            <ul class="blog-metainfo list-style">
-                                <li><a href="#">Medical Devices</a></li>
-                                <li>No Comment</li>
-                            </ul>
-                            <h3><a href="#">SPO2 Sensor</a></h3>
-                            <p>SINOATRIAL provides reliable SPO2 sensors
-                                manufactured in an ISO 13485:2016 certified
-                                facility, ensuring global quality standards
-                                and dependable service.</p>
-                            <a href="#" class="link-one">Read More...</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="500"
-                    data-aos-duration="1000">
-                    <div class="blog-card style-one">
-                        <div class="blog-card-img">
-                            <img src="https://sinoatrial.in/images/new/blog_2.png" alt="Blood Pressure Accessories" width="400" height="250" loading="lazy">
-                        </div>
-                        <div class="blog-card-info">
-                            <a href="#" class="blog-date"><i class="flaticon-calendar"></i>Dec 22,
-                                2022</a>
-                            <ul class="blog-metainfo list-style">
-                                <li><a href="#">Healthcare
-                                        Accessories</a></li>
-                                <li>No Comment</li>
-                            </ul>
-                            <h3><a href="#">Blood Pressure NIBP / IBP &
-                                    Ventilator Accessories</a></h3>
-                            <p>Explore our wide range of NIBP/IBP and
-                                ventilator accessories, engineered to meet
-                                the highest quality assurance practices and
-                                certifications.</p>
-                            <a href="#" class="link-one">Read More...</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-left" data-aos-delay="600"
-                    data-aos-duration="1000">
-                    <div class="blog-card style-one">
-                        <div class="blog-card-img">
-                            <img src="https://sinoatrial.in/images/new/blog_3.png"
-                                alt="ECG Cables & Surgical Accessories" width="400" height="250" loading="lazy">
-                        </div>
-                        <div class="blog-card-info">
-                            <a href="#" class="blog-date"><i class="flaticon-calendar"></i>Dec 22,
-                                2022</a>
-                            <ul class="blog-metainfo list-style">
-                                <li><a href="#">Surgical Equipment</a></li>
-                                <li>No Comment</li>
-                            </ul>
-                            <h3><a href="#">ECG, EKG Cables and Surgical
-                                    Accessories</a></h3>
-                            <p>High-quality ECG/EKG cables and surgical
-                                accessories from SINOATRIAL, trusted
-                                globally for their performance and
-                                compliance with medical standards.</p>
-                            <a href="#" class="link-one">Read More...</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <!-- Blog Section End -->
+    <!-- Our Clients Section End -->
 
-    <!-- Service Section Start -->
-    <div class="service-wrap style-two bg_optional ptb-100">
+    <!-- Medical Equipment Installation Section Start -->
+    <div class="installation-section-wrap py-5 bg-white position-relative">
         <div class="container">
-            <img src="{{ asset('user/assets/img/services/service-shape-3.png') }}" alt="Image"
-                class="service-shape moveHorizontal" width="64" height="64" loading="lazy">
-            <img src="{{ asset('user/assets/img/services/service-shape-1.png') }}" alt="Image"
-                class="service-shape-two bounce" width="64" height="64" loading="lazy">
-
-            <div class="row">
-                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-                    <div class="content-title style-one text-center mb-40" data-aos="fade-up" data-aos-delay="100">
-                        <span>MEDICAL EQUIPMENT </span>
-                        <h2>We Provide Best
-                            <span>Installation
-                                <img src="{{ asset('user/assets/img/section-shape-2.png') }}" alt="Image" width="64" height="64" loading="lazy">
-                            </span>
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10 text-center">
+                    <div class="content-title style-one text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <span class="about-pill-badge mb-2">INSTALLATION & SUPPORT</span>
+                        <h2 class="installation-title">
+                            We Provide Best <span class="text-red">Installation</span>
+                            <svg class="pulse-wave-svg ms-1" width="46" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 10H12L16 2L22 18L28 6L32 12L36 10H48" stroke="#03348e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </h2>
                     </div>
                 </div>
             </div>
 
-            <div class="service-slider-wrap" data-aos="fade-up" data-aos-delay="200">
+            <!-- Slider Container with Navigation Buttons -->
+            <div class="installation-slider-container position-relative px-md-5" data-aos="fade-up" data-aos-delay="200">
+                
+                <!-- Side Navigation Arrows -->
+                <button class="installation-nav-btn installation-nav-prev" aria-label="Previous Installation Slide">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <button class="installation-nav-btn installation-nav-next" aria-label="Next Installation Slide">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+
+                <!-- Swiper Slider -->
                 <div class="installation-slider swiper">
                     <div class="swiper-wrapper">
-
-                        <!-- Slide 1 - Left -->
-                        <div class="swiper-slide">
-                            <div class="d-flex justify-content-center">
-
-                                <img class="rounded" src="{{ asset('user/assets/img/IND/1.webp') }}" alt="Installation 1" width="350" height="350" loading="lazy">
-
-
+                        @for($i = 1; $i <= 5; $i++)
+                            <div class="swiper-slide">
+                                <div class="installation-card">
+                                    <img src="{{ asset('user/assets/img/IND/' . $i . '.webp') }}" alt="Medical Equipment Installation {{ $i }}" loading="lazy">
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Slide 1 - Left -->
-                        <div class="swiper-slide">
-                            <div class="d-flex justify-content-center">
-
-                                <img class="rounded" src="{{ asset('user/assets/img/IND/2.webp') }}" alt="Installation 2" width="350" height="350" loading="lazy">
-
-
-                            </div>
-                        </div>
-
-                        <!-- Slide 1 - Left -->
-                        <div class="swiper-slide">
-                            <div class="d-flex justify-content-center">
-
-                                <img class="rounded" src="{{ asset('user/assets/img/IND/3.webp') }}" alt="Installation 3" width="350" height="350" loading="lazy">
-
-
-                            </div>
-                        </div>
-
-                        <!-- Slide 1 - Left -->
-                        <div class="swiper-slide">
-                            <div class="d-flex justify-content-center">
-
-                                <img class="rounded" src="{{ asset('user/assets/img/IND/4.webp') }}" alt="Installation 4" width="350" height="350" loading="lazy">
-
-
-                            </div>
-                        </div>
-
-                        <!-- Slide 1 - Left -->
-                        <div class="swiper-slide">
-                            <div class="d-flex justify-content-center">
-
-                                <img class="rounded" src="{{ asset('user/assets/img/IND/5.webp') }}" alt="Installation 5" width="350" height="350" loading="lazy">
-
-
-                            </div>
-                        </div>
-
-
-
+                        @endfor
                     </div>
                 </div>
 
-                <!-- Slider Navigation -->
-                <div class="service-slider-btn slider-btn">
-                    <div class="installation-prev prev-btn"><img src="{{ asset('user/assets/img/left-arrow.svg') }}"
-                            alt="Image" width="24" height="24" loading="lazy"></div>
-                    <div class="installation-next next-btn"><img src="{{ asset('user/assets/img/right-arrow.svg') }}"
-                            alt="Image" width="24" height="24" loading="lazy"></div>
-                </div>
+                <!-- Swiper Pagination Dots -->
+                <div class="installation-pagination-dots swiper-pagination"></div>
             </div>
-
         </div>
     </div>
-    <!-- Service Section End -->
-
+    <!-- Medical Equipment Installation Section End -->
 
     </main>
 
-    <!--footer start-->
+    <!-- Footer Area Start -->
     @include('user.layouts.footer')
-    <!--footer end-->
+    <!-- Footer Area End -->
 
-    {{-- main Layout Ends here --}}
-
-
-
-
-    <!-- Shop Area Start Here -->
-    {{-- <section class="shop-wrap-layout1 bg-light-primary100 bg-light-secondary100">
-        <div class="container">
-            <div class="section-heading heading-dark text-center heading-layout1">
-                <h2>Our Online Store</h2>
-                <p>Shop Online Any Where</p>
-            </div>
-            <div class="rc-carousel dot-control-layout3" data-loop="true" data-items="4" data-margin="30"
-                data-autoplay="false" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="true"
-                data-nav="false" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="false"
-                data-r-x-small-dots="true" data-r-x-medium="2" data-r-x-medium-nav="false"
-                data-r-x-medium-dots="true" data-r-small="2" data-r-small-nav="false" data-r-small-dots="true"
-                data-r-medium="3" data-r-medium-nav="false" data-r-medium-dots="true" data-r-large="4"
-                data-r-large-nav="false" data-r-large-dots="true" data-r-extra-large="4"
-                data-r-extra-large-nav="false" data-r-extra-large-dots="true">
-
-                @if ($products->count() > 0)
-                    @foreach ($products as $product)
-                        <div class="shop-box-layout1">
-                            <a href="{{ route('product_details', $product->slug) }}">
-                                <div class="item-img">
-                                    <img src="/storage/{{ $product->thumbnail }}" alt="{{ $product->name }}"
-                                        class="img-fluid">
-
-                                </div>
-                                <div class="item-content">
-                                    <h3 class="item-title">
-                                        {{ $product->name }}
-                                    </h3>
-                                    <div class="rate-items">
-                                        @if ($product->rating > 0)
-                                            @php
-                                                $averageRating = round($product->rating); // Round the rating to the nearest integer
-                                            @endphp
-                                            @for ($i = 1; $i <= 5; $i++)
-                                                <i
-                                                    class="fas fa-star {{ $i <= $averageRating ? 'text-warning' : 'text-secondary' }}"></i>
-                                            @endfor
-                                        @endif
-
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                @else
-                    <p class="text-left">No related products found.</p>
-                @endif
-            </div>
-        </div>
-    </section> --}}
-    <!-- Shop Area End Here -->
-    <!-- Javascript -->
     @include('user.layouts.script')
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Hero Swiper Banner (Laptop and Mobile)
+            document.querySelectorAll('.hero-swiper').forEach(function(swiperEl) {
+                new Swiper(swiperEl, {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    loop: true,
+                    speed: 700,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: swiperEl.querySelector('.hero-swiper-pagination'),
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: swiperEl.querySelector('.hero-swiper-next'),
+                        prevEl: swiperEl.querySelector('.hero-swiper-prev'),
+                    }
+                });
+            });
+
+            // Initialize Installation Swiper Slider
+            if (document.querySelector('.installation-slider')) {
+                var installationSwiper = new Swiper('.installation-slider', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    navigation: {
+                        nextEl: '.installation-nav-next',
+                        prevEl: '.installation-nav-prev',
+                    },
+                    pagination: {
+                        el: '.installation-pagination-dots',
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        576: { slidesPerView: 2, spaceBetween: 20 },
+                        768: { slidesPerView: 3, spaceBetween: 22 },
+                        1200: { slidesPerView: 4, spaceBetween: 25 }
+                    }
+                });
+            }
+
+            // Initialize Clients Swiper Slider
+            if (document.querySelector('.clients-slider')) {
+                var clientsSwiper = new Swiper('.clients-slider', {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                    loop: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    navigation: {
+                        nextEl: '.clients-nav-next',
+                        prevEl: '.clients-nav-prev',
+                    },
+                    pagination: {
+                        el: '.clients-pagination-dots',
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        576: { slidesPerView: 3, spaceBetween: 18 },
+                        768: { slidesPerView: 4, spaceBetween: 20 },
+                        992: { slidesPerView: 5, spaceBetween: 22 },
+                        1200: { slidesPerView: 6, spaceBetween: 24 }
+                    }
+                });
+            }
+
+            // Feedback Modal Handlers
+            const backdrop = document.getElementById('feedbackModalBackdrop');
+            const openBtn = document.getElementById('open-feedback-btn');
+            const closeBtn = document.getElementById('close-feedback-btn');
+            const form = document.getElementById('feedbackForm');
+            const starsContainer = document.getElementById('modal-stars-rating');
+            const ratingInput = document.getElementById('modal-rating-value');
+            const successOverlay = document.getElementById('feedbackSuccessOverlay');
+
+            if (openBtn && backdrop) {
+                openBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    backdrop.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                function closeModal() {
+                    backdrop.classList.remove('show');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        if (form) form.reset();
+                        if (successOverlay) successOverlay.classList.remove('show');
+                        if (ratingInput) ratingInput.value = '5';
+                        highlightStars(5);
+                    }, 400);
+                }
+
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+                backdrop.addEventListener('click', function(e) {
+                    if (e.target === backdrop) {
+                        closeModal();
+                    }
+                });
+
+                const stars = starsContainer ? starsContainer.querySelectorAll('.star-input') : [];
+                
+                function highlightStars(val) {
+                    stars.forEach(star => {
+                        const starVal = parseInt(star.getAttribute('data-value'));
+                        if (starVal <= val) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+
+                highlightStars(5);
+
+                stars.forEach(star => {
+                    star.addEventListener('mouseenter', function() {
+                        const val = parseInt(this.getAttribute('data-value'));
+                        highlightStars(val);
+                    });
+
+                    if (starsContainer) {
+                        starsContainer.addEventListener('mouseleave', function() {
+                            const currentVal = parseInt(ratingInput.value);
+                            highlightStars(currentVal);
+                        });
+                    }
+
+                    star.addEventListener('click', function() {
+                        const val = parseInt(this.getAttribute('data-value'));
+                        ratingInput.value = val;
+                        highlightStars(val);
+                    });
+                });
+
+                if (form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const name = document.getElementById('modal-client-name').value;
+                        const role = document.getElementById('modal-client-role').value;
+                        const rating = parseInt(ratingInput.value);
+                        const comment = document.getElementById('modal-client-comment').value;
+                        
+                        const submitBtn = form.querySelector('button[type="submit"]');
+                        if (submitBtn) {
+                            submitBtn.disabled = true;
+                            submitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Submitting...';
+                        }
+
+                        fetch('{{ route("testimonial.submit") }}', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                name: name,
+                                designation: role,
+                                rating: rating,
+                                comment: comment
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (submitBtn) {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = 'Submit Review <i class="ri-send-plane-fill ms-2"></i>';
+                            }
+
+                            if (data.success) {
+                                if (successOverlay) successOverlay.classList.add('show');
+                                setTimeout(closeModal, 2500);
+                            } else {
+                                alert(data.message || 'Something went wrong. Please try again.');
+                            }
+                        })
+                        .catch(error => {
+                            if (submitBtn) {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = 'Submit Review <i class="ri-send-plane-fill ms-2"></i>';
+                            }
+                            console.error('Error submitting feedback:', error);
+                            alert('Something went wrong. Please try again.');
+                        });
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

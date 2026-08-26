@@ -301,6 +301,10 @@
                                     <i class="ri-mail-send-fill"></i>
                                     <span>sinoatrialservice@gmail.com</span>
                                 </a>
+                                <a href="mailto:sinoatrialmedical@gmail.com" class="contact-link-item">
+                                    <i class="ri-mail-send-fill"></i>
+                                    <span>sinoatrialmedical@gmail.com</span>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect width="100%" height="100%" fill="none"/>
+  <circle cx="30" cy="30" r="18" fill="#005eb8"/>
+  <text x="30" y="37" font-family="'Georgia', serif" font-size="18" font-weight="bold" font-style="italic" fill="#ffffff" text-anchor="middle">GE</text>
+  <text x="58" y="34" font-family="'Poppins', sans-serif" font-size="16" font-weight="700" fill="#005eb8">GE Healthcare</text>
+</svg>

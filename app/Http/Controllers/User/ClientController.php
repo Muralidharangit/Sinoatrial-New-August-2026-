@@ -13,6 +13,7 @@ use App\Models\Product;
 use App\Models\Product_Image;
 use App\Models\ProductFeature;
 use App\Models\Quote;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -22,15 +23,16 @@ class ClientController extends Controller
     {
         $categories = Category::all(); // Fetch all categories
         $products = Product::take(6)->get(); // Fetch only up to 6 products
+        $testimonials = Testimonial::where('status', 1)->orderBy('created_at', 'desc')->get();
 
-
-        return view('user.home', compact('categories', 'products'));
+        return view('user.home', compact('categories', 'products', 'testimonials'));
     }
 
     public function about()
     {
         $categories = Category::all(); // Fetch all categories
-        return view('user.about', compact('categories'));
+        $testimonials = Testimonial::where('status', 1)->orderBy('created_at', 'desc')->get();
+        return view('user.about', compact('categories', 'testimonials'));
     }
 
     public function service()
@@ -217,6 +219,38 @@ class ClientController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Something went wrong while submitting your application. Please try again.',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function testimonialSubmit(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'designation' => 'nullable|string|max:255',
+            'rating' => 'required|integer|min:1|max:5',
+            'comment' => 'required|string',
+        ]);
+
+        try {
+            $testimonial = Testimonial::create([
+                'name' => $request->name,
+                'designation' => $request->designation,
+                'rating' => $request->rating,
+                'comment' => $request->comment,
+                'status' => 1 // Active by default so it shows up immediately on submission
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Thank you for your valuable feedback!',
+                'data' => $testimonial
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Something went wrong. Please try again.',
                 'error' => $e->getMessage()
             ], 500);
         }
