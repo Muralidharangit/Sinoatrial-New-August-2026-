@@ -45,6 +45,7 @@
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
 
+         
                 <!-- Banner Slide 1 -->
                 <div class="swiper-slide hero-banner-slide">
                     <img src="{{ asset('user/assets/img/hero/bn1.png') }}" alt="Sinoatrial Medical Technology Banner 1" class="hero-banner-img">
@@ -521,7 +522,7 @@
                             <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/10.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
                             <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/11.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
                             <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/12.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
-                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/13.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box brand-marquee-box-dark"><img src="{{ asset('user/assets/img/MEquip_log/13.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
                         </div>
                         <div class="marquee-set">
                             <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/8.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
@@ -529,7 +530,7 @@
                             <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/10.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
                             <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/11.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
                             <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/12.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
-                            <div class="brand-marquee-box"><img src="{{ asset('user/assets/img/MEquip_log/13.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
+                            <div class="brand-marquee-box brand-marquee-box-dark"><img src="{{ asset('user/assets/img/MEquip_log/13.png') }}" alt="Brand Logo" class="brand-marquee-img" loading="lazy"></div>
                         </div>
                     </div>
 
@@ -1022,7 +1023,7 @@ background: linear-gradient(to right, #0043a6, #db0a24);">
                     <div class="swiper-wrapper align-items-center">
                         @for($i = 1; $i <= 19; $i++)
                             <div class="swiper-slide">
-                                <div class="client-logo-card">
+                                <div class="client-logo-card {{ in_array($i, [1, 9]) ? 'client-logo-card-dark' : '' }}">
                                     <img src="{{ asset('user/assets/img/Clients/' . $i . '.png') }}" alt="Client Logo {{ $i }}" loading="lazy">
                                 </div>
                             </div>
