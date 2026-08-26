@@ -3,7 +3,7 @@
     xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
-    <title>Contact form Details</title>
+    <title>Contact form Details From Sinoatrial</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<![endif]-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -134,82 +134,78 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation"
                                     style="vertical-align:bottom;" width="100%">
 
-                                    <tr>
-                                        <td align="center"
-                                            style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                                     <tr>
+                                         <td align="center"
+                                             style="font-size:0px;padding:15px 25px;word-break:break-word;">
 
-                                            <table align="center" border="0" cellpadding="0" cellspacing="0"
-                                                role="presentation"
-                                                style="border-collapse:collapse;border-spacing:0px;">
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="width:200px;">
+                                             <table align="center" border="0" cellpadding="0" cellspacing="0"
+                                                 role="presentation"
+                                                 style="border-collapse:collapse;border-spacing:0px;">
+                                                 <tbody>
+                                                     <tr>
+                                                         <td style="width:180px;">
+                                                             @if(file_exists(public_path('user/assets/img/logo2.png')))
+                                                                 <img height="auto" src="{{ $message->embed(public_path('user/assets/img/logo2.png')) }}"
+                                                                     alt="Sinoatrial Medical"
+                                                                     style="border:0;display:block;outline:none;text-decoration:none;max-width:180px;width:100%;" />
+                                                             @elseif(file_exists(public_path('user/assets/img/logo.webp')))
+                                                                 <img height="auto" src="{{ $message->embed(public_path('user/assets/img/logo.webp')) }}"
+                                                                     alt="Sinoatrial Medical"
+                                                                     style="border:0;display:block;outline:none;text-decoration:none;max-width:180px;width:100%;" />
+                                                             @endif
+                                                         </td>
+                                                     </tr>
+                                                 </tbody>
+                                             </table>
 
-                                                            <img height="auto" src=""
-                                                                style="border:0;display:block;outline:none;text-decoration:none;width:100%;" />
+                                         </td>
+                                     </tr>
 
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                     <tr>
+                                         <td align="center"
+                                             style="font-size:0px;padding:10px 25px;word-break:break-word;">
 
-                                        </td>
-                                    </tr>
+                                             <div
+                                                 style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:22px;font-weight:bold;line-height:28px;text-align:center;color:#03348e;">
+                                                 You Have Received A New Contact Enquiry
+                                             </div>
 
-                                    <tr>
-                                        <td align="center"
-                                            style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                                         </td>
+                                     </tr>
+                                     <tr>
+                                         <td align="left"
+                                             style="font-size:0px;padding:20px 25px;word-break:break-word;">
 
-                                            <div
-                                                style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:24px;font-weight:bold;line-height:22px;text-align:center;color:#525252;">
-                                                You Have Received A New Contact Details
-                                            </div>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="left"
-                                            style="font-size:0px;padding:10px 25px;word-break:break-word;padding-top:40px">
-
-                                            <table 0="[object Object]" 1="[object Object]" 2="[object Object]"
-                                                border="0"
-                                                style="cellspacing:0;color:#000;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:100%;">
-                                                <tr style="border-bottom:1px solid #ecedee;text-align:left;">
-                                                    <th style="padding: 0 15px 10px 0;"></th>
-                                                    <th style="padding: 0 15px;"></th>
-                                                    <th style="padding: 0 0 0 15px;" align="right"></th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 5px 15px 5px 0;">Name</td>
-                                                    <td style="padding: 0 15px;" align="right">
-                                                        {{ $contactInfo['name'] }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 0 15px 5px 0;">Email</td>
-                                                    <td style="padding: 0 15px;"align="right">
-                                                        {{ $contactInfo['email'] }}</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td style="padding: 0 15px 5px 0;">Mobile Number</td>
-                                                    <td style="padding: 0 15px;" align="right">
-                                                        {{ $contactInfo['mobile_no'] }}</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td style="padding: 0 15px 5px 0;">Subject</td>
-                                                    <td style="padding: 0 15px;" align="right">
-                                                        {{ $contactInfo['subject'] }}</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td style="padding: 0 15px 5px 0;">Enquiry</td>
-                                                    <td style="padding: 0 15px;" align="right">
-                                                        {{ $contactInfo['enquiry'] }}</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
+                                             <table border="0" cellpadding="0" cellspacing="0"
+                                                 style="color:#333;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:22px;width:100%;border-collapse:collapse;">
+                                                 <tr style="border-bottom:1px solid #ecedee;">
+                                                     <td style="padding:10px 8px 10px 0;font-weight:bold;color:#475569;width:130px;white-space:nowrap;vertical-align:top;" width="130">Name</td>
+                                                     <td style="padding:10px 0 10px 8px;color:#0f172a;text-align:right;vertical-align:top;">
+                                                         {{ $contactInfo['name'] }}</td>
+                                                 </tr>
+                                                 <tr style="border-bottom:1px solid #ecedee;">
+                                                     <td style="padding:10px 8px 10px 0;font-weight:bold;color:#475569;width:130px;white-space:nowrap;vertical-align:top;" width="130">Email</td>
+                                                     <td style="padding:10px 0 10px 8px;color:#03348e;text-align:right;vertical-align:top;word-break:break-all;">
+                                                         {{ $contactInfo['email'] }}</td>
+                                                 </tr>
+                                                 <tr style="border-bottom:1px solid #ecedee;">
+                                                     <td style="padding:10px 8px 10px 0;font-weight:bold;color:#475569;width:130px;white-space:nowrap;vertical-align:top;" width="130">Mobile Number</td>
+                                                     <td style="padding:10px 0 10px 8px;color:#0f172a;text-align:right;vertical-align:top;">
+                                                         {{ $contactInfo['mobile_no'] }}</td>
+                                                 </tr>
+                                                 <tr style="border-bottom:1px solid #ecedee;">
+                                                     <td style="padding:10px 8px 10px 0;font-weight:bold;color:#475569;width:130px;white-space:nowrap;vertical-align:top;" width="130">Subject</td>
+                                                     <td style="padding:10px 0 10px 8px;color:#0f172a;text-align:right;vertical-align:top;">
+                                                         {{ $contactInfo['subject'] }}</td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td style="padding:10px 8px 10px 0;font-weight:bold;color:#475569;width:130px;white-space:nowrap;vertical-align:top;" width="130">Enquiry</td>
+                                                     <td style="padding:10px 0 10px 8px;color:#0f172a;text-align:right;vertical-align:top;line-height:1.5;">
+                                                         {{ $contactInfo['enquiry'] }}</td>
+                                                 </tr>
+                                             </table>
+                                         </td>
+                                     </tr>
 
                                     {{-- <tr>
                                         <td align="left"

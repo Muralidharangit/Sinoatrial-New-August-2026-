@@ -152,8 +152,12 @@ class ClientController extends Controller
                 'enquiry' => $request->input('enquiry'),
             ]);
 
-            $adminEmail = env('MAIL_USERNAME') ?: 'muralidharan18898@gmail.com';
-            Mail::to($adminEmail)->send(new ContactFormSubmitted($contact_info));
+            $toMail = $request->input('email');
+            $ccMails = [
+                'sinoatrialservice@gmail.com',
+            ];
+
+            Mail::to($toMail)->cc($ccMails)->send(new ContactFormSubmitted($contact_info));
 
             return response()->json([
                 'success' => true,
