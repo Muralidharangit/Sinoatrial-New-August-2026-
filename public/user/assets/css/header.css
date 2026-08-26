@@ -951,7 +951,7 @@
    Modern Header & Top Bar Custom Styles
 ========================================== */
 .header-top-bar {
-    background-color: #f4f8fc;
+    background-color: #d6e7f9;
     border-bottom: 1px solid rgba(3, 52, 142, 0.08);
     padding: 9px 0;
     font-size: 13px;
@@ -989,7 +989,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     position: relative;
     z-index: 999;
-    border-bottom: 1px solid #003fa45c;
+    border-bottom: 1px solid #003fa400;
 }
 .main-navbar-wrap .navbar-brand img {
     height: 52px;
